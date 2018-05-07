@@ -24,32 +24,3 @@ def do_all_data_loading():
     df = clean_speaker_names(df)
     df = drop_deleted_scenes(df)
     return df
-
-
-def line_search(line, speaker=None):
-    if speaker:
-        speaker = df['speaker'] == speaker
-    else:
-        speaker = True
-
-    line = line.replace(' ', '\s*')
-    line = df['line_text'].str.contains(line, regex=True, flags=re.I)
-
-    return df[line & speaker]
-
-
-def get_dialogue(season, episode, scenes=None):
-    season = df['season'] == season
-    episode = df['episode'] == episode
-
-    if scenes:
-        if type(scenes) != list:
-            scenes = [scenes]
-        else:
-            scenes = list(range(*scenes))
-
-        scenes = df['scene'].isin(scenes)
-    else:
-        scenes = True
-
-    return df[season & episode & scenes]
