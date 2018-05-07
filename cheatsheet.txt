@@ -1,0 +1,110 @@
+def get_data():
+    df = pd.read_csv('data/the-office-lines-scripts.csv')
+    df = clean_line_text(df)
+    df = clean_speaker_names(df)
+    df = drop_deleted_scenes(df)
+    return df
+
+def clean_line_text(df):
+    badChars = re.compile('[^A-Z \-?\.&\'\[\],*!\%]', re.I)
+    df['line_text'] = df['line_text'].map(lambda x: badChars.sub('', x))
+    return df
+
+def clean_speaker_names(df):
+    df['speaker'] = df['speaker'].str.strip().str.lower()
+    return df
+
+def drop_deleted_scenes(df):
+    df = df[df['deleted'] == True]
+    del df['deleted']
+    return df.reset_index(drop=True)
+
+
+
+def line_search(line, speaker=None):
+    if speaker:
+        speaker = df['speaker'] == speaker
+    else:
+        speaker = True
+
+    line = line.replace(' ', '\s*')
+    line = df['line_text'].str.contains(line, regex=True, flags=re.I)
+
+    return df[line & speaker]
+
+
+
+def get_dialogue(season, episode, scenes=None):
+    season = df['season'] == season
+    episode = df['episode'] == episode
+
+    if scenes:
+        if type(scenes) != list:
+            scenes = [scenes]
+        else:
+            scenes = list(range(*scenes))
+
+        scenes = df['scene'].isin(scenes)
+    else:
+        scenes = True
+
+    return df[season & episode & scenes]
+
+
+
+
+def filter_cast(df, minLines=100):
+    lineCounts = df['speaker'].value_counts()
+    importantPeople = lineCounts[lineCounts > minLines].index
+
+    filtered = df[df['speaker'].isin(importantPeople)]
+
+    return filtered.reset_index(drop=True)
+
+
+
+
+
+
+
+
+
+gb = aListDf.groupby(['season', 'episode', 'scene'])
+
+
+s = gb['speaker'].unique().reset_index(drop=True)
+
+sceneByCast = pd.get_dummies(s.apply(pd.Series).stack()).sum(level=0)
+
+sceneByCast = sceneByCast[sceneByCast.sum(axis=1) > 1]
+
+sceneByCast[sceneByCast['Andy'] > 0].sum()
+
+
+pairs = {char:None for char in sceneByCast}
+
+for char in sceneByCast:
+    pairs[char] = sceneByCast[sceneByCast[char] > 0].sum()
+
+pairValues = pd.DataFrame(pairs).values
+
+
+
+
+
+
+
+def heat_map(pairValues):
+    fig, ax = plt.subplots(figsize=(18, 10))
+
+    im = ax.imshow(np.tril(pairValues, k=-1), cmap='Greys')
+    ax.figure.colorbar(im)
+
+    _ = ax.set_xticks(np.arange(len(pairs)))
+    _ = ax.set_yticks(np.arange(len(pairs)))
+
+    _ = ax.set_xticklabels(pairs, rotation=45, ha='right')
+    _ = ax.set_yticklabels(pairs)
+
+    _ = ax.set_title('Number of Scenes Shared, by Character', size=20)
+    return ax
