@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="author" content="Nick">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+        <title>for frame in movie: make_bars() | Movies, Metrics, Musings</title>
+
+	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+	<link rel="icon" href="/favicon.ico" type="image/x-icon">
+        <link rel="alternate" type="application/atom+xml" title="Movies, Metrics, Musings blog atom feed" href="/feeds/all.atom.xml" />
+        <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700' rel='stylesheet' type='text/css'>
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="/theme/css/icons.css"/>
+        <style>.highlight .hll { background-color: #ffffcc }
+.highlight .c { color: #60a0b0; font-style: italic } /* Comment */
+.highlight .err { border: 1px solid #FF0000 } /* Error */
+.highlight .k { color: #007020; font-weight: bold } /* Keyword */
+.highlight .o { color: #666666 } /* Operator */
+.highlight .cm { color: #60a0b0; font-style: italic } /* Comment.Multiline */
+.highlight .cp { color: #007020 } /* Comment.Preproc */
+.highlight .c1 { color: #60a0b0; font-style: italic } /* Comment.Single */
+.highlight .cs { color: #60a0b0; background-color: #fff0f0 } /* Comment.Special */
+.highlight .gd { color: #A00000 } /* Generic.Deleted */
+.highlight .ge { font-style: italic } /* Generic.Emph */
+.highlight .gr { color: #FF0000 } /* Generic.Error */
+.highlight .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+.highlight .gi { color: #00A000 } /* Generic.Inserted */
+.highlight .go { color: #808080 } /* Generic.Output */
+.highlight .gp { color: #c65d09; font-weight: bold } /* Generic.Prompt */
+.highlight .gs { font-weight: bold } /* Generic.Strong */
+.highlight .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+.highlight .gt { color: #0040D0 } /* Generic.Traceback */
+.highlight .kc { color: #007020; font-weight: bold } /* Keyword.Constant */
+.highlight .kd { color: #007020; font-weight: bold } /* Keyword.Declaration */
+.highlight .kn { color: #007020; font-weight: bold } /* Keyword.Namespace */
+.highlight .kp { color: #007020 } /* Keyword.Pseudo */
+.highlight .kr { color: #007020; font-weight: bold } /* Keyword.Reserved */
+.highlight .kt { color: #902000 } /* Keyword.Type */
+.highlight .m { color: #40a070 } /* Literal.Number */
+.highlight .s { color: #4070a0 } /* Literal.String */
+.highlight .na { color: #4070a0 } /* Name.Attribute */
+.highlight .nb { color: #007020 } /* Name.Builtin */
+.highlight .nc { color: #0e84b5; font-weight: bold } /* Name.Class */
+.highlight .no { color: #60add5 } /* Name.Constant */
+.highlight .nd { color: #555555; font-weight: bold } /* Name.Decorator */
+.highlight .ni { color: #d55537; font-weight: bold } /* Name.Entity */
+.highlight .ne { color: #007020 } /* Name.Exception */
+.highlight .nf { color: #06287e } /* Name.Function */
+.highlight .nl { color: #002070; font-weight: bold } /* Name.Label */
+.highlight .nn { color: #0e84b5; font-weight: bold } /* Name.Namespace */
+.highlight .nt { color: #062873; font-weight: bold } /* Name.Tag */
+.highlight .nv { color: #bb60d5 } /* Name.Variable */
+.highlight .ow { color: #007020; font-weight: bold } /* Operator.Word */
+.highlight .w { color: #bbbbbb } /* Text.Whitespace */
+.highlight .mf { color: #40a070 } /* Literal.Number.Float */
+.highlight .mh { color: #40a070 } /* Literal.Number.Hex */
+.highlight .mi { color: #40a070 } /* Literal.Number.Integer */
+.highlight .mo { color: #40a070 } /* Literal.Number.Oct */
+.highlight .sb { color: #4070a0 } /* Literal.String.Backtick */
+.highlight .sc { color: #4070a0 } /* Literal.String.Char */
+.highlight .sd { color: #4070a0; font-style: italic } /* Literal.String.Doc */
+.highlight .s2 { color: #4070a0 } /* Literal.String.Double */
+.highlight .se { color: #4070a0; font-weight: bold } /* Literal.String.Escape */
+.highlight .sh { color: #4070a0 } /* Literal.String.Heredoc */
+.highlight .si { color: #70a0d0; font-style: italic } /* Literal.String.Interpol */
+.highlight .sx { color: #c65d09 } /* Literal.String.Other */
+.highlight .sr { color: #235388 } /* Literal.String.Regex */
+.highlight .s1 { color: #4070a0 } /* Literal.String.Single */
+.highlight .ss { color: #517918 } /* Literal.String.Symbol */
+.highlight .bp { color: #007020 } /* Name.Builtin.Pseudo */
+.highlight .vc { color: #bb60d5 } /* Name.Variable.Class */
+.highlight .vg { color: #bb60d5 } /* Name.Variable.Global */
+.highlight .vi { color: #bb60d5 } /* Name.Variable.Instance */
+.highlight .il { color: #40a070 } /* Literal.Number.Integer.Long */</style>
+        <style>body {
+  margin: 0;
+  padding: 0;
+  font: 15px 'Source Sans Pro', sans-serif;
+  line-height: 1.6em;
+  color: #222;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+a {
+  color: #007EE5;
+  text-decoration: none;
+}
+a:hover {
+  color: #007EE5;
+  text-decoration: none;
+}
+header.main-header {
+  background: none repeat scroll 0% 0% #205F29;
+  margin-bottom: 0px;
+}
+header.main-header a {
+  color: #fff;
+}
+header.main-header .container {
+  max-width: 1000px;
+}
+header.main-header .container nav a:hover {
+  background-color: #5C881C;
+}
+article {
+  margin: 0;
+}
+article header.about {
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+}
+article header {
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+}
+article header h1 {
+  margin-bottom: 2px;
+  font-weight: 700;
+  color: #000;
+}
+article header time {
+  color: #9E9E9E;
+  font-size: 0.85em;
+  float: right;
+}
+article header time.left {
+  color: #9E9E9E;
+  font-size: 0.85em;
+  float: left;
+}
+article div.social-links ul {
+  padding: 0px;
+}
+article div.social-links li {
+  display: inline;
+  font-size: 20px;
+}
+article div.social-links li a {
+  color: #000;
+  padding: 10px;
+}
+article div.social-links li a:hover {
+  color: #666;
+  text-decoration: none;
+}
+article p {
+  font-size: 16px;
+  margin-bottom: 20px;
+  line-height: 1.6em;
+}
+article p.note {
+  background: #f5f5f5;
+  border: 1px solid #ddd;
+  padding: 0.533em 0.733em;
+}
+article p.update {
+  background-color: #FEEFB3;
+  border: 1px solid #e6e68a;
+  padding: 0.533em 0.733em;
+}
+article p.alert {
+  background-color: #ffe2e2;
+  border: 1px solid #ffb2b2;
+  padding: 0.533em 0.733em;
+}
+article ol {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+article ol {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+article li {
+  font-size: 16px;
+  line-height: 1.6em;
+}
+article a:hover {
+  text-decoration: underline;
+}
+article blockquote {
+  border-left: 2px solid #c7c7cc;
+  color: #666;
+  margin: 30px 0;
+  padding: 0 0 0 25px;
+}
+article img {
+  max-width: 100%;
+}
+article code {
+  color: #333;
+  background-color: #EEE;
+  border-radius: 0;
+  font-size: 13px;
+}
+article .meta {
+  font-size: 11px;
+}
+article .meta a:hover {
+  text-decoration: none;
+}
+article .meta div {
+  margin-bottom: 20px;
+  display: block;
+}
+article .meta a.tag {
+  margin: 0 10px 10px 0;
+  padding: 1px 12px;
+  display: inline-block;
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.8);
+  background: rgba(0, 0, 0, 0.05);
+}
+article .meta a.tag:hover {
+  background: rgba(0, 0, 0, 0.15);
+}
+article .meta a.read_more,
+article .meta a.comments_btn {
+  font-size: 14px;
+  font-weight: 800;
+  padding: 10px 20px;
+  color: #205F29;
+  background: #FFF;
+  border: 1px solid #205F29;
+}
+article .meta a.read_more:hover,
+article .meta a.comments_btn:hover {
+  color: #FFF;
+  background: #5C881C;
+}
+.index {
+  max-width: 700px;
+}
+.index article header h2 {
+  font-size: 36px;
+  margin-bottom: 2px;
+  font-weight: 700;
+}
+.index article header h2 a {
+  color: #000;
+}
+.index article header h2 a:hover {
+  color: #007EE5;
+  text-decoration: none;
+}
+.index .separator {
+  padding: 40px 0 0 0;
+  margin: 0 0 40px 0;
+  height: 10px;
+  border-bottom: solid 1px #CCC;
+}
+.index .pagination {
+  display: block;
+  margin-bottom: 100px;
+}
+.index .pagination .left {
+  text-align: right;
+}
+.index .pagination .right {
+  text-align: left;
+}
+.index .pagination a {
+  display: inline-block;
+  border: 2px solid #5C881C;
+  margin: 0 5px;
+  padding: 8px 20px;
+  font-weight: bold;
+  color: #5C881C;
+}
+.index .pagination a:hover {
+  color: #FFF;
+  background: #5C881C;
+}
+.post {
+  max-width: 800px;
+}
+.post h2:before {
+  font-weight: bold;
+  color: #DDD;
+}
+.post h3:before {
+  font-weight: bold;
+  color: #DDD;
+}
+.post h4:before {
+  font-weight: bold;
+  color: #DDD;
+}
+.post article .meta {
+  margin: 50px 0 100px;
+}
+.list {
+  max-width: 700px;
+}
+.list ul.double-list {
+  margin: 0 auto 60px;
+  padding: 0;
+  list-style-type: none;
+}
+.list ul.double-list li {
+  padding: 5px 0;
+}
+.list ul.double-list li h2 {
+  font-size: 1em;
+  display: inline;
+  font-weight: normal;
+}
+.list ul.double-list li span {
+  font-family: sans-serif;
+  text-transform: uppercase;
+  text-align: right;
+  float: right;
+  padding-top: 3px;
+  font-size: 12px;
+  color: #999;
+}
+.full-width-content {
+  padding-top: 10px;
+  padding-left: 0px;
+  padding-right: 0px;
+  margin-left: -20px;
+  margin-right: -20px;
+}
+.col-xs-1,
+.col-sm-1,
+.col-md-1,
+.col-lg-1,
+.col-xs-2,
+.col-sm-2,
+.col-md-2,
+.col-lg-2,
+.col-xs-3,
+.col-sm-3,
+.col-md-3,
+.col-lg-3,
+.col-xs-4,
+.col-sm-4,
+.col-md-4,
+.col-lg-4,
+.col-xs-5,
+.col-sm-5,
+.col-md-5,
+.col-lg-5,
+.col-xs-6,
+.col-sm-6,
+.col-md-6,
+.col-lg-6,
+.col-xs-7,
+.col-sm-7,
+.col-md-7,
+.col-lg-7,
+.col-xs-8,
+.col-sm-8,
+.col-md-8,
+.col-lg-8,
+.col-xs-9,
+.col-sm-9,
+.col-md-9,
+.col-lg-9,
+.col-xs-10,
+.col-sm-10,
+.col-md-10,
+.col-lg-10,
+.col-xs-11,
+.col-sm-11,
+.col-md-11,
+.col-lg-11,
+.col-xs-12,
+.col-sm-12,
+.col-md-12,
+.col-lg-12 {
+  padding-right: 0px;
+  padding-left: 0px;
+}</style>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+    </head>
+
+    <body>
+        <header class="navbar navbar-inverse bs-docs-nav">
+            <div class="container-fluid">
+                <div class="navbar-header">
+		  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#theNavbar">
+		    <span class="icon-bar"></span>
+		    <span class="icon-bar"></span>
+		    <span class="icon-bar"></span>
+		  </button>
+                  <a class="navbar-brand" href="/" title="Home" class="title">Movies, Metrics, Musings</a>
+                </div>
+                <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation" id="theNavbar">
+		    <ul class="nav navbar-nav navbar-right">
+                            <li><a href="/pages/about.html" title="About">About</a></li>
+                            <li><a href="/archives.html" title="Archive">Archive</a></li>
+                            <li><a href="/pages/resources.html" title="Resources">Resources</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <div id="wrap">
+<div class="container post">
+    <article>
+        <header>
+            <h1>for frame in movie: make_bars()</h1>
+            <time datetime="article.date.isoformat()" pubdate>Fri 23 June 2017</time>
+        </header>
+
+        <div class="panel panel-default">
+            <div class="panel-heading">Table of Contents</div>
+            <div class="panel-body">
+            <div id="toc"><ul><li><a class="toc-href" href="#fast-forward" title="Fast Forward ">Fast Forward </a></li><li><a class="toc-href" href="#under-the-hood" title="Under the Hood ">Under the Hood </a></li><li><a '="" class="toc-href" cooking="" href="#now-were-cooking" re="" title="Now We">Now We're Cooking </a></li><li><a class="toc-href" href="#gallery" title="Gallery ">Gallery </a></li><li><a class="toc-href" href="#what-next" title="What Next? ">What Next? </a></li></ul></div>
+            </div>
+        </div>
+
+        <div class="article_content">
+            
+<p><a href="https://www.youtube.com/watch?v=GI6CfKcMhjY">Related mood music (see below)</a>. Revisited this one for the first time in a long while today and have been listening to it on repeat while I typed up this blog.</p>
+<p><strong>Total Plays at the Time I Hit Publish: 21</strong></p>
+<p>Anyhow, I stumbled across a wildly amusing Reddit thread a couple years ago where a user had basically:</p>
+<ul>
+<li>Got ahold of various movies through one mean or another</li>
+<li>Went through and calculated the average color in each frame</li>
+<li>Used those values to make a bunch of vertical bars that mapped the progression of color through the movie</li>
+</ul>
+<p><a href="https://imgur.com/gallery/Pw6LD/">Check it out. It's pretty cool.</a></p>
+<p>The Internet has taken to calling these Movie Bar Codes (which drives the pedant in me insane, lol) and other users have some pretty cool galleries of their takes on the project. One of my favorites is a <a href="http://moviebarcode.tumblr.com/">tumblr user whose been cranking out dozens of them</a>, with a grainier, hand-brushed aesthetic. So I bookmarked the links into my "would be cool to do" folder, then totally forgot about it.</p>
+<p><center><img height="400" src="../../../../../images/moviebars/jackmkv.png" width="700"/></center>
+<center><strong>The Jack Sparrow music video:</strong> Look at how starkly that first Jack Sparrow scene pops at the first white bar, lol</center></p>
+
+<h2 id="fast-forward">Fast Forward<a class="headerlink" href="#fast-forward" title="Permanent link"> </a></h2>
+<p>And so a couple years go by, and <a href="https://imgur.com/a/pfJ8N">another album</a> hits it big on the movies subreddit. I remember how much I wanted to take a crack at doing this myself-- after all I've learned a hell of a lot of Python between then and now-- and lo and behold, <a href="https://www.reddit.com/r/movies/comments/6ce2df/the_average_color_of_every_frame_of_a_given_movie/dhu8otu/">someone shows up in the comments with some relevant Python code. Nice.</a></p>
+<p>And so I pull it down from GitHub and try and throw it up against an episode of Detroiters, which I loved and you should totally check out, and I botched the hell out of it. First off, it took longer than the runtime of the episode to compile, and when it was finished, the image was so big that I couldn't open it in any of the software on my computer. Bummer.</p>
+<p>But the cool thing about living in the future is that you can just talk to strangers on the Internet until you suck less, <a href="https://www.reddit.com/r/movies/comments/6ce2df/the_average_color_of_every_frame_of_a_given_movie/dipd3om/?context=3">which is precisely what I did</a>. Huge thanks to /u/flashman for playing along. Basically, the code he'd hosted needed some love/tweaking before someone could use it in the way I was intending (hosted my changes at the bottom of this post!). My blundering was twofold:</p>
+<ol>
+<li>I had no idea what the video resolution was (nor did I understand exactly how those arguments were working), so I was telling it to ingest a file several times smaller than it actually was.</li>
+<li>I was grabbing and drawing a bar for every single frame. Let's do some napkin math.</li>
+<li>The episode in question was about 24 minutes. So that's <strong>1440 seconds</strong></li>
+<li>Then consider the fact that the show is filmed at 24 Frames per Second; <strong>34,560</strong> frames.</li>
+<li>Finally, by telling it to read the episode as if it were, idk, ~320x240 resolution, not the 1280x720 that it was, multiply that by 10 or so.</li>
+</ol>
+<p>Go figure my computer was giving me grief about trying to open up a 345,600x720 image.</p>
+<h2 id="under-the-hood">Under the Hood<a class="headerlink" href="#under-the-hood" title="Permanent link"> </a></h2>
+<p><a href="http://timbennett.github.io/movie-barcodes/">I love the way /u/flashman explain how this works</a>-- check it out, I'll wait here.</p>
+<p>But from an implementation standpoint here's an overview of what's going on:</p>
+<ul>
+<li>FFMPEG gets pointed at a video file and chunks it into all of its component frames.</li>
+<li>Because we tell the script the width, height, and length of the video it breaks the images into their vector representations.<ul>
+<li>After all, each frame has dimensions width x height x 3, where the 3 represents the RGB values in each pixel. That's a lot, right?</li>
+</ul>
+</li>
+<li>Then, using the above, it calculates the average RGB values and assigns that average color to the frame for later use.</li>
+<li>Using this list of average RGBs, it makes a blank white image and then, left to right, colors in the bars.</li>
+</ul>
+<p>And that's the long-and-skinny of it. But what of the comically-long width issue I was having? The answer was obviously some good old-fashioned mod division.</p>
+<p>For the uninitiated, mod division is a $2 Computer Science term that we all learned back before we did long division. Recall that if we took, say, 53 / 6, it'd divide neatly 8 times, before leaving us remainder 7. Well mod division (53 % 6) would simply output that 7.</p>
+<p>This is super useful when we want to construct an "Every nth frame" scheme, because all you have to do is take the total number of frames, and only draw a line where (frameIndex % nthFrame == 0). This nthFrame value becomes a lever that we can adjust to determine the final width of our dimensions. Which is basically what I wound up doing.</p>
+<h2 id="now-were-cooking">Now We're Cooking<a class="headerlink" href="#now-were-cooking" title="Permanent link"> </a></h2>
+<p>Hard part out of the way, this is where I got to start having fun with it. My ideal final product was a 4096x2160 (standard 4k resolution) image, so making that happen was a two-step process:</p>
+<ul>
+<li>Get the movie. Ez pz.</li>
+<li>The following napkin math<ul>
+<li>Fire up the movie in VLC and hit CTRL+J to get the video metadata I was interested in.</li>
+<li>Write down the video width and height</li>
+<li>Convert the Hour:Minutes:Seconds into seconds</li>
+<li>Multiply that runtime by Frames per Second to get total frames</li>
+<li>Algebra: To get 4096 bars, we want to grab every <strong><em>_</em></strong> frames. This was the value, rounded to the nearest whole number, I'd pipe in as <code>nthFrame</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="gallery">Gallery<a class="headerlink" href="#gallery" title="Permanent link"> </a></h2>
+<p>Historically-speaking, there's about a 600 year gap between <strong>Gladiator</strong> and <strong>300</strong>, but I thought it would be interesting to compare the two.</p>
+<p><center><img height="400" src="../../../../../images/moviebars/Gladiatoravi.png" width="700"/></center>
+<center><strong>Gladiator</strong>: Was really surprised by how much the blues stood out. I only really remember the sunburnt Colosseum scenes.</center></p>
+<p><center><img height="400" src="../../../../../images/moviebars/300mkv.png" width="700"/></center>
+<center><strong>300</strong>: I anticipated a lot of red. The Spartan capes really stand out in memory, but alas, on average, we've got the standard Snyder, gritty palette.</center></p>
+<p>Wait, what about a movie famous for it's lack of color? <a href="http://www.imdb.com/title/tt0401792/">Sin City</a> was all in black and white, save for a few objects/characters that are vibrant shades of electric yellow and deep red. Maybe that would show up?</p>
+<p><center><img height="400" src="../../../../../images/moviebars/sinmkv.png" width="700"/></center>
+<center><strong>Sin City</strong>: Hell yes it does!</center></p>
+<p>I fired off some context-less texts-- "Hey, what's your favorite movie?"</p>
+<p><center><img height="400" src="../../../../../images/moviebars/sunshinemkv.png" width="700"/></center>
+<center><strong>Eternal Sunshine of the Spotless Mind</strong>: Soul-crushing movie, decidedly gorgeous palette.</center></p>
+<p><center><img height="400" src="../../../../../images/moviebars/scottmkv.png" width="700"/></center>
+<center><strong>Scott Pilgrim vs the World</strong>: Love how glaringly obvious the bright-white techno ghost-dragon sequence stands out near the end.</center></p>
+<p><center><img height="400" src="../../../../../images/moviebars/fifthmkv.png" width="700"/></center>
+<center><strong>The Fifth Element:</strong> Might be my favorite render to come out of this whole thing. What an awesome spattering of color.</center></p>
+<p>Lastly, I remember <a href="https://screenmuse.wordpress.com/2012/11/03/colour-symbolism-red-in-the-sixth-sense/">this awesome read from awhile back</a> that called out the importance of the color red in the Sixth Sense as a foreshadowing element. A number of times throughout the movie, when the screen is saturated with the color, a vision of a dead person is soon to follow.</p>
+<p><center><img height="400" src="../../../../../images/moviebars/sixthmkv.png" width="700"/></center>
+<center><strong>The Sixth Sense:</strong> The double-bars at the ~2/3 mark are the following:</center></p>
+<p><center><img height="400" src="../../../../../images/moviebars/sixth1.PNG" width="700"/></center></p>
+<p><center><img height="400" src="../../../../../images/moviebars/sixth2.PNG" width="700"/></center></p>
+<p>And then the slow ban through the tent to the dead girl sitting across him vomiting in horror. Scared the hell out of me when I was a kid. Still does, lol.</p>
+<h2 id="what-next">What Next?<a class="headerlink" href="#what-next" title="Permanent link"> </a></h2>
+<p>I've spitballed this project to a few friends as it's progressed over the past few weeks. A lot of good reception and egging me on to check out this movie or that-- but like, twist my arm, this stuff is super cool to me. A few times I've gotten "You know, you could make some money doing this!" And for sure, <a href="https://www.redbubble.com/people/moviebarcode/portfolio">people do</a>, but then it feels like work, ya know? I'm just really excited that I thought this was cool a couple of years ago and have figured out how to to it myself.</p>
+<p>But you'd better believe that this is high on my list of Birthday/Christmas/Just Because gift ideas.</p>
+<p>In terms of script improvements, I was getting pretty tired of doing the VLC poking a looked into a way to procedurally get the metadata so I didn't have to manually pass it in when I'd run the script. If I could do that, I'd be able to just point it at a folder full of movies, fire off the job, and come back to a bunch of cool, near-effortless data art.</p>
+<p>Alas, I found some Python methods to get at this stuff, but couldn't, for the life of me, get it to work correctly/consistently. For some files, it just wouldn't recognize any runtime at all, which is a downright crucial part of calculating the nthFrames parameter. And it wasn't specific to file formats-- it would work for some mkv's but not others, avis were typically good, but mp4 was also hit or miss. Before I knew it, I had spent 3 hours spinning my wheels and it dawned on me that I wasn't nearly as interested in continuing work on this as I was when I'd started. Had a real Rick moment and started writing this post before I lost interest in doing even that.</p>
+<p><center><span class="videobox">
+<iframe allowfullscreen="" frameborder="0" height="390" mozallowfullscreen="" src="https://www.youtube.com/embed/cPEnRb6aaS4" webkitallowfullscreen="" width="640">
+</iframe>
+</span></center></p>
+<p>Finally, my motivation for getting my hands dirty with this in the first place is to check out what the Cornetto Trilogy looked like. Hot Fuzz is my favorite movie of all time. Love the other two. Toss in Scott Pilgrim (pictured above) for good measure.</p>
+<p><center><img height="400" src="../../../../../images/moviebars/shaunmkv.png" width="700"/></center>
+<center><strong>Shaun of the Dead</strong></center></p>
+<p><center><img height="400" src="../../../../../images/moviebars/hotfuzzmkv.png" width="700"/></center>
+<center><strong>Hot Fuzz</strong></center></p>
+<p><center><img height="400" src="../../../../../images/moviebars/worldendmkv.png" width="700"/></center>
+<center><strong>The World's End</strong></center></p>
+<p>Gonna get some stretched canvas prints and hang them together in my living room. Will update the post with pictures when they come in!</p>
+<p><strong>Update: Thrilled with how these turned out.</strong></p>
+<p><center><img height="400" src="../../../../../images/moviebars/edgarwright.png" width="700"/></center></p>
+<p>As always, <a href="https://github.com/NapsterInBlue/movie-barcodes">GitHub link</a> if anyone's interested in tinkering themselves.</p>
+        </div>
+
+        <div class="meta">
+            <div>
+                    <a href="../../../../../tag/data.html" class="tag">data</a>
+                    <a href="../../../../../tag/movies.html" class="tag">movies</a>
+                    <a href="../../../../../tag/python.html" class="tag">python</a>
+                    <a href="../../../../../tag/viz.html" class="tag">viz</a>
+            </div>
+        </div>
+    </article>
+
+
+</div>
+
+<style type="text/css">
+{
+    max-width: 700px;
+}
+
+.text_cell .prompt {
+    display: none;
+}
+
+.output_png {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+div.cell {
+    padding: 0;
+}
+
+div.text_cell_render {
+    padding: 0;
+}
+
+div.prompt {
+    padding: -2px;
+    font-size: 13px;
+    min-width: 9ex;
+}
+
+div.input_prompt {
+    padding: .4em 0.2em;
+}
+
+div.output_prompt {
+    padding: .1em .2em;
+}
+
+div.output_area{
+    padding-bottom: 10px;
+}
+
+div.output_subarea {
+    max-width: calc(100% - 10ex);
+}
+
+div.input_area {
+    margin: .2em 0.4em;
+    max-width: 650px;
+}
+
+table.dataframe {
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    line-height: 20px;
+}
+
+table.dataframe th, td {
+    padding: 4px;
+    text-align: left;
+}
+
+pre code {
+    background-color: inherit;
+}
+
+.highlight {
+    padding-left: 4ex;
+    background: #fff;
+}</style>
+
+        </div>
+<!--
+    <footer>
+      <p>
+        © 2012-2017 Nick, license <a href=""> </a>
+        unless otherwise noted.
+        Generated by <a href= "http://docs.getpelican.com/">Pelican</a>.
+      </p>
+    </footer>
+-->
+    </body>
+</html>

@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="author" content="Nick">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+        <title>Trivial Pursuits in Sports and Web Scraping | Movies, Metrics, Musings</title>
+
+	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+	<link rel="icon" href="/favicon.ico" type="image/x-icon">
+        <link rel="alternate" type="application/atom+xml" title="Movies, Metrics, Musings blog atom feed" href="/feeds/all.atom.xml" />
+        <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700' rel='stylesheet' type='text/css'>
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="/theme/css/icons.css"/>
+        <style>.highlight .hll { background-color: #ffffcc }
+.highlight .c { color: #60a0b0; font-style: italic } /* Comment */
+.highlight .err { border: 1px solid #FF0000 } /* Error */
+.highlight .k { color: #007020; font-weight: bold } /* Keyword */
+.highlight .o { color: #666666 } /* Operator */
+.highlight .cm { color: #60a0b0; font-style: italic } /* Comment.Multiline */
+.highlight .cp { color: #007020 } /* Comment.Preproc */
+.highlight .c1 { color: #60a0b0; font-style: italic } /* Comment.Single */
+.highlight .cs { color: #60a0b0; background-color: #fff0f0 } /* Comment.Special */
+.highlight .gd { color: #A00000 } /* Generic.Deleted */
+.highlight .ge { font-style: italic } /* Generic.Emph */
+.highlight .gr { color: #FF0000 } /* Generic.Error */
+.highlight .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+.highlight .gi { color: #00A000 } /* Generic.Inserted */
+.highlight .go { color: #808080 } /* Generic.Output */
+.highlight .gp { color: #c65d09; font-weight: bold } /* Generic.Prompt */
+.highlight .gs { font-weight: bold } /* Generic.Strong */
+.highlight .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+.highlight .gt { color: #0040D0 } /* Generic.Traceback */
+.highlight .kc { color: #007020; font-weight: bold } /* Keyword.Constant */
+.highlight .kd { color: #007020; font-weight: bold } /* Keyword.Declaration */
+.highlight .kn { color: #007020; font-weight: bold } /* Keyword.Namespace */
+.highlight .kp { color: #007020 } /* Keyword.Pseudo */
+.highlight .kr { color: #007020; font-weight: bold } /* Keyword.Reserved */
+.highlight .kt { color: #902000 } /* Keyword.Type */
+.highlight .m { color: #40a070 } /* Literal.Number */
+.highlight .s { color: #4070a0 } /* Literal.String */
+.highlight .na { color: #4070a0 } /* Name.Attribute */
+.highlight .nb { color: #007020 } /* Name.Builtin */
+.highlight .nc { color: #0e84b5; font-weight: bold } /* Name.Class */
+.highlight .no { color: #60add5 } /* Name.Constant */
+.highlight .nd { color: #555555; font-weight: bold } /* Name.Decorator */
+.highlight .ni { color: #d55537; font-weight: bold } /* Name.Entity */
+.highlight .ne { color: #007020 } /* Name.Exception */
+.highlight .nf { color: #06287e } /* Name.Function */
+.highlight .nl { color: #002070; font-weight: bold } /* Name.Label */
+.highlight .nn { color: #0e84b5; font-weight: bold } /* Name.Namespace */
+.highlight .nt { color: #062873; font-weight: bold } /* Name.Tag */
+.highlight .nv { color: #bb60d5 } /* Name.Variable */
+.highlight .ow { color: #007020; font-weight: bold } /* Operator.Word */
+.highlight .w { color: #bbbbbb } /* Text.Whitespace */
+.highlight .mf { color: #40a070 } /* Literal.Number.Float */
+.highlight .mh { color: #40a070 } /* Literal.Number.Hex */
+.highlight .mi { color: #40a070 } /* Literal.Number.Integer */
+.highlight .mo { color: #40a070 } /* Literal.Number.Oct */
+.highlight .sb { color: #4070a0 } /* Literal.String.Backtick */
+.highlight .sc { color: #4070a0 } /* Literal.String.Char */
+.highlight .sd { color: #4070a0; font-style: italic } /* Literal.String.Doc */
+.highlight .s2 { color: #4070a0 } /* Literal.String.Double */
+.highlight .se { color: #4070a0; font-weight: bold } /* Literal.String.Escape */
+.highlight .sh { color: #4070a0 } /* Literal.String.Heredoc */
+.highlight .si { color: #70a0d0; font-style: italic } /* Literal.String.Interpol */
+.highlight .sx { color: #c65d09 } /* Literal.String.Other */
+.highlight .sr { color: #235388 } /* Literal.String.Regex */
+.highlight .s1 { color: #4070a0 } /* Literal.String.Single */
+.highlight .ss { color: #517918 } /* Literal.String.Symbol */
+.highlight .bp { color: #007020 } /* Name.Builtin.Pseudo */
+.highlight .vc { color: #bb60d5 } /* Name.Variable.Class */
+.highlight .vg { color: #bb60d5 } /* Name.Variable.Global */
+.highlight .vi { color: #bb60d5 } /* Name.Variable.Instance */
+.highlight .il { color: #40a070 } /* Literal.Number.Integer.Long */</style>
+        <style>body {
+  margin: 0;
+  padding: 0;
+  font: 15px 'Source Sans Pro', sans-serif;
+  line-height: 1.6em;
+  color: #222;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+a {
+  color: #007EE5;
+  text-decoration: none;
+}
+a:hover {
+  color: #007EE5;
+  text-decoration: none;
+}
+header.main-header {
+  background: none repeat scroll 0% 0% #205F29;
+  margin-bottom: 0px;
+}
+header.main-header a {
+  color: #fff;
+}
+header.main-header .container {
+  max-width: 1000px;
+}
+header.main-header .container nav a:hover {
+  background-color: #5C881C;
+}
+article {
+  margin: 0;
+}
+article header.about {
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+}
+article header {
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+}
+article header h1 {
+  margin-bottom: 2px;
+  font-weight: 700;
+  color: #000;
+}
+article header time {
+  color: #9E9E9E;
+  font-size: 0.85em;
+  float: right;
+}
+article header time.left {
+  color: #9E9E9E;
+  font-size: 0.85em;
+  float: left;
+}
+article div.social-links ul {
+  padding: 0px;
+}
+article div.social-links li {
+  display: inline;
+  font-size: 20px;
+}
+article div.social-links li a {
+  color: #000;
+  padding: 10px;
+}
+article div.social-links li a:hover {
+  color: #666;
+  text-decoration: none;
+}
+article p {
+  font-size: 16px;
+  margin-bottom: 20px;
+  line-height: 1.6em;
+}
+article p.note {
+  background: #f5f5f5;
+  border: 1px solid #ddd;
+  padding: 0.533em 0.733em;
+}
+article p.update {
+  background-color: #FEEFB3;
+  border: 1px solid #e6e68a;
+  padding: 0.533em 0.733em;
+}
+article p.alert {
+  background-color: #ffe2e2;
+  border: 1px solid #ffb2b2;
+  padding: 0.533em 0.733em;
+}
+article ol {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+article ol {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+article li {
+  font-size: 16px;
+  line-height: 1.6em;
+}
+article a:hover {
+  text-decoration: underline;
+}
+article blockquote {
+  border-left: 2px solid #c7c7cc;
+  color: #666;
+  margin: 30px 0;
+  padding: 0 0 0 25px;
+}
+article img {
+  max-width: 100%;
+}
+article code {
+  color: #333;
+  background-color: #EEE;
+  border-radius: 0;
+  font-size: 13px;
+}
+article .meta {
+  font-size: 11px;
+}
+article .meta a:hover {
+  text-decoration: none;
+}
+article .meta div {
+  margin-bottom: 20px;
+  display: block;
+}
+article .meta a.tag {
+  margin: 0 10px 10px 0;
+  padding: 1px 12px;
+  display: inline-block;
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.8);
+  background: rgba(0, 0, 0, 0.05);
+}
+article .meta a.tag:hover {
+  background: rgba(0, 0, 0, 0.15);
+}
+article .meta a.read_more,
+article .meta a.comments_btn {
+  font-size: 14px;
+  font-weight: 800;
+  padding: 10px 20px;
+  color: #205F29;
+  background: #FFF;
+  border: 1px solid #205F29;
+}
+article .meta a.read_more:hover,
+article .meta a.comments_btn:hover {
+  color: #FFF;
+  background: #5C881C;
+}
+.index {
+  max-width: 700px;
+}
+.index article header h2 {
+  font-size: 36px;
+  margin-bottom: 2px;
+  font-weight: 700;
+}
+.index article header h2 a {
+  color: #000;
+}
+.index article header h2 a:hover {
+  color: #007EE5;
+  text-decoration: none;
+}
+.index .separator {
+  padding: 40px 0 0 0;
+  margin: 0 0 40px 0;
+  height: 10px;
+  border-bottom: solid 1px #CCC;
+}
+.index .pagination {
+  display: block;
+  margin-bottom: 100px;
+}
+.index .pagination .left {
+  text-align: right;
+}
+.index .pagination .right {
+  text-align: left;
+}
+.index .pagination a {
+  display: inline-block;
+  border: 2px solid #5C881C;
+  margin: 0 5px;
+  padding: 8px 20px;
+  font-weight: bold;
+  color: #5C881C;
+}
+.index .pagination a:hover {
+  color: #FFF;
+  background: #5C881C;
+}
+.post {
+  max-width: 800px;
+}
+.post h2:before {
+  font-weight: bold;
+  color: #DDD;
+}
+.post h3:before {
+  font-weight: bold;
+  color: #DDD;
+}
+.post h4:before {
+  font-weight: bold;
+  color: #DDD;
+}
+.post article .meta {
+  margin: 50px 0 100px;
+}
+.list {
+  max-width: 700px;
+}
+.list ul.double-list {
+  margin: 0 auto 60px;
+  padding: 0;
+  list-style-type: none;
+}
+.list ul.double-list li {
+  padding: 5px 0;
+}
+.list ul.double-list li h2 {
+  font-size: 1em;
+  display: inline;
+  font-weight: normal;
+}
+.list ul.double-list li span {
+  font-family: sans-serif;
+  text-transform: uppercase;
+  text-align: right;
+  float: right;
+  padding-top: 3px;
+  font-size: 12px;
+  color: #999;
+}
+.full-width-content {
+  padding-top: 10px;
+  padding-left: 0px;
+  padding-right: 0px;
+  margin-left: -20px;
+  margin-right: -20px;
+}
+.col-xs-1,
+.col-sm-1,
+.col-md-1,
+.col-lg-1,
+.col-xs-2,
+.col-sm-2,
+.col-md-2,
+.col-lg-2,
+.col-xs-3,
+.col-sm-3,
+.col-md-3,
+.col-lg-3,
+.col-xs-4,
+.col-sm-4,
+.col-md-4,
+.col-lg-4,
+.col-xs-5,
+.col-sm-5,
+.col-md-5,
+.col-lg-5,
+.col-xs-6,
+.col-sm-6,
+.col-md-6,
+.col-lg-6,
+.col-xs-7,
+.col-sm-7,
+.col-md-7,
+.col-lg-7,
+.col-xs-8,
+.col-sm-8,
+.col-md-8,
+.col-lg-8,
+.col-xs-9,
+.col-sm-9,
+.col-md-9,
+.col-lg-9,
+.col-xs-10,
+.col-sm-10,
+.col-md-10,
+.col-lg-10,
+.col-xs-11,
+.col-sm-11,
+.col-md-11,
+.col-lg-11,
+.col-xs-12,
+.col-sm-12,
+.col-md-12,
+.col-lg-12 {
+  padding-right: 0px;
+  padding-left: 0px;
+}</style>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+    </head>
+
+    <body>
+        <header class="navbar navbar-inverse bs-docs-nav">
+            <div class="container-fluid">
+                <div class="navbar-header">
+		  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#theNavbar">
+		    <span class="icon-bar"></span>
+		    <span class="icon-bar"></span>
+		    <span class="icon-bar"></span>
+		  </button>
+                  <a class="navbar-brand" href="/" title="Home" class="title">Movies, Metrics, Musings</a>
+                </div>
+                <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation" id="theNavbar">
+		    <ul class="nav navbar-nav navbar-right">
+                            <li><a href="/pages/about.html" title="About">About</a></li>
+                            <li><a href="/archives.html" title="Archive">Archive</a></li>
+                            <li><a href="/pages/resources.html" title="Resources">Resources</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <div id="wrap">
+<div class="container post">
+    <article>
+        <header>
+            <h1>Trivial Pursuits in Sports and Web Scraping</h1>
+            <time datetime="article.date.isoformat()" pubdate>Sun 04 June 2017</time>
+        </header>
+
+        <div class="panel panel-default">
+            <div class="panel-heading">Table of Contents</div>
+            <div class="panel-body">
+            <div id="toc"><ul><li><a class="toc-href" href="#high-volume-but-to-what-end" title="High Volume, but to what End? ">High Volume, but to what End? </a><ul><li><a class="toc-href" href="#anki" title="Anki ">Anki </a></li></ul></li><li><a class="toc-href" href="#examples-from-my-decks_1" title="Examples from my Decks ">Examples from my Decks </a><ul><li><a class="toc-href" href="#presidents" title="Presidents ">Presidents </a></li><li><a class="toc-href" href="#movies" title="Movies ">Movies </a></li><li><a class="toc-href" href="#quotes" title="Quotes ">Quotes </a></li><li><a class="toc-href" href="#the-rest" title="The Rest ">The Rest </a></li><li><a class="toc-href" href="#i-suck-at-sports" title="I Suck at Sports ">I Suck at Sports </a></li><li><a class="toc-href" href="#at-long-last-your-mood-music-for-the-remainder-of-the-read" title="At long-last your mood music for the remainder of the read ">At long-last your mood music for the remainder of the read </a></li></ul></li><li><a class="toc-href" href="#sucking-less-at-sports_1" title="Sucking less at Sports ">Sucking less at Sports </a><ul><li><a class="toc-href" href="#world-series" title="World Series ">World Series </a></li><li><a class="toc-href" href="#nba-playoffs" title="NBA Playoffs ">NBA Playoffs </a></li><li><a class="toc-href" href="#stanley-cup-finals" title="Stanley Cup Finals ">Stanley Cup Finals </a></li></ul></li><li><a class="toc-href" href="#one-last-hiccup_1" title="One Last Hiccup ">One Last Hiccup </a></li><li><a class="toc-href" href="#conclusion" title="Conclusion ">Conclusion </a></li><li><a class="toc-href" href="#links" title="Links ">Links </a></li></ul></div>
+            </div>
+        </div>
+
+        <div class="article_content">
+            
+<h2 id="high-volume-but-to-what-end">High Volume, but to what End?<a class="headerlink" href="#high-volume-but-to-what-end" title="Permanent link"> </a></h2>
+<p>So in the past couple of years, I've gone on tears where I'm addicted to MOOC's (or Massive Open Online Courses, like Coursera, Khan Academy, etc). Occasionally, I'll really connect with some exceptional material, for instance</p>
+<ul>
+<li>I'm currently revisiting <a href="https://www.coursera.org/learn/machine-learning">Andrew Ng's Machine Learning course</a>, which I loved, and trying my damnedest to implement the whole thing in Python, not Matlab/Octave.</li>
+<li>I got a ton out of the <a href="https://www.coursera.org/learn/analytics-tableau">Data Visualization and Communication in Tableau</a> course.</li>
+<li>And I recently had a ton of fun learning the fundamentals of MapReduce with [Udacity](https://www.udacity.com/course/intro-to-hadoop-and-mapreduce--ud617.</li>
+</ul>
+<p>Though, perhaps equally often, I'll engage with a course for a few then give up-- like that time <a href="https://soundcloud.com/manifes7o/coursera-week1">I was really excited about Jazz Improvization</a> and then got distracted with other things. More perilous, I'm coming to understand that get addicted to the dopamine rush of bookmarking the hell out of everything, and never following up. It's a low-effort, high-"feels"-dividend to imagine all of the cool things that I WILL be learning..........someday. (For real, don't ask me how many O'Reilly manuals I own but haven't read.)</p>
+<p>Eventually, it occurred to me that I got really good at watching YouTube videos and following along. Ultimately, though, I was kind of shit at keeping all of the information in my head. Truth be told, looking back-- even at courses that I really enjoyed-- my experience in academia can largely be summarized with the phrase</p>
+<p>"Okay. I'll do what I need to to get the grade now, but I'm going to come back and really learn this later."</p>
+
+<blockquote>
+<p><strong>"Okay. I'll do what I need to to get the grade now, but I'm going to come back and really learn this later."</strong></p>
+</blockquote>
+<p>I don't regret my time at school-- I had some fantastic experiences with some of the best people I'll ever know. But looking back, I'm coming to find that I really short-changed myself by not learning how to learn and retain information.</p>
+<p>And then I stumbled across <a href="https://www.coursera.org/instructor/barboakley">Barbara Oakley's fantastic "Learning How to Learn" course</a>. It serves as an excellent primer in all things meta-cognition (thinking about how your brain thinks and grows), and overall I'd highly recommend it. Many people cite various books that they make it a point to revisit to ensure that they're growing in line with the things they read. To wit, books like</p>
+<ul>
+<li><a href="https://www.amazon.com/Getting-Things-Done-Stress-Free-Productivity/dp/0142000280">"GTD: The Art of Stress-Free Productivity"</a>, which I read, loved, and implemented to great effect</li>
+<li><a href="https://www.amazon.com/How-Win-Friends-Influence-People-ebook/dp/B003WEAI4E/ref=sr_1_1?s=books&amp;ie=UTF8&amp;qid=1496597074&amp;sr=1-1&amp;keywords=how+to+win+friends+and+influence+people">Dale Carnegie's classic, "How to Win Friends and Influence People"</a> which should honestly be a required reading for just about anything.</li>
+<li><a href="https://www.amazon.com/Happiness-Trap-Struggling-Start-Living/dp/1590305841">The Happiness Trap</a>, which a good friend of mine recently recommended and I'm looking forward to digging into soon&trade;.</li>
+<li>And various others</li>
+</ul>
+<p>I'd contend that this course should be worked into that rotation as well, as a solid-principled study routine is fundamental to your development in whatever endeavors you're after.</p>
+<h3 id="anki">Anki<a class="headerlink" href="#anki" title="Permanent link"> </a></h3>
+<p>But, what this course re-ignited in me, and the reason that I'm writing, is a love for the FREE flashcard software Anki. Essentially, Anki is a really cool tool used to drill and develop deep memorization of information using a concept called spaced-repetition, which is just a $2 phrase that means "you see the cards about only as often as you need them." So when you build a deck of cards for, say, some vocab words, you might get re-served the card every day or so. But the more consistently you get the card correct (when you reveal the back of a card, you can rate how difficult it was to recall on a sliding scale from AGAIN to EASY; more on this later), the longer Anki waits to serve it back up to you. Theoretically, the more comfortable that you are with a card, the fewer and fewer times it'll get served back up to you. When you get to the point where you haven't seen a card in several months and can easily answer the reverse side after a long waiting period, you know that you've achieved deep memorization! Hot dang.</p>
+<p>I had a TON of success with this back in my days of university-level Spanish. It's been years, and I can't conjugate worth a damn, but I still retain a great deal of my vocab because of how ingrained it is in my memory. It was a great return on my time spent studying, but for whatever reason, I never thought to utilize this tool for, well, everything else. Until this course reminded me of how damn cool it was, then I got a little carried away, lol</p>
+<p>When I started with QL a couple years ago, it was one of the first bits of software that I threw onto my work laptop, and I've since used it for everything from remembering bits of factoids and business knowledge, to memorizing back-end status codes, to having useful code snippets on hand</p>
+<ul>
+<li>I got tired of Googling "How do you get the pandas library in Python to stop showing you all of your numbers in scientific notation?"</li>
+</ul>
+<p><code>python
+pd.set_option('float.display_format', lambda x: '%.2f' %x)</code></p>
+<ul>
+<li>What's that snippet of code that you put at the top of your SQL queries to check for and auto-drop temp tables so your queries don't break trying to write over pre-existing tables?</li>
+</ul>
+<p><code>sql
+IF OBJECT_ID('tempdb..#temp') IS NOT NULL DROP TABLE #temp</code></p>
+<p>I love trivia. I used to play a ton back in college, but it was more or less me going to be with friends and enjoy hella-cheap apps. Was never really good at it. Then recently, I just started writing down every single question that I got wrong on some scratch paper and throwing it into Anki. Furthermore, my good friend Scott got me into <a href="https://learnedleague.com/">Learned League</a> which is a more-or-less daily trivia league where you get dumped on with some punishingly hard trivia that I more often than not whiff hard on... and then put into cards.</p>
+<p>And it's great. Nowadays, I try to refrain from Reddit and Facebook until I'm caught on all of my cards for the day (because recall, the more I get them right, the less they show up. Some days are light, some days aren't, but it's always optimized for my retention). Leveraging those small pockets of time in my day-- elevator rides, in between reps at the gym, procrastinating getting out of bed in the morning-- to drill and keep fresh knowledge that otherwise escapes me is a real thrill for me. I feel like I'm getting smarter for free, and weaning myself off of my bad dopamine-seeking habits to boot.</p>
+<h2 id="examples-from-my-decks_1">Examples from my Decks<a class="headerlink" href="#examples-from-my-decks" title="Permanent link"> </a></h2>
+<h3 id="presidents">Presidents<a class="headerlink" href="#presidents" title="Permanent link"> </a></h3>
+<p>Learning the different presidencies is a really useful bit of trivia anchoring. If I can map the whole history of the US to which president was reigning, then general-purpose history trivia questions have a bit of context, ya know? And so the front side is short and sweet.</p>
+<p><center><img src="../../../../../images/anki/jamesMonroe.PNG" width="400"/></center></p>
+<p>And then the reverse</p>
+<p><center><img src="../../../../../images/anki/jamesMonroe_reverse.PNG" width="400"/></center></p>
+<ol>
+<li>Which president number he was</li>
+<li>What years they were in office</li>
+<li>The aforementioned "How easy was this for you" rater. If I need it again, I'll see it during that same session, if it's easy, I'll see it in 5 days. These values have a repeated multiplicative scaling effect-- thus my card for Obama's term has been marked "EASY" so many times, that I don't see it for another couple of years.</li>
+</ol>
+<h3 id="movies">Movies<a class="headerlink" href="#movies" title="Permanent link"> </a></h3>
+<p>The reverse side of my Movie Trivia is a bit more rigorous. It includes</p>
+<ul>
+<li>The year</li>
+<li>Notable cast members</li>
+<li>Notable Directors</li>
+<li>Notable Writers</li>
+<li>Any and all information about how they did at the Academy Awards</li>
+</ul>
+<p><center><img src="../../../../../images/anki/jungleBook.PNG" width="400"/></center></p>
+<p>If about every movie I watch gets a <a href="https://letterboxd.com/nick_m3blog/films/reviews/">Letterboxd review</a>, every single movie I watch gets an Anki card.</p>
+<h3 id="quotes">Quotes<a class="headerlink" href="#quotes" title="Permanent link"> </a></h3>
+<p>Finally, I have a deck for quotes that I like or want to remind myself. These can be things that I read somewhere, something someone said in a movie that resonated with me, or snippets of conversations that I've had that I want to hold onto. Here, I re-purpose the re-serve ratings at the bottom, not as my ability to remember them, but as a benchmark for how soon I want to wait before I hear them again.</p>
+<p><center><img src="../../../../../images/anki/bangs.PNG" width="400"/></center></p>
+<h3 id="the-rest">The Rest<a class="headerlink" href="#the-rest" title="Permanent link"> </a></h3>
+<p>Here's the broad swath of decks that I keep current with on my home PC. Buncha other, more technically-leaning, stuff in a separate account on my work computer.</p>
+<p><center><img src="../../../../../images/anki/decks.PNG" width="200"/></center></p>
+<h3 id="i-suck-at-sports">I Suck at Sports<a class="headerlink" href="#i-suck-at-sports" title="Permanent link"> </a></h3>
+<p>I love watching them. I enjoy playing them. During my years in the Michigan Marching and Basketball Bands, I was thinking about them constantly. Now that I'm graduated, I keep a bead on Michigan, but otherwise I don't really follow them at all. I'm certain that I would love hockey if I gave it a chance. Or the NBA. Hell, even NASCAR. But on the whole, sports are just one more thing to follow, so I don't. Which makes it my worst trivia subject by a huge margin. So in an effort to be less garbage at it, I decided to start learning the championships of various sports and leagues over the past few years. I took to Wikipedia and started poking around, typing up some new Anki cards, but it got monotonous fast and just felt like something that I should be automating. And so I spent this weekend tinkering around in Python so I can procedurally pull back new information, for whatever years I requested, as I start to get these factoids under my belt, to keep growing these decks.</p>
+<h3 id="at-long-last-your-mood-music-for-the-remainder-of-the-read"><center><a href="https://soundcloud.com/jhlodin/oppa-spacejam-style">At long-last your mood music for the remainder of the read</a></center><a class="headerlink" href="#at-long-last-your-mood-music-for-the-remainder-of-the-read" title="Permanent link"> </a></h3>
+<h2 id="sucking-less-at-sports_1">Sucking less at Sports<a class="headerlink" href="#sucking-less-at-sports" title="Permanent link"> </a></h2>
+<h3 id="world-series">World Series<a class="headerlink" href="#world-series" title="Permanent link"> </a></h3>
+<p>Blame it on my crap attention-span, I don't watch a lick of baseball. And I've got a real cognitive dissonance about that. As a numbers/data nerd, this should be the sport that I'm most dedicated to watching, stereotypically. I love the movie Moneyball and get fired up about it every time I watch it, but then I turn on a baseball game and make it minutes, not hours, before I'm doing something else. Football and basketball just more my speed, I guess. Anyhow, to get at World Series information, I just jumped right to the "List of World Series Champions" page of Wikipedia and clicked into the years of each game, in red below.</p>
+<p><center><img src="../../../../../images/anki/worldseries1.PNG" width="600"/></center></p>
+<p>From here, I would basically mine the info box in the right pane for pretty much everything I'm interested in memorizing.</p>
+<p><center><img src="../../../../../images/anki/worldseries2.png" width="600"/></center></p>
+<p>For you unawares, any time that you're trying to figure out how to scrape a site, the F12 and CTRL+SHIFT+C keys are your best friends. The former opens up the underlying HTML, while the latter allows you to click on elements of the page to highlight where they are in the garbly-goop (a very-technical Computer Science term) of web code your field of interest lies. From here, I used the <a href="http://docs.python-requests.org/en/master/">Requests</a> and <a href="https://www.crummy.com/software/BeautifulSoup/bs4/doc/">BeautifulSoup</a> libraries for Python to pick out the pieces that I wanted.</p>
+<p>My objectives were pretty straight-forward. I was grabbing:</p>
+<p><center><img src="../../../../../images/anki/worldseries3.PNG" width="400"/></center></p>
+<ol>
+<li>The winning team, which was thankfully always the first of the two teams on these pages</li>
+<li>The losing team, just the opposite</li>
+<li>The MVP of the series</li>
+<li>And, of course, the year, but that was implicit in whatever page metadata I was hitting for this info</li>
+</ol>
+<p>Then I'd transform those fields into Anki cards where the front read "<code>[YEAR OF INTEREST] World Series</code>" and the reverse had "<code>[WINNING TEAM] &gt; [LOSING TEAM]</code>" and then a couple lines down would list the <code>[MVP]</code>.</p>
+<h3 id="nba-playoffs">NBA Playoffs<a class="headerlink" href="#nba-playoffs" title="Permanent link"> </a></h3>
+<p>Hey, what do you know, this approach translated more or less seamlessly to figuring out the NBA Finals!</p>
+<p><center><img src="../../../../../images/anki/nba1.png" width="600"/></center>
+<center><img src="../../../../../images/anki/nba2.PNG" width="400"/></center></p>
+<h3 id="stanley-cup-finals">Stanley Cup Finals<a class="headerlink" href="#stanley-cup-finals" title="Permanent link"> </a></h3>
+<p>And then for whatever reason, I stopped being able to rely on this format.</p>
+<p><center><img src="../../../../../images/anki/nhl1.PNG" width="600"/></center></p>
+<p>This chunk of the algorithm was fine.</p>
+<p><center><img src="../../../../../images/anki/nhl2.PNG" width="450"/></center></p>
+<p>But then I couldn't use the "team on top was the winner" heuristic anymore. Bleh.</p>
+<p>My work-around was kind of janky:</p>
+<ul>
+<li>First, I grab anything that looks like a team</li>
+</ul>
+<p><center><img src="../../../../../images/anki/nhl3.png" width="400"/></center></p>
+<ul>
+<li>Then, give me all of the teams who are listed with a bold font, like the Red Wings above. This was the winning team.</li>
+</ul>
+<p><center><img src="../../../../../images/anki/nhl4.png" width="400"/></center></p>
+<ul>
+<li>Using that result, I'd then 'subtract' whatever team this was from the list of teams.</li>
+</ul>
+<p><center><img src="../../../../../images/anki/nhl5.png" width="400"/></center></p>
+<ul>
+<li>Finally, this list of teams, only having one value, is now the list of losers in this series (length 1)</li>
+</ul>
+<p><center><img src="../../../../../images/anki/nhl6.png" width="400"/></center></p>
+<p>And grabbing the MVP worked as intended.</p>
+<h2 id="one-last-hiccup_1">One Last Hiccup<a class="headerlink" href="#one-last-hiccup" title="Permanent link"> </a></h2>
+<p>It was like 2am. I finally got to that huge sigh of relief that celebrated being done code-monkeying, and I start running this damn thing.</p>
+<p>I grab the last 20 years of NBA Finals without a hitch.</p>
+<p>World Series works great, too.</p>
+<p>Then the last 20 years of Stanley Cup Finals breaks. Balls.</p>
+<p><center><img src="../../../../../images/anki/lockout1.PNG" width="550"/></center></p>
+<p>And so I toss in a Try/Except block, which is the coding equivalent to saying "I know this is busted, but do it anyways, lol." with a print statement to zero in on the year that this thing goes off the rails on the last line.</p>
+<p><center><img src="../../../../../images/anki/lockout2.PNG" width="550"/></center></p>
+<p>Ran it again. Huh. What's going on in 2005?</p>
+<p><center><img src="../../../../../images/anki/lockout3.PNG" width="500"/></center></p>
+<p>Again, the universe reminds me that coding skills are a complement, not a substitute, for some good old-fashioned common sense and practical knowledge.</p>
+<p><center><img src="../../../../../images/anki/lockout4.PNG" width="550"/></center></p>
+<h2 id="conclusion">Conclusion<a class="headerlink" href="#conclusion" title="Permanent link"> </a></h2>
+<p>There's still work to go on this one, but I was excited to share the process I used to get at it with you all. I'm going to expand this out to get SuperbOwl stuff (with the addition of stadium information), March Madness final games, and likely a few others that aren't coming to me right now. But when I sat down to expand these decks a bit, I realized that it was going to be more time that it was worth typing everything out by hand, introducing the possibility (or likelihood...) of human error and all-around brain fry of monotonous data entry. Of course, after a couple hours of blowing the dust off of my Web Scraping tools and another couple of writing this thing up, I don't really have a leg to stand on from a "this was a huge time-saver!" perspective, lol. Nevertheless, I hope that you had as much fun reading this as I did working on it.</p>
+<h2 id="links">Links<a class="headerlink" href="#links" title="Permanent link"> </a></h2>
+<p>Seriously, use <a href="https://apps.ankiweb.net/">Anki</a>. It's so useful that it's basically cheating.</p>
+<p>Huge thank you to GitHub user DrLulz, who I'm sure will never read this ever, for stitching together <a href="https://gist.github.com/DrLulz/fc802d43e310cec1ecd7">some code I leveraged to write to my existing decks.</a></p>
+<p>And as always, a <a href="https://github.com/NapsterInBlue/SportsAnkiCards">GitHub link to the hacky code I used to put this together.</a></p>
+<p><em>Editor's note: To actually write the cards that I built to my deck, I needed to use a library that I didn't write. And for that, I was finally forced to use Python 3. You win this round, Jim Keena.</em></p>
+        </div>
+
+        <div class="meta">
+            <div>
+                    <a href="../../../../../tag/python.html" class="tag">python</a>
+                    <a href="../../../../../tag/scraping.html" class="tag">scraping</a>
+                    <a href="../../../../../tag/tools.html" class="tag">tools</a>
+                    <a href="../../../../../tag/trivia.html" class="tag">trivia</a>
+            </div>
+        </div>
+    </article>
+
+
+</div>
+
+<style type="text/css">
+{
+    max-width: 700px;
+}
+
+.text_cell .prompt {
+    display: none;
+}
+
+.output_png {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+div.cell {
+    padding: 0;
+}
+
+div.text_cell_render {
+    padding: 0;
+}
+
+div.prompt {
+    padding: -2px;
+    font-size: 13px;
+    min-width: 9ex;
+}
+
+div.input_prompt {
+    padding: .4em 0.2em;
+}
+
+div.output_prompt {
+    padding: .1em .2em;
+}
+
+div.output_area{
+    padding-bottom: 10px;
+}
+
+div.output_subarea {
+    max-width: calc(100% - 10ex);
+}
+
+div.input_area {
+    margin: .2em 0.4em;
+    max-width: 650px;
+}
+
+table.dataframe {
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    line-height: 20px;
+}
+
+table.dataframe th, td {
+    padding: 4px;
+    text-align: left;
+}
+
+pre code {
+    background-color: inherit;
+}
+
+.highlight {
+    padding-left: 4ex;
+    background: #fff;
+}</style>
+
+        </div>
+<!--
+    <footer>
+      <p>
+        © 2012-2017 Nick, license <a href=""> </a>
+        unless otherwise noted.
+        Generated by <a href= "http://docs.getpelican.com/">Pelican</a>.
+      </p>
+    </footer>
+-->
+    </body>
+</html>

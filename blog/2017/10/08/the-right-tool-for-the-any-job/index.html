@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="author" content="Nick">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+        <title>The Right Tool for ̶t̶h̶e̶ Any Job | Movies, Metrics, Musings</title>
+
+	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+	<link rel="icon" href="/favicon.ico" type="image/x-icon">
+        <link rel="alternate" type="application/atom+xml" title="Movies, Metrics, Musings blog atom feed" href="/feeds/all.atom.xml" />
+        <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700' rel='stylesheet' type='text/css'>
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="/theme/css/icons.css"/>
+        <style>.highlight .hll { background-color: #ffffcc }
+.highlight .c { color: #60a0b0; font-style: italic } /* Comment */
+.highlight .err { border: 1px solid #FF0000 } /* Error */
+.highlight .k { color: #007020; font-weight: bold } /* Keyword */
+.highlight .o { color: #666666 } /* Operator */
+.highlight .cm { color: #60a0b0; font-style: italic } /* Comment.Multiline */
+.highlight .cp { color: #007020 } /* Comment.Preproc */
+.highlight .c1 { color: #60a0b0; font-style: italic } /* Comment.Single */
+.highlight .cs { color: #60a0b0; background-color: #fff0f0 } /* Comment.Special */
+.highlight .gd { color: #A00000 } /* Generic.Deleted */
+.highlight .ge { font-style: italic } /* Generic.Emph */
+.highlight .gr { color: #FF0000 } /* Generic.Error */
+.highlight .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+.highlight .gi { color: #00A000 } /* Generic.Inserted */
+.highlight .go { color: #808080 } /* Generic.Output */
+.highlight .gp { color: #c65d09; font-weight: bold } /* Generic.Prompt */
+.highlight .gs { font-weight: bold } /* Generic.Strong */
+.highlight .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+.highlight .gt { color: #0040D0 } /* Generic.Traceback */
+.highlight .kc { color: #007020; font-weight: bold } /* Keyword.Constant */
+.highlight .kd { color: #007020; font-weight: bold } /* Keyword.Declaration */
+.highlight .kn { color: #007020; font-weight: bold } /* Keyword.Namespace */
+.highlight .kp { color: #007020 } /* Keyword.Pseudo */
+.highlight .kr { color: #007020; font-weight: bold } /* Keyword.Reserved */
+.highlight .kt { color: #902000 } /* Keyword.Type */
+.highlight .m { color: #40a070 } /* Literal.Number */
+.highlight .s { color: #4070a0 } /* Literal.String */
+.highlight .na { color: #4070a0 } /* Name.Attribute */
+.highlight .nb { color: #007020 } /* Name.Builtin */
+.highlight .nc { color: #0e84b5; font-weight: bold } /* Name.Class */
+.highlight .no { color: #60add5 } /* Name.Constant */
+.highlight .nd { color: #555555; font-weight: bold } /* Name.Decorator */
+.highlight .ni { color: #d55537; font-weight: bold } /* Name.Entity */
+.highlight .ne { color: #007020 } /* Name.Exception */
+.highlight .nf { color: #06287e } /* Name.Function */
+.highlight .nl { color: #002070; font-weight: bold } /* Name.Label */
+.highlight .nn { color: #0e84b5; font-weight: bold } /* Name.Namespace */
+.highlight .nt { color: #062873; font-weight: bold } /* Name.Tag */
+.highlight .nv { color: #bb60d5 } /* Name.Variable */
+.highlight .ow { color: #007020; font-weight: bold } /* Operator.Word */
+.highlight .w { color: #bbbbbb } /* Text.Whitespace */
+.highlight .mf { color: #40a070 } /* Literal.Number.Float */
+.highlight .mh { color: #40a070 } /* Literal.Number.Hex */
+.highlight .mi { color: #40a070 } /* Literal.Number.Integer */
+.highlight .mo { color: #40a070 } /* Literal.Number.Oct */
+.highlight .sb { color: #4070a0 } /* Literal.String.Backtick */
+.highlight .sc { color: #4070a0 } /* Literal.String.Char */
+.highlight .sd { color: #4070a0; font-style: italic } /* Literal.String.Doc */
+.highlight .s2 { color: #4070a0 } /* Literal.String.Double */
+.highlight .se { color: #4070a0; font-weight: bold } /* Literal.String.Escape */
+.highlight .sh { color: #4070a0 } /* Literal.String.Heredoc */
+.highlight .si { color: #70a0d0; font-style: italic } /* Literal.String.Interpol */
+.highlight .sx { color: #c65d09 } /* Literal.String.Other */
+.highlight .sr { color: #235388 } /* Literal.String.Regex */
+.highlight .s1 { color: #4070a0 } /* Literal.String.Single */
+.highlight .ss { color: #517918 } /* Literal.String.Symbol */
+.highlight .bp { color: #007020 } /* Name.Builtin.Pseudo */
+.highlight .vc { color: #bb60d5 } /* Name.Variable.Class */
+.highlight .vg { color: #bb60d5 } /* Name.Variable.Global */
+.highlight .vi { color: #bb60d5 } /* Name.Variable.Instance */
+.highlight .il { color: #40a070 } /* Literal.Number.Integer.Long */</style>
+        <style>body {
+  margin: 0;
+  padding: 0;
+  font: 15px 'Source Sans Pro', sans-serif;
+  line-height: 1.6em;
+  color: #222;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+a {
+  color: #007EE5;
+  text-decoration: none;
+}
+a:hover {
+  color: #007EE5;
+  text-decoration: none;
+}
+header.main-header {
+  background: none repeat scroll 0% 0% #205F29;
+  margin-bottom: 0px;
+}
+header.main-header a {
+  color: #fff;
+}
+header.main-header .container {
+  max-width: 1000px;
+}
+header.main-header .container nav a:hover {
+  background-color: #5C881C;
+}
+article {
+  margin: 0;
+}
+article header.about {
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+}
+article header {
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+}
+article header h1 {
+  margin-bottom: 2px;
+  font-weight: 700;
+  color: #000;
+}
+article header time {
+  color: #9E9E9E;
+  font-size: 0.85em;
+  float: right;
+}
+article header time.left {
+  color: #9E9E9E;
+  font-size: 0.85em;
+  float: left;
+}
+article div.social-links ul {
+  padding: 0px;
+}
+article div.social-links li {
+  display: inline;
+  font-size: 20px;
+}
+article div.social-links li a {
+  color: #000;
+  padding: 10px;
+}
+article div.social-links li a:hover {
+  color: #666;
+  text-decoration: none;
+}
+article p {
+  font-size: 16px;
+  margin-bottom: 20px;
+  line-height: 1.6em;
+}
+article p.note {
+  background: #f5f5f5;
+  border: 1px solid #ddd;
+  padding: 0.533em 0.733em;
+}
+article p.update {
+  background-color: #FEEFB3;
+  border: 1px solid #e6e68a;
+  padding: 0.533em 0.733em;
+}
+article p.alert {
+  background-color: #ffe2e2;
+  border: 1px solid #ffb2b2;
+  padding: 0.533em 0.733em;
+}
+article ol {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+article ol {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+article li {
+  font-size: 16px;
+  line-height: 1.6em;
+}
+article a:hover {
+  text-decoration: underline;
+}
+article blockquote {
+  border-left: 2px solid #c7c7cc;
+  color: #666;
+  margin: 30px 0;
+  padding: 0 0 0 25px;
+}
+article img {
+  max-width: 100%;
+}
+article code {
+  color: #333;
+  background-color: #EEE;
+  border-radius: 0;
+  font-size: 13px;
+}
+article .meta {
+  font-size: 11px;
+}
+article .meta a:hover {
+  text-decoration: none;
+}
+article .meta div {
+  margin-bottom: 20px;
+  display: block;
+}
+article .meta a.tag {
+  margin: 0 10px 10px 0;
+  padding: 1px 12px;
+  display: inline-block;
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.8);
+  background: rgba(0, 0, 0, 0.05);
+}
+article .meta a.tag:hover {
+  background: rgba(0, 0, 0, 0.15);
+}
+article .meta a.read_more,
+article .meta a.comments_btn {
+  font-size: 14px;
+  font-weight: 800;
+  padding: 10px 20px;
+  color: #205F29;
+  background: #FFF;
+  border: 1px solid #205F29;
+}
+article .meta a.read_more:hover,
+article .meta a.comments_btn:hover {
+  color: #FFF;
+  background: #5C881C;
+}
+.index {
+  max-width: 700px;
+}
+.index article header h2 {
+  font-size: 36px;
+  margin-bottom: 2px;
+  font-weight: 700;
+}
+.index article header h2 a {
+  color: #000;
+}
+.index article header h2 a:hover {
+  color: #007EE5;
+  text-decoration: none;
+}
+.index .separator {
+  padding: 40px 0 0 0;
+  margin: 0 0 40px 0;
+  height: 10px;
+  border-bottom: solid 1px #CCC;
+}
+.index .pagination {
+  display: block;
+  margin-bottom: 100px;
+}
+.index .pagination .left {
+  text-align: right;
+}
+.index .pagination .right {
+  text-align: left;
+}
+.index .pagination a {
+  display: inline-block;
+  border: 2px solid #5C881C;
+  margin: 0 5px;
+  padding: 8px 20px;
+  font-weight: bold;
+  color: #5C881C;
+}
+.index .pagination a:hover {
+  color: #FFF;
+  background: #5C881C;
+}
+.post {
+  max-width: 800px;
+}
+.post h2:before {
+  font-weight: bold;
+  color: #DDD;
+}
+.post h3:before {
+  font-weight: bold;
+  color: #DDD;
+}
+.post h4:before {
+  font-weight: bold;
+  color: #DDD;
+}
+.post article .meta {
+  margin: 50px 0 100px;
+}
+.list {
+  max-width: 700px;
+}
+.list ul.double-list {
+  margin: 0 auto 60px;
+  padding: 0;
+  list-style-type: none;
+}
+.list ul.double-list li {
+  padding: 5px 0;
+}
+.list ul.double-list li h2 {
+  font-size: 1em;
+  display: inline;
+  font-weight: normal;
+}
+.list ul.double-list li span {
+  font-family: sans-serif;
+  text-transform: uppercase;
+  text-align: right;
+  float: right;
+  padding-top: 3px;
+  font-size: 12px;
+  color: #999;
+}
+.full-width-content {
+  padding-top: 10px;
+  padding-left: 0px;
+  padding-right: 0px;
+  margin-left: -20px;
+  margin-right: -20px;
+}
+.col-xs-1,
+.col-sm-1,
+.col-md-1,
+.col-lg-1,
+.col-xs-2,
+.col-sm-2,
+.col-md-2,
+.col-lg-2,
+.col-xs-3,
+.col-sm-3,
+.col-md-3,
+.col-lg-3,
+.col-xs-4,
+.col-sm-4,
+.col-md-4,
+.col-lg-4,
+.col-xs-5,
+.col-sm-5,
+.col-md-5,
+.col-lg-5,
+.col-xs-6,
+.col-sm-6,
+.col-md-6,
+.col-lg-6,
+.col-xs-7,
+.col-sm-7,
+.col-md-7,
+.col-lg-7,
+.col-xs-8,
+.col-sm-8,
+.col-md-8,
+.col-lg-8,
+.col-xs-9,
+.col-sm-9,
+.col-md-9,
+.col-lg-9,
+.col-xs-10,
+.col-sm-10,
+.col-md-10,
+.col-lg-10,
+.col-xs-11,
+.col-sm-11,
+.col-md-11,
+.col-lg-11,
+.col-xs-12,
+.col-sm-12,
+.col-md-12,
+.col-lg-12 {
+  padding-right: 0px;
+  padding-left: 0px;
+}</style>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+    </head>
+
+    <body>
+        <header class="navbar navbar-inverse bs-docs-nav">
+            <div class="container-fluid">
+                <div class="navbar-header">
+		  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#theNavbar">
+		    <span class="icon-bar"></span>
+		    <span class="icon-bar"></span>
+		    <span class="icon-bar"></span>
+		  </button>
+                  <a class="navbar-brand" href="/" title="Home" class="title">Movies, Metrics, Musings</a>
+                </div>
+                <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation" id="theNavbar">
+		    <ul class="nav navbar-nav navbar-right">
+                            <li><a href="/pages/about.html" title="About">About</a></li>
+                            <li><a href="/archives.html" title="Archive">Archive</a></li>
+                            <li><a href="/pages/resources.html" title="Resources">Resources</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <div id="wrap">
+<div class="container post">
+    <article>
+        <header>
+            <h1>The Right Tool for ̶t̶h̶e̶ Any Job</h1>
+            <time datetime="article.date.isoformat()" pubdate>Sun 08 October 2017</time>
+        </header>
+
+        <div class="panel panel-default">
+            <div class="panel-heading">Table of Contents</div>
+            <div class="panel-body">
+            <div id="toc"><ul><li><a class="toc-href" href="#gotta-go-fast" title="Gotta Go Fast ">Gotta Go Fast </a></li><li><a class="toc-href" href="#slowing-the-hell-down" title="Slowing the Hell Down ">Slowing the Hell Down </a><ul><li><a class="toc-href" href="#to-save-time" title="To Save Time ">To Save Time </a></li><li><a class="toc-href" href="#to-save-brain-power" title="To Save Brain Power ">To Save Brain Power </a></li><li><a class="toc-href" href="#to-share-an-approach" title="To Share an Approach ">To Share an Approach </a></li><li><a class="toc-href" href="#to-cover-your-ass" title="To Cover Your Ass ">To Cover Your Ass </a></li></ul></li><li><a class="toc-href" href="#so-when-and-where_1" title="So When and Where? ">So When and Where? </a></li><li><a class="toc-href" href="#conclusion" title="Conclusion ">Conclusion </a></li></ul></div>
+            </div>
+        </div>
+
+        <div class="article_content">
+            
+<p>I'm sure we've all heard the "Hire a lazy person to do a job" Bill Gates quote a million times. But what does that actually mean? In the weeks leading up to and after <a href="../../../../../blog/2017/09/15/hey-hows-it-going-empirically/">my last post on my Daylio data</a>, I've been thinking a lot about tools.</p>
+<p>And this is far less about what hardware you're using when you sit down to knock something out. Nor is it a stance on the Python vs R vs whatever else debate. Instead, I want to talk a bit about the way I consider tooling as an analyst, and how that's changed over the past couple of years.</p>
+
+<h1 id="gotta-go-fast">Gotta Go Fast<a class="headerlink" href="#gotta-go-fast" title="Permanent link"> </a></h1>
+<p>For starters, I should note that this video speaks to me on a very visceral level.</p>
+<p><center><span class="videobox">
+<iframe allowfullscreen="" frameborder="0" height="390" mozallowfullscreen="" src="https://www.youtube.com/embed/fa9DLxDtPtc" webkitallowfullscreen="" width="640">
+</iframe>
+</span></center></p>
+<p>How often do you take the time to learn hotkeys in whatever software you use?</p>
+<p>Take Excel for a example. Say you had some aggregated data in SQL or some other source, and you wanted to do some formatting to get from this</p>
+<p><center><img src="../../../../../images/tools/excel1.PNG" width="400"/></center></p>
+<p>to this</p>
+<p><center><img src="../../../../../images/tools/excel3.PNG" width="400"/></center></p>
+<p>If you were so inclined, you can get most of the way there by typing</p>
+<p><code>Click Cell A1
+    CTRL + A
+    ALT + (H, B, T)
+    &uarr;
+    CTRL + SHIFT + (&rarr;, &rarr;)
+    CTRL + B
+    ALT + (H, B, O)
+    ALT + (H, A, C)
+    &larr;
+    CTRL + SHIFT + (&darr;, &darr;)
+    CTRL + B
+    ALT + (H, B, R)
+    &darr;, &rarr;
+    CTRL + SHIFT + (&darr;, &rarr;)
+    ALT + (H, A, C)
+    CTRL + (&larr;, &uarr;, &larr;, &uarr;)
+    ALT + (H, I, C)
+    ALT + (H, I, C)
+    ALT + (H, I, R)
+    ALT + (H, I, R)</code></p>
+<p>Which gives you</p>
+<p><center><img src="../../../../../images/tools/excel2.png" width="400"/></center></p>
+<p>then it's just labeling the rows/columns with the headers, sizing them appropriately, turning gridlines off, and shading the cells on the top. Not moving mountains here, but if you're quick enough, you're probably saving yourself 30s or so per figure. (Found these links invaluable getting started in <a href="https://docs.microsoft.com/en-us/sql/ssms/sql-server-management-studio-keyboard-shortcuts?view=sql-server-2017">SQL Server Management Studio</a> and <a href="http://docs.sublimetext.info/en/latest/reference/keyboard_shortcuts_win.html">Sublime Text</a>. Hopefully they're helpful for you too.)</p>
+<p>Of course, getting comfortable with the right keys isn't anything new. If I'm firing up a new game that has more than like 6 action keys, you'd better believe that I'm spending the first hour or so running in circles and rebinding actions to my superfluous neckbeard mouse until I'm comfortable enough that I'm not deliberately thinking about which keys I'm pressing.</p>
+<p><center><img src="../../../../../images/tools/loser.PNG" width="400"/></center></p>
+<p>And the benefits of learning how to navigate with your key bindings aren't unique to just the programs themselves. For example, on Windows:</p>
+<ul>
+<li>If you ever find yourself wanting to save a copy of something, more often than not, ALT + (F, A, B) will get you to a "Save file as" prompt</li>
+<li>Windows + E opens the file explorer (where you've already bookmarked the directories that you popularly used, no doubt)</li>
+<li>A quick ALT + TAB returns you to the last window you were working in, which holding ALT allows you to navigate between windows with your arrow keys.</li>
+</ul>
+<p>I'm confident that not all of these were news. But what about the global shortcut keys? Say you have a program that you often find yourself wanting to open quickly. Right-clickit</p>
+<p><center><img src="../../../../../images/tools/shortcut.png" width="400"/></center></p>
+<p>then right-click the name of the program itself, and select Properties. That'll take you to a prompt that looks like this.</p>
+<p><center><img src="../../../../../images/tools/shortcut2.PNG" width="300"/></center></p>
+<p>Where you can set the "Shortcut Key" field to be whatever you want. I usually opt to make mine some derivation of "CTRL + ALT + SHIFT" and then some random character. This means that when I'm on a tear and want to get to some kind of tool, it's a keystroke, not some point-and-click away. Off the cuff, I do this for:</p>
+<ul>
+<li>Snipping Tool: X</li>
+<li>Python: P</li>
+<li>Sublime Text Editor: S</li>
+<li>SQL Server Management Studio: Q</li>
+<li>Git Bash: G</li>
+<li>Calculator: C</li>
+</ul>
+<p>In addition to learning hotkeys, I use this cool desktop utility called <a href="https://www.labnol.org/software/tutorials/keep-window-always-on-top/5213/">Always On Top</a> which allows you to keep windows you're not actively working on in the forefront of your screen, letting you do stuff like</p>
+<p><center><img src="../../../../../images/tools/ontop.png" width="400"/></center></p>
+<p>Of course, just because you're faster doesn't necessarily mean you're better. If you get into the habit of just going as fast as your APM will allow, it's probable that you'll find yourself in a situation like this.</p>
+<p><center>
+<blockquote class="twitter-tweet" data-lang="en"><p dir="ltr" lang="en">A 3 hr coding tear later:<br/><br/>Pro: Managed to get a working data pipeline<br/><br/>Con: I've looked forward to hangovers more than I am the refactoring</p>&mdash; Nick (@NapsterInBlue) <a href="https://twitter.com/NapsterInBlue/status/902721881568157696?ref_src=twsrc%5Etfw">August 30, 2017</a></blockquote>
+<script async="" charset="utf-8" src="https://platform.twitter.com/widgets.js"></script>
+</center></p>
+<p>Spoiler alert: It was a ridiculous pain in the ass opening up the repository and trying to figure out what I had done, days later.</p>
+<p>Which transitions nicely into my next section.</p>
+<h1 id="slowing-the-hell-down">Slowing the Hell Down<a class="headerlink" href="#slowing-the-hell-down" title="Permanent link"> </a></h1>
+<p><a href="https://www.youtube.com/watch?v=wFHupcR5KBU">Mood Music</a></p>
+<h2 id="to-save-time">To Save Time<a class="headerlink" href="#to-save-time" title="Permanent link"> </a></h2>
+<p>I've been gradually digging through the old PyCon archives the past couple weeks. One of my better finds was a talk where a guy was locked in a vault with hundreds of boxes containing printouts of source code and a computer with over a TB of poorly-labelled files and no Internet connection. He was an expert witness in a tech patent case and heavily utilized Python to help him organize and detangle the mess he was parked next to. Before he went heads down and threw himself at the mountain of work to make sense of in front of him, he first took a few weeks to-- this killed me-- reimplement Git and Unix commands from scratch using vanilla Python 2.7, to assist in all of the parsing and cataloging of the information on this computer.</p>
+<p><a href="https://www.youtube.com/watch?v=RZ4Sn-Y7AP8">The talk</a> is fascinating and absolutely worth the bookmark, but as it relates to this section header, it perfectly illustrates the kind of measured approach that I'm advocating for here. When faced with a problem that he could have, for sure, just started in on, he paused and assessed what tools would make his research go smoother. Even if he pushed himself to the absolute limit, there's no way that he'd be able to perform the complicated searching needed as well as a computer did, so instead he figured out what sorts of things he'd need to do, and set computer up to do it for him.</p>
+<p><center><img src="../../../../../images/tools/fishing.PNG" width="500"/></center>
+<center>Seriously, this guy's a wizard. Check him out.</center></p>
+<p>And sure, by doing this, he saves himself a ton of headache. But the thing that's most exciting to me is that by setting himself up this way, <strong><em>he's minimized the amount of time it takes him to go from good idea to execution</em></strong>. As soon as he had an idea about how to explore the code, he could just hop in and do it.</p>
+<h2 id="to-save-brain-power">To Save Brain Power<a class="headerlink" href="#to-save-brain-power" title="Permanent link"> </a></h2>
+<p>Consider the earlier Excel example. If I got blisteringly fast at the muscle memory needed to go from raw data table to 2/3 of the way to something neatly formatted, it'd still be orders of magnitude slower than how fast a computer would be able to do it. Instead, maybe I take an hour and knock out a Macro in VBA-- or better yet, build a Python function with a call that looks like <code>export_pretty_table(data, fpath, headerColor)</code> because even if it's only saving you ones of minutes, it's still "costs" you a non-zero amount of your brainspace to make sure that you're checking all of the boxes correctly, and that's probably nobody's favorite part of the analysis.</p>
+<p>I've spent a ton of time in the past few weeks thinking about this in particular. Had a handful of ideas about some broad, multi-movie analyses that I'd like to do that could really benefit from having some numbers behind the observations. All kinds of things from box office data to the number of theaters they were showing in to composite review scores. All of this data exists on one form or another across the Internet. But is it a better use of my time to get at this as I need it? Or will I thank myself later for taking the time to build a handful of robust scrapers that will get me the data as soon as I've got a good idea for a post, and take off from there?</p>
+<p>Pretty excited to have a few of these nearing completion, by the by.</p>
+<h2 id="to-share-an-approach">To Share an Approach<a class="headerlink" href="#to-share-an-approach" title="Permanent link"> </a></h2>
+<p>What about the analysis approaches themselves? By happenstance, in my time with QL, I've supported a handful of different business areas. In so doing, I started to see the patterns in the types of analyses we do, like classes of problems-- that if you listed out all of the steps beyond "collect the area-specific data," you'd see a good deal of overlap, regardless of whatever data you happened to be a SME in. A typical conversion problem behaves like a typical conversion problem; understanding how to tie together dimensionalized data will make learning every new dataset that much easier.</p>
+<p>How about a super-generic example?</p>
+<p>Say you own a supermarket and want to understand the flow of customer traffic through the shop over time. And so you give a few teenagers summer jobs to park themselves in front of the aisles and write down:</p>
+<ul>
+<li>What aisle the customer is walking down?</li>
+<li>What time they entered the aisle?</li>
+<li>What number they're wearing around their neck? (Oh yeah. Assume this is a weird dystopia where this is pretty normal, lol)</li>
+</ul>
+<p>Okay, so what sorts of things can you glean from this?</p>
+<p>Well, if you're creative, there's a messy dataset join that you can get at that would allow you to say "At this specific point in time, how many people were where?" Which is cool. You can throw that against any sort of time-specific metric you've got, from cleanups needed to figuring out when you should focus on restocking specific aisles in the store. You run that on enough different samples across time and you can start to see patterns, and enrich your understanding with visuals like this (different area colors represent the different aisles)</p>
+<p><center><img src="../../../../../images/tools/stackedarea.png" width="500"/></center>
+<center>Randomly-generated dataset made an interesting dip at 9:45. Too bad there's literally nothing to analyze, lol.</center></p>
+<p>Obviously not going into the specifics, but it's not tough to imagine a use case for something like this for an analyst at a mortgage company. But that's the thing-- it's easy to think of a <em>bunch of problems that fit this form.</em> And to do all of the data processing/joining on the SQL side means that you'll find yourself copy/pasting, and subsequently modifying, the same chunk of code into whatever queries that you're putting together, every single time you want to do something like this. Hope you remember everything correctly!</p>
+<p>Instead, a few of us took the time to sit down and said "assuming a dataset that fits the form of "Agent," "Their State," and "Time Entered the State" you could use this for damn near anything. What took us, idk, 5-10 mins per cross section that we wanted to explore is now tooled down to a few seconds and is generic to whatever data you want to point it at.</p>
+<h2 id="to-cover-your-ass">To Cover Your Ass<a class="headerlink" href="#to-cover-your-ass" title="Permanent link"> </a></h2>
+<p>And I haven't even brought up correctness. There is, after all, an positive relationship between the number of errors and the amount of human entries. Something as simple as table formatting might not be the most perilous part of your day, but what about data cleaning? There's this ubiquitous notion in the data science community that 80% of any analysis is spent doing data prep-- a problem that's only growing as the amount of data sources of all shapes and sizes continues to swell. This is where formalizing data definitions and sharing SQL views and map/cleaner code becomes invaluable.</p>
+<p>This extends to the ability to share your work, or understand the work that you did before. It's not a tangible tool, sure, but pausing when you're done writing something that works to document it for the next person in line (yourself or otherwise) is just as, if not more, valuable as any hotkeys or software. If I'm digging through some old code that I wrote where I stuffed 40 fields into a table called <code>#temp</code>, I set Future-Nick's lockjaw to flare up due to excessive teeth grinding. Instead, if I'm skimming through a query and can scan through the intermediate tables that I'm seeing:</p>
+<ul>
+<li><code>#PilotLoans</code></li>
+<li><code>#ClientsOnLoans</code></li>
+<li><code>#TeamMembersThatTouchedLoans</code></li>
+<li><code>#CallsFromTMToClient</code></li>
+<li><code>#PilotLoans30sOrLonger</code></li>
+</ul>
+<p>Regardless of whether or not I understand all of the underlying data or all of the exclusionary logic at each step, I can piece together the general approach of the couple hundred lines of SQL, and know where to focus if I'm concerned that anything is incorrect in my comically nondescript example.</p>
+<p>Much better than (true story)</p>
+<ul>
+<li><code>#meeearp</code></li>
+<li><code>#butts</code></li>
+<li><code>#temp</code></li>
+<li><code>#tmp</code></li>
+<li><code>#meeeearp</code></li>
+<li><code>#lololol</code></li>
+</ul>
+<p>yeah?</p>
+<h1 id="so-when-and-where_1">So When and Where?<a class="headerlink" href="#so-when-and-where" title="Permanent link"> </a></h1>
+<p>At this point, maybe you see the value of stopping and figuring out how to work better. I know I did.</p>
+<p>In my last transition from one business area to another, I took the opportunity to shotgun a bunch of Git knowledge and start compiling a wiki to chronicle everything new that I was learning. It was enormously helpful for my own understanding to document all of the new information that I was hearing, and hey, it was occasionally useful to the folks around me.</p>
+<p>But I'm also more-than-acutely aware that at glance, it might appear as if this is the only mode that I operate:</p>
+<p><center><img src="../../../../../images/tools/the_general_problem.png" width="400"/></center>
+<center>Relevant XKCD, as always.</center></p>
+<p>And in truth, this is something that I'm actively working on. I hardly think that I'm bullet-proof in this regard. Like anything, to shackle yourself to an absolute approach is to set yourself up to miss the mark, and flounder spectacularly doing so. So how do I strike a balance between tooling up and, well, actually doing anything?</p>
+<p>That question's been on my mind a lot the past couple of weeks. To paraphrase: "How do you know when it's a good time to focus on tooling?"</p>
+<p>Ate lunch this afternoon watching <a href="https://www.youtube.com/watch?v=I56oFTm9UlE">another really great talk worth bookmarking by Brandon Rhodes</a>. Among many other things, he touches on 3 big points I want to address.</p>
+<ol>
+<li>"Many novice programmers have no gauge on whether the tools they're using are wasting their time."<ul>
+<li>This one rang true to me in a big way. If the only tool that you know exists is Excel, then watching someone else do your job quickly and with a fraction of the effort in SQL or Python is going to blow your mind.</li>
+<li>Similarly, if you know a tool well enough, but haven't seen how someone else uses it, you're bound to pick up a best practice or two just watching them. Hell, just this week someone turned me onto the LEAD/LAG functions in SQL and I was near hysterical that I could finally let the ridiculous ROW_NUMBER PARTITION BY into self-join fall out of my head.</li>
+<li>All of this to say, beyond the obvious project correctness and knowledge-redundancy that paired programming creates, learning the different ways that someone operates can dramatically improve your perspective when approaching problems.</li>
+</ul>
+</li>
+<li>Frustration as a motivator<ul>
+<li>One of the easiest heuristics I've heard about all of this tooling business is "if you have to do it more than twice, find a way to automate it."</li>
+<li>This way, you don't find yourself burning untold minutes and brain cells doing the same repetitive tasks, and can instead wrestle with the problem at a more stimulating level. Love this.</li>
+<li>As Rhodes said, "If it feels like I'm flailing, then I stop and work on my tools."</li>
+<li>I'm only just figuring out how to break an awful habit of mine. Maybe this'll sound familiar:<ul>
+<li>Working between my text editor and terminal and I'm trying to debug a very specific bit of behavior in a class I'm working on. My last 4 IPython commands look like:
+<code>[1] run exampleclass.py
+[2] data = get_data_from_path('filepath')
+[3] test = ExampleClass(data)
+[4] test.method_im_debugging()</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>It's just a quick fix. Should only take a run or two.</li>
+<li>And so 30 runs later, I'm not much closer to a solution, and now my workflow has gone from deliberate to frantic, spending time and energy cycling through the history of previous commands.
+<code>Tinker and make changes to exampleclass.py
+    &uarr;, &uarr;, &uarr;, &uarr;, ENTER
+    &uarr;, &uarr;, &uarr;, &uarr;, ENTER
+    &uarr;, &uarr;, &uarr;, &uarr;, ENTER
+    &uarr;, &uarr;, &uarr;, &uarr;, ENTER
+    Damn.</code></li>
+<li>That time and effort adds up. And if you're chaining together more than a few commands this way, you can find yourself in a needless cadence of muscle-memory and frustration from all of the repetition.</li>
+<li>Instead, now I don't do any development without this gorgeous if block at the bottom of my scripts.
+<code>python
+        if __name__ == "__main__":
+            data = get_data_from_path('filepath')
+            test = ExampleClass(data)
+            test.method_im_debugging()</code></li>
+<li>and my workflow looks like
+<code>Tinker and make changes to exampleclass.py
+        &uarr;, ENTER
+        Rinse, repeat.</code></li>
+<li>
+<p>Then the twenty terminal keystrokes becomes two. Four calls becomes one. And it works exactly the same. Might not seem like much, but it makes a world of difference for me.</p>
+</li>
+<li>
+<p>Traction as a motivator</p>
+<ul>
+<li>This one's interesting. Basically, human nature suggests that you're going to gravitate to doing whatever's clearest/easiest.</li>
+<li>However, just because something feels like the path of least resistance, doesn't mean it's the most essential thing you should be aiming yourself at.</li>
+<li>In fact Rhodes suggests that the part you're going to struggle with the most is <em>precisely</em> where you should be focusing your tooling efforts.</li>
+<li>I'm inclined to agree with him. Web scraping and Regex are a pain in my ass. Love the site, though I may, if there was a "how long have I been on this site?" counter for <a href="https://pythex.org/">Pythex</a>, I'm not sure I'd want to see it. But packaging them into function calls when I need to use them means that I can solve the problem once and then use the functions to get to the stuff I'm good at.</li>
+</ul>
+</li>
+</ol>
+<h1 id="conclusion">Conclusion<a class="headerlink" href="#conclusion" title="Permanent link"> </a></h1>
+<p>It's worth mentioning that I'm spending a good deal of my time lately figuring out how to navigate through the intersection of these last two points-- frustration vs traction. Historically, if I get to a spot where I don't know how to do something, or am confident that if I just knew this one library a bit better, I'd be able to write elegant, effective code to knock out whatever I'm stuck on.</p>
+<p>However, as I'm learning more about software architecture, specifically <a href="https://en.wikipedia.org/wiki/SOLID_(object-oriented_design)">SOLID coding principles</a> (wearing an Econ background on my sleeve here, citing something so basic), I'm having an easier time just building something that works, if barely. If I chain together a bunch of method calls, each of which are technically correct but are revolting under the hood from a design or library use perspective, then getting something that works allows me to confidently iterate on the parts that aren't so great. Like so:</p>
+<p><code>compare_two_movies(movie1, movie2):
+    |
+    ---&gt; check_for_cached_data() # basically my Dayilo stuff
+    |
+    ---&gt; scrape_box_office_data() # finally works
+    |
+    ---&gt; scrape_rating_data() # finally works
+    |
+    ---&gt; normalize_data() # technically works. Probably better Pandas methods I could be using.
+    |
+    ---&gt; make_relevant_plots()
+        |
+        ---&gt; plot_gross_over_time()
+        |
+        ---&gt; plot_num_theaters_over_time()
+        |
+        ---&gt; # room for more visuals
+    |
+    ---&gt; cache_data() # basically my Dayilo stuff</code></p>
+<p>But hey, <em>it works</em>. All of the things I'd do to analyze the differences between two movies are tucked away into a repeatable function call.</p>
+<p>And then from there, I can start to explore all kinds of development patterns and testing strategies and other things that that are showing up more and more in my google searches. But that only happened, interestingly, after I dramatically sped up the way that I worked, and then saw the value in then slowing it back down by a whole lot.</p>
+<p><strong>So in summary</strong>: Get fast enough that being slow becomes a choice. Then choose to find/build the right tools to make things easier on yourself. Might seem unintuitive at first, but in the long run, the time investment pays for itself several times over.</p>
+        </div>
+
+        <div class="meta">
+            <div>
+                    <a href="../../../../../tag/meta.html" class="tag">meta</a>
+                    <a href="../../../../../tag/musing.html" class="tag">musing</a>
+                    <a href="../../../../../tag/python.html" class="tag">python</a>
+                    <a href="../../../../../tag/technical.html" class="tag">technical</a>
+                    <a href="../../../../../tag/tools.html" class="tag">tools</a>
+            </div>
+        </div>
+    </article>
+
+
+</div>
+
+<style type="text/css">
+{
+    max-width: 700px;
+}
+
+.text_cell .prompt {
+    display: none;
+}
+
+.output_png {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+div.cell {
+    padding: 0;
+}
+
+div.text_cell_render {
+    padding: 0;
+}
+
+div.prompt {
+    padding: -2px;
+    font-size: 13px;
+    min-width: 9ex;
+}
+
+div.input_prompt {
+    padding: .4em 0.2em;
+}
+
+div.output_prompt {
+    padding: .1em .2em;
+}
+
+div.output_area{
+    padding-bottom: 10px;
+}
+
+div.output_subarea {
+    max-width: calc(100% - 10ex);
+}
+
+div.input_area {
+    margin: .2em 0.4em;
+    max-width: 650px;
+}
+
+table.dataframe {
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    line-height: 20px;
+}
+
+table.dataframe th, td {
+    padding: 4px;
+    text-align: left;
+}
+
+pre code {
+    background-color: inherit;
+}
+
+.highlight {
+    padding-left: 4ex;
+    background: #fff;
+}</style>
+
+        </div>
+<!--
+    <footer>
+      <p>
+        © 2012-2017 Nick, license <a href=""> </a>
+        unless otherwise noted.
+        Generated by <a href= "http://docs.getpelican.com/">Pelican</a>.
+      </p>
+    </footer>
+-->
+    </body>
+</html>

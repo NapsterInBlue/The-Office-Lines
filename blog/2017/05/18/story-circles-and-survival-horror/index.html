@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="author" content="Nick">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+        <title>Story Circles and Survival Horror | Movies, Metrics, Musings</title>
+
+	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+	<link rel="icon" href="/favicon.ico" type="image/x-icon">
+        <link rel="alternate" type="application/atom+xml" title="Movies, Metrics, Musings blog atom feed" href="/feeds/all.atom.xml" />
+        <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700' rel='stylesheet' type='text/css'>
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="/theme/css/icons.css"/>
+        <style>.highlight .hll { background-color: #ffffcc }
+.highlight .c { color: #60a0b0; font-style: italic } /* Comment */
+.highlight .err { border: 1px solid #FF0000 } /* Error */
+.highlight .k { color: #007020; font-weight: bold } /* Keyword */
+.highlight .o { color: #666666 } /* Operator */
+.highlight .cm { color: #60a0b0; font-style: italic } /* Comment.Multiline */
+.highlight .cp { color: #007020 } /* Comment.Preproc */
+.highlight .c1 { color: #60a0b0; font-style: italic } /* Comment.Single */
+.highlight .cs { color: #60a0b0; background-color: #fff0f0 } /* Comment.Special */
+.highlight .gd { color: #A00000 } /* Generic.Deleted */
+.highlight .ge { font-style: italic } /* Generic.Emph */
+.highlight .gr { color: #FF0000 } /* Generic.Error */
+.highlight .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+.highlight .gi { color: #00A000 } /* Generic.Inserted */
+.highlight .go { color: #808080 } /* Generic.Output */
+.highlight .gp { color: #c65d09; font-weight: bold } /* Generic.Prompt */
+.highlight .gs { font-weight: bold } /* Generic.Strong */
+.highlight .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+.highlight .gt { color: #0040D0 } /* Generic.Traceback */
+.highlight .kc { color: #007020; font-weight: bold } /* Keyword.Constant */
+.highlight .kd { color: #007020; font-weight: bold } /* Keyword.Declaration */
+.highlight .kn { color: #007020; font-weight: bold } /* Keyword.Namespace */
+.highlight .kp { color: #007020 } /* Keyword.Pseudo */
+.highlight .kr { color: #007020; font-weight: bold } /* Keyword.Reserved */
+.highlight .kt { color: #902000 } /* Keyword.Type */
+.highlight .m { color: #40a070 } /* Literal.Number */
+.highlight .s { color: #4070a0 } /* Literal.String */
+.highlight .na { color: #4070a0 } /* Name.Attribute */
+.highlight .nb { color: #007020 } /* Name.Builtin */
+.highlight .nc { color: #0e84b5; font-weight: bold } /* Name.Class */
+.highlight .no { color: #60add5 } /* Name.Constant */
+.highlight .nd { color: #555555; font-weight: bold } /* Name.Decorator */
+.highlight .ni { color: #d55537; font-weight: bold } /* Name.Entity */
+.highlight .ne { color: #007020 } /* Name.Exception */
+.highlight .nf { color: #06287e } /* Name.Function */
+.highlight .nl { color: #002070; font-weight: bold } /* Name.Label */
+.highlight .nn { color: #0e84b5; font-weight: bold } /* Name.Namespace */
+.highlight .nt { color: #062873; font-weight: bold } /* Name.Tag */
+.highlight .nv { color: #bb60d5 } /* Name.Variable */
+.highlight .ow { color: #007020; font-weight: bold } /* Operator.Word */
+.highlight .w { color: #bbbbbb } /* Text.Whitespace */
+.highlight .mf { color: #40a070 } /* Literal.Number.Float */
+.highlight .mh { color: #40a070 } /* Literal.Number.Hex */
+.highlight .mi { color: #40a070 } /* Literal.Number.Integer */
+.highlight .mo { color: #40a070 } /* Literal.Number.Oct */
+.highlight .sb { color: #4070a0 } /* Literal.String.Backtick */
+.highlight .sc { color: #4070a0 } /* Literal.String.Char */
+.highlight .sd { color: #4070a0; font-style: italic } /* Literal.String.Doc */
+.highlight .s2 { color: #4070a0 } /* Literal.String.Double */
+.highlight .se { color: #4070a0; font-weight: bold } /* Literal.String.Escape */
+.highlight .sh { color: #4070a0 } /* Literal.String.Heredoc */
+.highlight .si { color: #70a0d0; font-style: italic } /* Literal.String.Interpol */
+.highlight .sx { color: #c65d09 } /* Literal.String.Other */
+.highlight .sr { color: #235388 } /* Literal.String.Regex */
+.highlight .s1 { color: #4070a0 } /* Literal.String.Single */
+.highlight .ss { color: #517918 } /* Literal.String.Symbol */
+.highlight .bp { color: #007020 } /* Name.Builtin.Pseudo */
+.highlight .vc { color: #bb60d5 } /* Name.Variable.Class */
+.highlight .vg { color: #bb60d5 } /* Name.Variable.Global */
+.highlight .vi { color: #bb60d5 } /* Name.Variable.Instance */
+.highlight .il { color: #40a070 } /* Literal.Number.Integer.Long */</style>
+        <style>body {
+  margin: 0;
+  padding: 0;
+  font: 15px 'Source Sans Pro', sans-serif;
+  line-height: 1.6em;
+  color: #222;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+a {
+  color: #007EE5;
+  text-decoration: none;
+}
+a:hover {
+  color: #007EE5;
+  text-decoration: none;
+}
+header.main-header {
+  background: none repeat scroll 0% 0% #205F29;
+  margin-bottom: 0px;
+}
+header.main-header a {
+  color: #fff;
+}
+header.main-header .container {
+  max-width: 1000px;
+}
+header.main-header .container nav a:hover {
+  background-color: #5C881C;
+}
+article {
+  margin: 0;
+}
+article header.about {
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+}
+article header {
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+}
+article header h1 {
+  margin-bottom: 2px;
+  font-weight: 700;
+  color: #000;
+}
+article header time {
+  color: #9E9E9E;
+  font-size: 0.85em;
+  float: right;
+}
+article header time.left {
+  color: #9E9E9E;
+  font-size: 0.85em;
+  float: left;
+}
+article div.social-links ul {
+  padding: 0px;
+}
+article div.social-links li {
+  display: inline;
+  font-size: 20px;
+}
+article div.social-links li a {
+  color: #000;
+  padding: 10px;
+}
+article div.social-links li a:hover {
+  color: #666;
+  text-decoration: none;
+}
+article p {
+  font-size: 16px;
+  margin-bottom: 20px;
+  line-height: 1.6em;
+}
+article p.note {
+  background: #f5f5f5;
+  border: 1px solid #ddd;
+  padding: 0.533em 0.733em;
+}
+article p.update {
+  background-color: #FEEFB3;
+  border: 1px solid #e6e68a;
+  padding: 0.533em 0.733em;
+}
+article p.alert {
+  background-color: #ffe2e2;
+  border: 1px solid #ffb2b2;
+  padding: 0.533em 0.733em;
+}
+article ol {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+article ol {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+article li {
+  font-size: 16px;
+  line-height: 1.6em;
+}
+article a:hover {
+  text-decoration: underline;
+}
+article blockquote {
+  border-left: 2px solid #c7c7cc;
+  color: #666;
+  margin: 30px 0;
+  padding: 0 0 0 25px;
+}
+article img {
+  max-width: 100%;
+}
+article code {
+  color: #333;
+  background-color: #EEE;
+  border-radius: 0;
+  font-size: 13px;
+}
+article .meta {
+  font-size: 11px;
+}
+article .meta a:hover {
+  text-decoration: none;
+}
+article .meta div {
+  margin-bottom: 20px;
+  display: block;
+}
+article .meta a.tag {
+  margin: 0 10px 10px 0;
+  padding: 1px 12px;
+  display: inline-block;
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.8);
+  background: rgba(0, 0, 0, 0.05);
+}
+article .meta a.tag:hover {
+  background: rgba(0, 0, 0, 0.15);
+}
+article .meta a.read_more,
+article .meta a.comments_btn {
+  font-size: 14px;
+  font-weight: 800;
+  padding: 10px 20px;
+  color: #205F29;
+  background: #FFF;
+  border: 1px solid #205F29;
+}
+article .meta a.read_more:hover,
+article .meta a.comments_btn:hover {
+  color: #FFF;
+  background: #5C881C;
+}
+.index {
+  max-width: 700px;
+}
+.index article header h2 {
+  font-size: 36px;
+  margin-bottom: 2px;
+  font-weight: 700;
+}
+.index article header h2 a {
+  color: #000;
+}
+.index article header h2 a:hover {
+  color: #007EE5;
+  text-decoration: none;
+}
+.index .separator {
+  padding: 40px 0 0 0;
+  margin: 0 0 40px 0;
+  height: 10px;
+  border-bottom: solid 1px #CCC;
+}
+.index .pagination {
+  display: block;
+  margin-bottom: 100px;
+}
+.index .pagination .left {
+  text-align: right;
+}
+.index .pagination .right {
+  text-align: left;
+}
+.index .pagination a {
+  display: inline-block;
+  border: 2px solid #5C881C;
+  margin: 0 5px;
+  padding: 8px 20px;
+  font-weight: bold;
+  color: #5C881C;
+}
+.index .pagination a:hover {
+  color: #FFF;
+  background: #5C881C;
+}
+.post {
+  max-width: 800px;
+}
+.post h2:before {
+  font-weight: bold;
+  color: #DDD;
+}
+.post h3:before {
+  font-weight: bold;
+  color: #DDD;
+}
+.post h4:before {
+  font-weight: bold;
+  color: #DDD;
+}
+.post article .meta {
+  margin: 50px 0 100px;
+}
+.list {
+  max-width: 700px;
+}
+.list ul.double-list {
+  margin: 0 auto 60px;
+  padding: 0;
+  list-style-type: none;
+}
+.list ul.double-list li {
+  padding: 5px 0;
+}
+.list ul.double-list li h2 {
+  font-size: 1em;
+  display: inline;
+  font-weight: normal;
+}
+.list ul.double-list li span {
+  font-family: sans-serif;
+  text-transform: uppercase;
+  text-align: right;
+  float: right;
+  padding-top: 3px;
+  font-size: 12px;
+  color: #999;
+}
+.full-width-content {
+  padding-top: 10px;
+  padding-left: 0px;
+  padding-right: 0px;
+  margin-left: -20px;
+  margin-right: -20px;
+}
+.col-xs-1,
+.col-sm-1,
+.col-md-1,
+.col-lg-1,
+.col-xs-2,
+.col-sm-2,
+.col-md-2,
+.col-lg-2,
+.col-xs-3,
+.col-sm-3,
+.col-md-3,
+.col-lg-3,
+.col-xs-4,
+.col-sm-4,
+.col-md-4,
+.col-lg-4,
+.col-xs-5,
+.col-sm-5,
+.col-md-5,
+.col-lg-5,
+.col-xs-6,
+.col-sm-6,
+.col-md-6,
+.col-lg-6,
+.col-xs-7,
+.col-sm-7,
+.col-md-7,
+.col-lg-7,
+.col-xs-8,
+.col-sm-8,
+.col-md-8,
+.col-lg-8,
+.col-xs-9,
+.col-sm-9,
+.col-md-9,
+.col-lg-9,
+.col-xs-10,
+.col-sm-10,
+.col-md-10,
+.col-lg-10,
+.col-xs-11,
+.col-sm-11,
+.col-md-11,
+.col-lg-11,
+.col-xs-12,
+.col-sm-12,
+.col-md-12,
+.col-lg-12 {
+  padding-right: 0px;
+  padding-left: 0px;
+}</style>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+    </head>
+
+    <body>
+        <header class="navbar navbar-inverse bs-docs-nav">
+            <div class="container-fluid">
+                <div class="navbar-header">
+		  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#theNavbar">
+		    <span class="icon-bar"></span>
+		    <span class="icon-bar"></span>
+		    <span class="icon-bar"></span>
+		  </button>
+                  <a class="navbar-brand" href="/" title="Home" class="title">Movies, Metrics, Musings</a>
+                </div>
+                <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation" id="theNavbar">
+		    <ul class="nav navbar-nav navbar-right">
+                            <li><a href="/pages/about.html" title="About">About</a></li>
+                            <li><a href="/archives.html" title="Archive">Archive</a></li>
+                            <li><a href="/pages/resources.html" title="Resources">Resources</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <div id="wrap">
+<div class="container post">
+    <article>
+        <header>
+            <h1>Story Circles and Survival Horror</h1>
+            <time datetime="article.date.isoformat()" pubdate>Thu 18 May 2017</time>
+        </header>
+
+        <div class="panel panel-default">
+            <div class="panel-heading">Table of Contents</div>
+            <div class="panel-body">
+            <div id="toc"><ul><li><a class="toc-href" href="#story-circles" title="Story Circles ">Story Circles </a></li><li><a '="" class="toc-href" href="#so-now-that-were-on-the-same-page" on="" page...="" re="" same="" the="" title="So now that we">So now that we're on the same page... </a></li><li><a class="toc-href" href="#survival-horror" title="Survival Horror ">Survival Horror </a></li><li><a class="toc-href" href="#cherry-picking-examples-that-work" title="Cherry Picking Examples that Work ">Cherry Picking Examples that Work </a><ul><li><a class="toc-href" href="#cabin-in-the-woods" title="Cabin in the Woods ">Cabin in the Woods </a></li><li><a class="toc-href" href="#the-2004-dawn-of-the-dead-the-first-horror-movie-that-i-remember-enjoying" title="The 2004 Dawn of the Dead (the first horror movie that I remember enjoying) ">The 2004 Dawn of the Dead (the first horror movie that I remember enjoying) </a></li><li><a class="toc-href" href="#season-1-of-stranger-things" title="Season 1 of Stranger Things ">Season 1 of Stranger Things </a></li><li><a class="toc-href" href="#re4" title="RE4 ">RE4 </a></li><li><a class="toc-href" href="#-fear-of-the-unknown-" title="----FEAR OF THE UNKNOWN---- ">----FEAR OF THE UNKNOWN---- </a></li><li><a class="toc-href" href="#-adjustment-to-the-horror-" title="----ADJUSTMENT TO THE HORROR---- ">----ADJUSTMENT TO THE HORROR---- </a></li><li><a class="toc-href" href="#-fight-back-" title="----FIGHT BACK---- ">----FIGHT BACK---- </a></li></ul></li><li><a class="toc-href" href="#thanks-for-scrolling-this-far_1" title="Thanks for Scrolling this Far! ">Thanks for Scrolling this Far! </a></li></ul></div>
+            </div>
+        </div>
+
+        <div class="article_content">
+            
+<p>Hey, long time no see!</p>
+<p>I've been starting and stopping this post for the past few months ever since I sat down for a rewatch of one of my all time favorite horror movies, The Thing. I don't consider myself much of an aficianado by any capactity, but wanted to share some thoughts that I've been having as I absorb more of the genre.</p>
+<p>Before we dive in, let's establish some vocabulary. And for good measure, <a href="https://www.youtube.com/watch?v=EnFc7D0ZoCc">throw on some flavor music</a>. As I'm sure I've mentioned in previous posts, I'm a huge Dan Harmon fan. A good while back, <a href="http://channel101.wikia.com/wiki/Story_Structure_101:_Super_Basic_Shit">he did an excellent writeup of some basic story-structure patterns</a> that will really lend itself to understanding the brain-dump you're reading now, as I'm basically ripping off <em>his rip off</em> of famous literary academic Joseph Campbell.</p>
+<h2 id="story-circles">Story Circles<a class="headerlink" href="#story-circles" title="Permanent link"> </a></h2>
+<p>The whole article series is a really interesting read and will likely show up, in one capacity or another, in every bit of media you consume from here on out. But for brevity here's what you need to know:</p>
+<ul>
+<li>The Hero's Journey can represented as a circle divided into 4 quadrants with about 8 stops.</li>
+<li>The top half of the circle represents the zone that is familiar and comfortable, the bottom the unfamiliar and challenging</li>
+<li>Nearly every story starts out in a relative state of comfort at the 12 o'clock spot. As the story devlops we see the protagonist's journey around the circle and its neat points of story-telling milestones.</li>
+</ul>
+<p><center><img src="../../../../../images/horror/template.png"/></center>
+<center>First draft of the hacky screenplay I'm not writing</center></p>
+
+<p>As Harmon neatly summarizes:</p>
+<ol>
+<li>A character is in a zone of comfort,</li>
+<li>But they want something.</li>
+<li>They enter an unfamiliar situation,</li>
+<li>Adapt to it,</li>
+<li>Get what they wanted,</li>
+<li>Pay a heavy price for it,</li>
+<li>Then return to their familiar situation,</li>
+<li>Having changed.</li>
+</ol>
+<p>which, from here, I'm going to follow his parlance and abbreviate these as the following</p>
+<ol>
+<li>You (a character is in a zone of comfort)</li>
+<li>Need (but they want something)</li>
+<li>Go (they enter an unfamiliar situation)</li>
+<li>Search (adapt to it)</li>
+<li>Find (find what they wanted)</li>
+<li>Take (pay its price)</li>
+<li>Return (and go back to where they started)</li>
+<li>Change (now capable of change)</li>
+</ol>
+<p>Of course, the size of each section is fluid depending on which story you put it up against. Also, most other references to this story circle draw the horizontal line a bit higher up in the circle (after all, most of the story happens in the away, right?). But you get the idea. Think about your favorite movie. I bet you could fit it into this paradigm with minimal finagling.</p>
+<h2 id="so-now-that-were-on-the-same-page">So now that we're on the same page...<a class="headerlink" href="#so-now-that-were-on-the-same-page" title="Permanent link"> </a></h2>
+<p>As I was listening to the credit roll of The Thing, I was going through and mentally checking the boxes</p>
+<ol>
+<li>You (a character is in a zone of comfort)<ul>
+<li>Just a buncha science dudes hanging out in Antarctica. Oh hey, a dog.</li>
+</ul>
+</li>
+<li>Need (but they want something)<ul>
+<li>The Norwegians were acting mad crazy. What's going on at that camp?</li>
+</ul>
+</li>
+<li>Go (they enter an unfamiliar situation)<ul>
+<li>Oh. The comms are broken, the dog is actually a crazy monster, and if we don't do something, all life on earth will be eliminated in short time.</li>
+</ul>
+</li>
+<li>Search (adapt to it)<ul>
+<li>Okay. Put MacReady in charge, nobody trust each other until we can figure out how to fight back.</li>
+</ul>
+</li>
+<li>Find (find what they wanted)<ul>
+<li>Blair, you're sitting in the shed. Also, this blood test is going to save our asses. We have control again.</li>
+</ul>
+</li>
+<li>Take (pay its price)<ul>
+<li>Oh shit. Blood test backfired. We can definitively say that the guy that turned into a monster is the monster.</li>
+</ul>
+</li>
+<li>Return (and go back to where they started)<ul>
+<li>Yup. Good call on that Blair dude. Let's head back under the ice and kill this thing.</li>
+</ul>
+</li>
+<li>Change (now capable of change)<ul>
+<li>Having ostensibly saved the world, MacReady awaits death at camp, having become master of both worlds.</li>
+</ul>
+</li>
+</ol>
+<h2 id="survival-horror">Survival Horror<a class="headerlink" href="#survival-horror" title="Permanent link"> </a></h2>
+<p>But it occurred to me that I'd seen this sort of arc before. In addition to the story circle, I noticed that survival horror movies genreally follow their own sort of arc:</p>
+<ul>
+<li>First, we have the fear of the unknown. The crazy monster rears its head. People are turning up killed to death. In The Thing, this kicks off about the time that the dog starts to split open sending tendrils and fangs all around the pen, leading you, the viewer, to infer that things probably aren't normal.</li>
+<li>Then, there's an adjustment to the horror. Just as the protagonists are learning the rules, adapting, and posturing themselves defensively, the universe Yes-And's the wacky nonsense that they're pitted against. This is the whole psychological, "who do I trust because this thing imitates people now" stage of The Thing.</li>
+<li>Finally, they fight back. The protagonist goes from passive to active and this is where these movies often go from good to great. Ramona Flowers sticks it to Walter Sobchack in 10 Cloverfield Lane. MacReady blows The Thing to hell. Sarah Connor gets to drop an awesome one-liner as good triumphs over evil.</li>
+</ul>
+<p><center><span class="videobox">
+<iframe allowfullscreen="" frameborder="0" height="390" mozallowfullscreen="" src="https://www.youtube.com/embed/eeX7rB65nvA" webkitallowfullscreen="" width="640">
+</iframe>
+</span></center></p>
+<h2 id="cherry-picking-examples-that-work">Cherry Picking Examples that Work<a class="headerlink" href="#cherry-picking-examples-that-work" title="Permanent link"> </a></h2>
+<p>Spoilers ahead.</p>
+<p>I took these two concepts and laid them on top of each other for a handful of my favorites in the genre. Snapshots from the various stages of the story mark the steps in The Hero's Journey, and I've color-coded my rough guess at the pacing in this Survival Horror Arc.</p>
+<ul>
+<li>Grey: Calm before/after the storm</li>
+<li>Red: Fear of the unknown</li>
+<li>Green: Adaptation and Rules Changing</li>
+<li>Blue: Fighting Back</li>
+</ul>
+<h3 id="cabin-in-the-woods">Cabin in the Woods<a class="headerlink" href="#cabin-in-the-woods" title="Permanent link"> </a></h3>
+<p><center><img src="../../../../../images/horror/cabininthewoods.png" width="700"/></center></p>
+<ol>
+<li>You<ul>
+<li>Just a bunch of college kids going on vacation.</li>
+</ul>
+</li>
+<li>Need<ul>
+<li>Let's take down this crazy-ass painting and -- oh. Two-way mirror in the other room. Crazy cellar. What is going on in this house?</li>
+</ul>
+</li>
+<li>Go<ul>
+<li>Congratulations go to maintenence! Because Zombies aren't the same as Zombie Redneck Torture Family.</li>
+</ul>
+</li>
+<li>Search<ul>
+<li>They try and book it in the van, but the cave falls in. Chris Hemsworth eats it because of forcefield hacks. No way out and the world seems orchestrated against them.</li>
+</ul>
+</li>
+<li>Find<ul>
+<li>Suddenly it all clicks (and the brilliance of this movie takes over). They realize that they're being controlled and ride an elevator past a treasure trove of monsters which, hilariously, includes a few favorites from the Left 4 Dead series.</li>
+</ul>
+</li>
+<li>Take<ul>
+<li>How better to fight back than to turn the monsters against their captors? The "Ding... Oh shit" exchange is one of my favorite moments in film.</li>
+</ul>
+</li>
+<li>Return<ul>
+<li>By killing sugorney weaver and denying the ritual, they finally have control again. "I'm sorry I let you get attacked by a werewolf and ended the world." Boy, if I had a nickel.</li>
+</ul>
+</li>
+<li>Change<ul>
+<li>Some things just don't change.</li>
+</ul>
+</li>
+</ol>
+<h3 id="the-2004-dawn-of-the-dead-the-first-horror-movie-that-i-remember-enjoying">The 2004 Dawn of the Dead (the first horror movie that I remember enjoying)<a class="headerlink" href="#the-2004-dawn-of-the-dead-the-first-horror-movie-that-i-remember-enjoying" title="Permanent link"> </a></h3>
+<p><center><img src="../../../../../images/horror/dawnofthedead.png" width="700"/></center></p>
+<ol>
+<li>You<ul>
+<li>After overlooking a number of tremoring cadavers and apocalyptic news reports on her way home from work, our protagonist settles in for the night.</li>
+</ul>
+</li>
+<li>Need<ul>
+<li>Then, in one of my favorite horror reveals, a little girl wanders into their room caked in blood and all but eats her husband. Time to go.</li>
+</ul>
+</li>
+<li>Go<ul>
+<li>She jumps out of her window, flees her neighborhood, and winds up going shopping with Ving Rhames.</li>
+</ul>
+</li>
+<li>Search<ul>
+<li>Time to get cozy. They clear out the zombies in the mall, fortify defenses, and learn about the anatomical rammifications of pregnancy and zombie bites.</li>
+</ul>
+</li>
+<li>Find<ul>
+<li>After a lifetime of preparing for the government to come take his guns, Andy Across the Street is basically an S-tier survivor.</li>
+</ul>
+</li>
+<li>Take<ul>
+<li>Lol nevermind. Let's go get his guns.</li>
+</ul>
+</li>
+<li>Return<ul>
+<li>We listen to some sweet, sweet Richard Cheese while they build a some grizzly-looking busses and drive off to the boat that they'll use to sail away from the apocalypse.</li>
+</ul>
+</li>
+<li>Change<ul>
+<li>Survival. Well, mostly.</li>
+</ul>
+</li>
+</ol>
+<h3 id="season-1-of-stranger-things">Season 1 of Stranger Things<a class="headerlink" href="#season-1-of-stranger-things" title="Permanent link"> </a></h3>
+<p><center><img src="../../../../../images/horror/strangerthings.png" width="700"/></center></p>
+<ol>
+<li>You<ul>
+<li>The series takes place in quiet, fictional town of Hawkins, Indiana. I'm swamped with sensory memory of seeing a group of friends playing D&amp;D in someone's basement late into the night.</li>
+</ul>
+</li>
+<li>Need<ul>
+<li>Then all of a sudden, Will is missing. And the most popular Halloween costume this decade shows up eating everyone's Eggos. What's going on?</li>
+</ul>
+</li>
+<li>Go<ul>
+<li>Now Barb disappears. It's shaping up into a pattern and nobody can figure out why. Winona Ryder starts to lose her damn mind and Nancy also begins her journey to get to the bottom of things.</li>
+</ul>
+</li>
+<li>Search<ul>
+<li>Joyce is learning to communicate with Will. Nancy sheds her friends. The boys get a copy of Manual of the Planes 4 years before it's published and make the connection to the Upside Down</li>
+</ul>
+</li>
+<li>Find<ul>
+<li>Turns out what they needed was here all along. Eleven has ESPN and they use it to learn more about the monster.</li>
+</ul>
+</li>
+<li>Take<ul>
+<li>Shit gets real. Nancy and Steve are lighting fires and setting bear traps.</li>
+</ul>
+</li>
+<li>Return<ul>
+<li>We find Will. That douchebag director is out of the picture. Eleven minus one = "Goodbye Mike". Joyce faces the grim reality that there's no extra-planar clause to her Homeowner's Insurance.</li>
+</ul>
+</li>
+<li>Change<ul>
+<li>Mike is thrilled that he doesn't have to keep running Will's character as an NPC. We're treated to Eggo-related cliff hangers with Hop the Cop, and find out that Will is terrible at chewing his food.</li>
+</ul>
+</li>
+</ol>
+<h3 id="re4">RE4<a class="headerlink" href="#re4" title="Permanent link"> </a></h3>
+<p>Lastly, I wanted to tie this up in a neat bow by bringing what love I have for horror back to its roots. Resident Evil 4 is hands-down one of my all time favorite games. I've probably at least half a dozen playthroughs since I scared the hell out of myself with it at 13. In all of this talk and mediocre Paint.net renderings of about these movies, it became abundantly clear where this my idea of a survival-horror narrative arc originated.</p>
+<p>For you unawares, the TL;DR for this game is essentially that you're a special agent sent to a desolate village in Spain trying to find the president's daughter. Once you get there, we learn that everyone in this countryside is involved in some cult/zombie-like-parasite thing that's bad news bears.</p>
+<p>By the numbers:</p>
+<p>(1) You</p>
+<ul>
+<li>The first scene of the game is our disinterested protagonist talking vaguely about his edgy past and current mission.</li>
+</ul>
+<p><center><img src="../../../../../images/horror/re4lazy.PNG" width="500"/></center></p>
+<h3 id="-fear-of-the-unknown-"><center>----FEAR OF THE UNKNOWN----</center><a class="headerlink" href="#-fear-of-the-unknown-" title="Permanent link"> </a></h3>
+<p>(2) Need</p>
+<ul>
+<li>Your car stalls and you stop to ask for directions. Before you know it, there's a dude rushing you down with an axe.</li>
+</ul>
+<p><center><img src="../../../../../images/horror/re4firstvillager.PNG" width="500"/></center></p>
+<p>(3) Go</p>
+<ul>
+<li>You take care of the local and his friends outside, but your ride got chucked down a canyon. You call back to home base and they tell you to just keep moving.</li>
+</ul>
+<p><center><img src="../../../../../images/horror/re4order.PNG" width="500"/></center></p>
+<p>(4) Search</p>
+<ul>
+<li>And that's when shit gets out of hand. The hostile locals seem to take super-human amount of ammunition to take down, and they're communicating and using tools.</li>
+</ul>
+<p><center><img src="../../../../../images/horror/re4chainsaw.PNG" width="500"/></center>
+<center>And I'm having heart palpitations</center></p>
+<h3 id="-adjustment-to-the-horror-"><center>----ADJUSTMENT TO THE HORROR----</center><a class="headerlink" href="#-adjustment-to-the-horror-" title="Permanent link"> </a></h3>
+<p>(5) Find</p>
+<ul>
+<li>After hours of killing monster-parasite-ridden zombies, you find her. Now instead of running through everything all Willy Nilly, you've got to consider how to escort a civilian through hell.</li>
+</ul>
+<p><center><img src="../../../../../images/horror/re4dumpster.jpg" width="500"/></center>
+<center>You know in hindsight, this game isn't very empowering...</center></p>
+<ul>
+<li>Soon thereafter, you're thrust into Act two of this game. Huge tonal shift. The infected stop looking like schlubby villagers, and trade up for cultist robes and scythes, and you're now exploring a huge gothic castle full of puzzles, suits of armor that attack, and whatever the hell this guy is.</li>
+</ul>
+<p><center><img src="../../../../../images/horror/re4blind.PNG" width="500"/></center></p>
+<ul>
+<li>You meet the Big Evil Bad Guy and oh, hey, he nabs Ashley (again) and takes her to some random-ass island. Narratively, this chunk seems like a sliver, but in reality, it's about a third of the playtime.</li>
+</ul>
+<p>(6) Take</p>
+<ul>
+<li>You get Ashley back (again), she bolts you into a chair and shocks the hell out of you to kill the parasite you're infected with, in a refreshing role reversal.</li>
+</ul>
+<p><center><img src="../../../../../images/horror/roleReversal.png" width="500"/></center></p>
+<h3 id="-fight-back-"><center>----FIGHT BACK----</center><a class="headerlink" href="#-fight-back-" title="Permanent link"> </a></h3>
+<ul>
+<li>And then you've gotta get off the island. Another huge tonal shift, accentuated by the fact that RE4 was so damn big that this was the point where you'd have to pop in Disc 2 to keep playing. But it doesn't even feel like the same game. You're basically Rambo pulling such ridiculous acts as</li>
+</ul>
+<p><center><img src="../../../../../images/horror/re4chain.PNG" width="400"/></center>
+<center>Firefights with zombie chaingun commandos</center></p>
+<p><center><img src="../../../../../images/horror/re4krauser.PNG" width="400"/></center>
+<center>Cat and mouse battle with super soldier with a blade for an arm</center></p>
+<p><center><img src="../../../../../images/horror/re4rocket.PNG" width="400"/></center>
+<center>Literally taking an item called "Super Rocket Launcher" with you into the final boss battle.</center></p>
+<p>(7) Return
+- After you noob tube the final boss, you escape the island through a buggy jetski minigame</p>
+<p><center><img src="../../../../../images/horror/jetski.jpg" width="500"/></center>
+<center>An accidentally on-the-nose interpretation of <a href="http://changingminds.org/disciplines/storytelling/plots/hero_journey/magic_flight.htm">Campbell's Magic Flight</a></center></p>
+<p>(8) Change</p>
+<ul>
+<li>Finally, like any classic western, he pops a heck-a sweet wheelie on his steed before riding off into the sunset. The writers just phoning it in at this point. Roll credits.</li>
+<li>Thus we complete the hero's journey from a zone of comfort, through a bunch of Game of the Year awards, and ultimately to the friendzone.</li>
+</ul>
+<p><center><img src="../../../../../images/horror/fz1.png" width="500"/></center>
+<center><img src="../../../../../images/horror/fz2.PNG" width="500"/></center></p>
+<p><center><img src="../../../../../images/horror/fz3.PNG" width="500"/></center>
+<center>M'lady.</center></p>
+<h2 id="thanks-for-scrolling-this-far_1">Thanks for Scrolling this Far!<a class="headerlink" href="#thanks-for-scrolling-this-far" title="Permanent link"> </a></h2>
+<p>I'd shelved this blog post for longer than I care to admit-- it's been a crazy few months. Not to mention my concern that I'd stumbled across a way to look at movies more needlessly convoluted than my American Beauty write up, so I more or less gave up.</p>
+<p>Of course, recently watching the Evil Dead series for the first time, it was obvious to me that the arc of the 3 movies fit this idea perfectly.</p>
+<p><center><img src="../../../../../images/horror/AoD.jpg" width="300"/></center>
+<center>Because nothing says "Act 3: Fight Back" quite like a dude with a chansaw for an arm.</center></p>
+        </div>
+
+        <div class="meta">
+            <div>
+                    <a href="../../../../../tag/genre.html" class="tag">genre</a>
+                    <a href="../../../../../tag/meta.html" class="tag">meta</a>
+                    <a href="../../../../../tag/movies.html" class="tag">movies</a>
+            </div>
+        </div>
+    </article>
+
+
+</div>
+
+<style type="text/css">
+{
+    max-width: 700px;
+}
+
+.text_cell .prompt {
+    display: none;
+}
+
+.output_png {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+div.cell {
+    padding: 0;
+}
+
+div.text_cell_render {
+    padding: 0;
+}
+
+div.prompt {
+    padding: -2px;
+    font-size: 13px;
+    min-width: 9ex;
+}
+
+div.input_prompt {
+    padding: .4em 0.2em;
+}
+
+div.output_prompt {
+    padding: .1em .2em;
+}
+
+div.output_area{
+    padding-bottom: 10px;
+}
+
+div.output_subarea {
+    max-width: calc(100% - 10ex);
+}
+
+div.input_area {
+    margin: .2em 0.4em;
+    max-width: 650px;
+}
+
+table.dataframe {
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    line-height: 20px;
+}
+
+table.dataframe th, td {
+    padding: 4px;
+    text-align: left;
+}
+
+pre code {
+    background-color: inherit;
+}
+
+.highlight {
+    padding-left: 4ex;
+    background: #fff;
+}</style>
+
+        </div>
+<!--
+    <footer>
+      <p>
+        © 2012-2017 Nick, license <a href=""> </a>
+        unless otherwise noted.
+        Generated by <a href= "http://docs.getpelican.com/">Pelican</a>.
+      </p>
+    </footer>
+-->
+    </body>
+</html>

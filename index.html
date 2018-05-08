@@ -1,0 +1,956 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="author" content="Nick">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+        <title>Home | Movies, Metrics, Musings</title>
+
+	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+	<link rel="icon" href="/favicon.ico" type="image/x-icon">
+        <link rel="alternate" type="application/atom+xml" title="Movies, Metrics, Musings blog atom feed" href="/feeds/all.atom.xml" />
+        <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700' rel='stylesheet' type='text/css'>
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="/theme/css/icons.css"/>
+        <style>.highlight .hll { background-color: #ffffcc }
+.highlight .c { color: #60a0b0; font-style: italic } /* Comment */
+.highlight .err { border: 1px solid #FF0000 } /* Error */
+.highlight .k { color: #007020; font-weight: bold } /* Keyword */
+.highlight .o { color: #666666 } /* Operator */
+.highlight .cm { color: #60a0b0; font-style: italic } /* Comment.Multiline */
+.highlight .cp { color: #007020 } /* Comment.Preproc */
+.highlight .c1 { color: #60a0b0; font-style: italic } /* Comment.Single */
+.highlight .cs { color: #60a0b0; background-color: #fff0f0 } /* Comment.Special */
+.highlight .gd { color: #A00000 } /* Generic.Deleted */
+.highlight .ge { font-style: italic } /* Generic.Emph */
+.highlight .gr { color: #FF0000 } /* Generic.Error */
+.highlight .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+.highlight .gi { color: #00A000 } /* Generic.Inserted */
+.highlight .go { color: #808080 } /* Generic.Output */
+.highlight .gp { color: #c65d09; font-weight: bold } /* Generic.Prompt */
+.highlight .gs { font-weight: bold } /* Generic.Strong */
+.highlight .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+.highlight .gt { color: #0040D0 } /* Generic.Traceback */
+.highlight .kc { color: #007020; font-weight: bold } /* Keyword.Constant */
+.highlight .kd { color: #007020; font-weight: bold } /* Keyword.Declaration */
+.highlight .kn { color: #007020; font-weight: bold } /* Keyword.Namespace */
+.highlight .kp { color: #007020 } /* Keyword.Pseudo */
+.highlight .kr { color: #007020; font-weight: bold } /* Keyword.Reserved */
+.highlight .kt { color: #902000 } /* Keyword.Type */
+.highlight .m { color: #40a070 } /* Literal.Number */
+.highlight .s { color: #4070a0 } /* Literal.String */
+.highlight .na { color: #4070a0 } /* Name.Attribute */
+.highlight .nb { color: #007020 } /* Name.Builtin */
+.highlight .nc { color: #0e84b5; font-weight: bold } /* Name.Class */
+.highlight .no { color: #60add5 } /* Name.Constant */
+.highlight .nd { color: #555555; font-weight: bold } /* Name.Decorator */
+.highlight .ni { color: #d55537; font-weight: bold } /* Name.Entity */
+.highlight .ne { color: #007020 } /* Name.Exception */
+.highlight .nf { color: #06287e } /* Name.Function */
+.highlight .nl { color: #002070; font-weight: bold } /* Name.Label */
+.highlight .nn { color: #0e84b5; font-weight: bold } /* Name.Namespace */
+.highlight .nt { color: #062873; font-weight: bold } /* Name.Tag */
+.highlight .nv { color: #bb60d5 } /* Name.Variable */
+.highlight .ow { color: #007020; font-weight: bold } /* Operator.Word */
+.highlight .w { color: #bbbbbb } /* Text.Whitespace */
+.highlight .mf { color: #40a070 } /* Literal.Number.Float */
+.highlight .mh { color: #40a070 } /* Literal.Number.Hex */
+.highlight .mi { color: #40a070 } /* Literal.Number.Integer */
+.highlight .mo { color: #40a070 } /* Literal.Number.Oct */
+.highlight .sb { color: #4070a0 } /* Literal.String.Backtick */
+.highlight .sc { color: #4070a0 } /* Literal.String.Char */
+.highlight .sd { color: #4070a0; font-style: italic } /* Literal.String.Doc */
+.highlight .s2 { color: #4070a0 } /* Literal.String.Double */
+.highlight .se { color: #4070a0; font-weight: bold } /* Literal.String.Escape */
+.highlight .sh { color: #4070a0 } /* Literal.String.Heredoc */
+.highlight .si { color: #70a0d0; font-style: italic } /* Literal.String.Interpol */
+.highlight .sx { color: #c65d09 } /* Literal.String.Other */
+.highlight .sr { color: #235388 } /* Literal.String.Regex */
+.highlight .s1 { color: #4070a0 } /* Literal.String.Single */
+.highlight .ss { color: #517918 } /* Literal.String.Symbol */
+.highlight .bp { color: #007020 } /* Name.Builtin.Pseudo */
+.highlight .vc { color: #bb60d5 } /* Name.Variable.Class */
+.highlight .vg { color: #bb60d5 } /* Name.Variable.Global */
+.highlight .vi { color: #bb60d5 } /* Name.Variable.Instance */
+.highlight .il { color: #40a070 } /* Literal.Number.Integer.Long */</style>
+        <style>body {
+  margin: 0;
+  padding: 0;
+  font: 15px 'Source Sans Pro', sans-serif;
+  line-height: 1.6em;
+  color: #222;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+a {
+  color: #007EE5;
+  text-decoration: none;
+}
+a:hover {
+  color: #007EE5;
+  text-decoration: none;
+}
+header.main-header {
+  background: none repeat scroll 0% 0% #205F29;
+  margin-bottom: 0px;
+}
+header.main-header a {
+  color: #fff;
+}
+header.main-header .container {
+  max-width: 1000px;
+}
+header.main-header .container nav a:hover {
+  background-color: #5C881C;
+}
+article {
+  margin: 0;
+}
+article header.about {
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+}
+article header {
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+}
+article header h1 {
+  margin-bottom: 2px;
+  font-weight: 700;
+  color: #000;
+}
+article header time {
+  color: #9E9E9E;
+  font-size: 0.85em;
+  float: right;
+}
+article header time.left {
+  color: #9E9E9E;
+  font-size: 0.85em;
+  float: left;
+}
+article div.social-links ul {
+  padding: 0px;
+}
+article div.social-links li {
+  display: inline;
+  font-size: 20px;
+}
+article div.social-links li a {
+  color: #000;
+  padding: 10px;
+}
+article div.social-links li a:hover {
+  color: #666;
+  text-decoration: none;
+}
+article p {
+  font-size: 16px;
+  margin-bottom: 20px;
+  line-height: 1.6em;
+}
+article p.note {
+  background: #f5f5f5;
+  border: 1px solid #ddd;
+  padding: 0.533em 0.733em;
+}
+article p.update {
+  background-color: #FEEFB3;
+  border: 1px solid #e6e68a;
+  padding: 0.533em 0.733em;
+}
+article p.alert {
+  background-color: #ffe2e2;
+  border: 1px solid #ffb2b2;
+  padding: 0.533em 0.733em;
+}
+article ol {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+article ol {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+article li {
+  font-size: 16px;
+  line-height: 1.6em;
+}
+article a:hover {
+  text-decoration: underline;
+}
+article blockquote {
+  border-left: 2px solid #c7c7cc;
+  color: #666;
+  margin: 30px 0;
+  padding: 0 0 0 25px;
+}
+article img {
+  max-width: 100%;
+}
+article code {
+  color: #333;
+  background-color: #EEE;
+  border-radius: 0;
+  font-size: 13px;
+}
+article .meta {
+  font-size: 11px;
+}
+article .meta a:hover {
+  text-decoration: none;
+}
+article .meta div {
+  margin-bottom: 20px;
+  display: block;
+}
+article .meta a.tag {
+  margin: 0 10px 10px 0;
+  padding: 1px 12px;
+  display: inline-block;
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.8);
+  background: rgba(0, 0, 0, 0.05);
+}
+article .meta a.tag:hover {
+  background: rgba(0, 0, 0, 0.15);
+}
+article .meta a.read_more,
+article .meta a.comments_btn {
+  font-size: 14px;
+  font-weight: 800;
+  padding: 10px 20px;
+  color: #205F29;
+  background: #FFF;
+  border: 1px solid #205F29;
+}
+article .meta a.read_more:hover,
+article .meta a.comments_btn:hover {
+  color: #FFF;
+  background: #5C881C;
+}
+.index {
+  max-width: 700px;
+}
+.index article header h2 {
+  font-size: 36px;
+  margin-bottom: 2px;
+  font-weight: 700;
+}
+.index article header h2 a {
+  color: #000;
+}
+.index article header h2 a:hover {
+  color: #007EE5;
+  text-decoration: none;
+}
+.index .separator {
+  padding: 40px 0 0 0;
+  margin: 0 0 40px 0;
+  height: 10px;
+  border-bottom: solid 1px #CCC;
+}
+.index .pagination {
+  display: block;
+  margin-bottom: 100px;
+}
+.index .pagination .left {
+  text-align: right;
+}
+.index .pagination .right {
+  text-align: left;
+}
+.index .pagination a {
+  display: inline-block;
+  border: 2px solid #5C881C;
+  margin: 0 5px;
+  padding: 8px 20px;
+  font-weight: bold;
+  color: #5C881C;
+}
+.index .pagination a:hover {
+  color: #FFF;
+  background: #5C881C;
+}
+.post {
+  max-width: 800px;
+}
+.post h2:before {
+  font-weight: bold;
+  color: #DDD;
+}
+.post h3:before {
+  font-weight: bold;
+  color: #DDD;
+}
+.post h4:before {
+  font-weight: bold;
+  color: #DDD;
+}
+.post article .meta {
+  margin: 50px 0 100px;
+}
+.list {
+  max-width: 700px;
+}
+.list ul.double-list {
+  margin: 0 auto 60px;
+  padding: 0;
+  list-style-type: none;
+}
+.list ul.double-list li {
+  padding: 5px 0;
+}
+.list ul.double-list li h2 {
+  font-size: 1em;
+  display: inline;
+  font-weight: normal;
+}
+.list ul.double-list li span {
+  font-family: sans-serif;
+  text-transform: uppercase;
+  text-align: right;
+  float: right;
+  padding-top: 3px;
+  font-size: 12px;
+  color: #999;
+}
+.full-width-content {
+  padding-top: 10px;
+  padding-left: 0px;
+  padding-right: 0px;
+  margin-left: -20px;
+  margin-right: -20px;
+}
+.col-xs-1,
+.col-sm-1,
+.col-md-1,
+.col-lg-1,
+.col-xs-2,
+.col-sm-2,
+.col-md-2,
+.col-lg-2,
+.col-xs-3,
+.col-sm-3,
+.col-md-3,
+.col-lg-3,
+.col-xs-4,
+.col-sm-4,
+.col-md-4,
+.col-lg-4,
+.col-xs-5,
+.col-sm-5,
+.col-md-5,
+.col-lg-5,
+.col-xs-6,
+.col-sm-6,
+.col-md-6,
+.col-lg-6,
+.col-xs-7,
+.col-sm-7,
+.col-md-7,
+.col-lg-7,
+.col-xs-8,
+.col-sm-8,
+.col-md-8,
+.col-lg-8,
+.col-xs-9,
+.col-sm-9,
+.col-md-9,
+.col-lg-9,
+.col-xs-10,
+.col-sm-10,
+.col-md-10,
+.col-lg-10,
+.col-xs-11,
+.col-sm-11,
+.col-md-11,
+.col-lg-11,
+.col-xs-12,
+.col-sm-12,
+.col-md-12,
+.col-lg-12 {
+  padding-right: 0px;
+  padding-left: 0px;
+}</style>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+    </head>
+
+    <body>
+        <header class="navbar navbar-inverse bs-docs-nav">
+            <div class="container-fluid">
+                <div class="navbar-header">
+		  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#theNavbar">
+		    <span class="icon-bar"></span>
+		    <span class="icon-bar"></span>
+		    <span class="icon-bar"></span>
+		  </button>
+                  <a class="navbar-brand" href="/" title="Home" class="title">Movies, Metrics, Musings</a>
+                </div>
+                <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation" id="theNavbar">
+		    <ul class="nav navbar-nav navbar-right">
+                            <li><a href="/pages/about.html" title="About">About</a></li>
+                            <li><a href="/archives.html" title="Archive">Archive</a></li>
+                            <li><a href="/pages/resources.html" title="Resources">Resources</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <div id="wrap">
+<div class="container index">
+
+  <article>
+    <header>
+      <h2><a href="./blog/2018/05/07/thats-what-they-said/">That's What They Said</a></h2>
+      <time datetime="" title="2018-05-07T00:00:00-04:00" pubdate>Mon 07 May 2018</time>
+    </header>
+
+    <div class="article_content">
+      
+The Office has been one of my all-time favorite shows since I caught the <em>"Michael Scott's Dunder Mifflin Scranton Meredith Palmer Memorial Celebrity Rabies Awareness Pro-Am Fun Run Race for the Cure"</em> episode back in 2007. It's absurdly quotable, it's lousy with memorable characters, and it's got one of the best finales I've seen of any show.</p>
+<p>So imagine my delight when I stumble across a dataset cataloguing every single line of dialogue across its 9 seasons. I had to do a bit of data cleaning before I started tinkering around with it (GitHub link below), but ultimately it came out looking like this:</p>
+
+
+
+
+
+
+
+
+
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre>
+
+
+
+
+
+
+
+
+
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>id</th>
+<th>season</th>
+<th>episode</th>
+<th>scene</th>
+<th>line_text</th>
+<th>speaker</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>0</th>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>All right Jim. Your quarterlies look very good...</td>
+<td>michael</td>
+</tr>
+<tr>
+<th>1</th>
+<td>2</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>Oh, I told you. I couldn't close it. So...</td>
+<td>jim</td>
+</tr>
+<tr>
+<th>2</th>
+<td>3</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>So you've come to the master for guidance? Is ...</td>
+<td>michael</td>
+</tr>
+<tr>
+<th>3</th>
+<td>4</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>Actually, you called me in here, but yeah.</td>
+<td>jim</td>
+</tr>
+<tr>
+<th>4</th>
+<td>5</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>All right. Well, let me show you how it's done.</td>
+<td>michael</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+<p>Where each row represents a line of dialogue, labeled by when it happened in the script and who spoke it.</p>
+
+
+
+
+
+
+
+<p>With the help of some simple text-parsing methods, we can better investigate this file for classic lines from the show.</p>
+
+
+
+
+
+
+
+
+
+</pre>
+
+
+
+
+
+
+
+
+
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>id</th>
+<th>season</th>
+<th>episode</th>
+<th>scene</th>
+<th>line_text</th>
+<th>speaker</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>13409</th>
+<td>15346</td>
+<td>3</td>
+<td>20</td>
+<td>1</td>
+<td>Fact.  Bears eat beets.  Bears.  Beets.  Battl...</td>
+<td>jim</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+
+    <div class="meta">
+      <div>
+        <a href="./blog/2018/05/07/thats-what-they-said/" class="read_more">Read more &#8594;</a>
+      </div>
+
+      <div>
+            <a href="./tag/light.html" class="tag">light</a>
+            <a href="./tag/python.html" class="tag">python</a>
+            <a href="./tag/analysis.html" class="tag">analysis</a>
+      </div>
+
+    </div>
+
+  </article>
+  <div class="separator"></div>
+  <article>
+    <header>
+      <h2><a href="./blog/2018/05/01/why-i-switched-to-python-3/">Why I Switched to Python 3</a></h2>
+      <time datetime="" title="2018-05-01T00:00:00-04:00" pubdate>Tue 01 May 2018</time>
+    </header>
+
+    <div class="article_content">
+      
+<p>It took me almost a year and a half of tinkering around in Python to make the jump from 2 to 3. I'd initially picked up Zed Shaw's Learn Python the Hard Way, which was written in 2.7 (but has since been updated to 3). From there, I read through Wes McKinney's Python for Data Analysis (which is also enjoying similar updating). I learned 2 and so I worked in 2. Things were cool.</p>
+<p>However, by the time I wanted to start branching out and <a href="./blog/2017/06/04/trivial-pursuits/">doing some work with Anki</a>, I had run into my first "library not supported for Python 2" issue.</p>
+<p>So I reinstalled Python, begrudgingly started wrapping my <code>print</code> statements in parentheses, and started to poke around in some of the things I'd gain from making the jump.</p>
+<p>But before I share what ultimately brought me around to becoming pro-3, there are two important things to note if you're new and considering "Which version of Python should I use?":</p>
+<ul>
+<li>If you're <strong>not</strong> getting dumped into an environment where you'll be supporting 2.X code, then you've already passed perhaps the biggest pro-2.X argument that exists.</li>
+<li><a href="https://pythonclock.org/">The days of Python 2 support are literally numbered.</a></li>
+</ul>
+<p>I've probably had a few-dozen conversations in the last year where I've said "Just trust me and download 3." And so I wanted to take a minute to highlight a few things that helped me embrace my own cut-over.</p>
+
+    </div>
+
+    <div class="meta">
+      <div>
+        <a href="./blog/2018/05/01/why-i-switched-to-python-3/" class="read_more">Read more &#8594;</a>
+      </div>
+
+      <div>
+            <a href="./tag/python.html" class="tag">python</a>
+            <a href="./tag/technical.html" class="tag">technical</a>
+            <a href="./tag/tools.html" class="tag">tools</a>
+      </div>
+
+    </div>
+
+  </article>
+  <div class="separator"></div>
+  <article>
+    <header>
+      <h2><a href="./blog/2018/01/12/best-picture-consolation-prizes/">Best Picture Consolation Prizes</a></h2>
+      <time datetime="" title="2018-01-12T00:00:00-05:00" pubdate>Fri 12 January 2018</time>
+    </header>
+
+    <div class="article_content">
+      
+<h2 id="last-time-on-dragon-ball-z"><a href="./blog/2018/01/12/best-picture-consolation-prizes/">Last Time on Dragon Ball Z</a><a class="headerlink" href="#last-time-on-dragon-ball-z" title="Permanent link"> </a></h2>
+<p>I sat down to figure out when the announcements for this year's Academy Awards nominees were coming around. Some "basically-napkin-math" later, I'd narrowed it down to three dates:</p>
+<ul>
+<li>Tues, Jan 23rd</li>
+<li>Thurs, Jan 25th</li>
+<li>Tues, Jan 30th</li>
+</ul>
+<p>Poking around a bit further, I found some really weird year-over-year shifts in the dates that they'd announced in the past, as well as some uninspiring numbers regarding viewership in recent years. If the Academy's job was to get people interested in watching their show-- movie enthusiasts and casual viewers alike-- they weren't doing a great job.</p>
+<p><center><img src="./images/oscars2/fb.png" width="500"/></center></p>
+<p>But as I dug into the relationship between the award show and the movies that they celebrate, a bigger, more interesting picture started to unfold. I had a growing confidence that I would be able to correctly pick a winner from my three candidate dates...</p>
+
+    </div>
+
+    <div class="meta">
+      <div>
+        <a href="./blog/2018/01/12/best-picture-consolation-prizes/" class="read_more">Read more &#8594;</a>
+      </div>
+
+      <div>
+            <a href="./tag/analysis.html" class="tag">analysis</a>
+            <a href="./tag/data.html" class="tag">data</a>
+            <a href="./tag/movies.html" class="tag">movies</a>
+            <a href="./tag/pandas.html" class="tag">pandas</a>
+            <a href="./tag/python.html" class="tag">python</a>
+            <a href="./tag/scraping.html" class="tag">scraping</a>
+            <a href="./tag/viz.html" class="tag">viz</a>
+      </div>
+
+    </div>
+
+  </article>
+  <div class="separator"></div>
+  <article>
+    <header>
+      <h2><a href="./blog/2018/01/07/a-different-kind-of-oscar-prediction/">A Different Kind of Oscar Prediction</a></h2>
+      <time datetime="" title="2018-01-07T00:00:00-05:00" pubdate>Sun 07 January 2018</time>
+    </header>
+
+    <div class="article_content">
+      
+<p>I sat down the other day to start piecing together a tentative "Best of 2017" list. It's been a busy year and I didn't get around to seeing everything that I'd meant to, and it occurred to me that making such a list before seeing like a dozen good movies feels like a miss. Which isn't really a huge issue-- most of the gaps in my watchlist have only just started screening near me. Still, the question remained of "what sort of arbitrary deadline was I going to hold myself to?"</p>
+<p>To that end, it felt like the Academy Awards were probably a good a cutoff point as any. But when are those again? I checked out their site and turns out they're on March 4th this year. Which was a lot earlier than I would have guessed. They must be getting ready to announce nominees soon.</p>
+<h1 id="so-when">So When?<a class="headerlink" href="#so-when" title="Permanent link"> </a></h1>
+<p>I thought it'd be a fun, dumb little exercise in making an educated, data-driven guess. So I took to all of the various Wikipedia pages and started manually tabulating historical announcement and award show dates by year, going back to 1990.</p>
+
+    </div>
+
+    <div class="meta">
+      <div>
+        <a href="./blog/2018/01/07/a-different-kind-of-oscar-prediction/" class="read_more">Read more &#8594;</a>
+      </div>
+
+      <div>
+            <a href="./tag/meta.html" class="tag">meta</a>
+            <a href="./tag/movies.html" class="tag">movies</a>
+            <a href="./tag/python.html" class="tag">python</a>
+            <a href="./tag/scraping.html" class="tag">scraping</a>
+            <a href="./tag/viz.html" class="tag">viz</a>
+      </div>
+
+    </div>
+
+  </article>
+  <div class="separator"></div>
+  <article>
+    <header>
+      <h2><a href="./blog/2017/12/06/dmv-paradox-with-a-side-of-hash/">DMV Paradox, with a Side of Hash</a></h2>
+      <time datetime="" title="2017-12-06T00:00:00-05:00" pubdate>Wed 06 December 2017</time>
+    </header>
+
+    <div class="article_content">
+      
+<p><a href="https://www.youtube.com/watch?v=yWDB4tCEczM">Not necessarily related mood music</a>. If this sounds like your thing and you're in SE Michigan, do yourself a favor and check them out.</p>
+<p>Anyhow, I was out doing some errand running a few months ago and happened upon a dumb application of a famous math problem you may have heard of. I've wanted to get a post about this for some time now, but as I wrote, I realized that some of the math in this unrelated problem helped inform some intuition regarding a CS fundamental I've been tinkering with a whole lot lately.</p>
+<h1 id="the-birthday-paradox">The Birthday Paradox<a class="headerlink" href="#the-birthday-paradox" title="Permanent link"> </a></h1>
+<p>Perhaps you've heard of the Birthday Paradox. Essentially, it states that if 23 people are in the same room, it's more likely than not that two of them have the same birthday. Moreover, if you have 75 people in the room, you can be 99.9% certain that at least one pair of them share a birthday.</p>
+<p>This might not be immediately intuitive (hence the "paradox" part). I think mentally, everyone would easily accept 366 people in a room as a guarantee to see at least one pair, but to unpack why you can be half-certain with dramatically fewer people, you need to consider two things:</p>
+
+    </div>
+
+    <div class="meta">
+      <div>
+        <a href="./blog/2017/12/06/dmv-paradox-with-a-side-of-hash/" class="read_more">Read more &#8594;</a>
+      </div>
+
+      <div>
+            <a href="./tag/math.html" class="tag">math</a>
+            <a href="./tag/musing.html" class="tag">musing</a>
+            <a href="./tag/python.html" class="tag">python</a>
+            <a href="./tag/viz.html" class="tag">viz</a>
+      </div>
+
+    </div>
+
+  </article>
+  <div class="separator"></div>
+  <article>
+    <header>
+      <h2><a href="./blog/2017/10/08/the-right-tool-for-the-any-job/">The Right Tool for ̶t̶h̶e̶ Any Job</a></h2>
+      <time datetime="" title="2017-10-08T00:00:00-04:00" pubdate>Sun 08 October 2017</time>
+    </header>
+
+    <div class="article_content">
+      
+<p>I'm sure we've all heard the "Hire a lazy person to do a job" Bill Gates quote a million times. But what does that actually mean? In the weeks leading up to and after <a href="./blog/2017/09/15/hey-hows-it-going-empirically/">my last post on my Daylio data</a>, I've been thinking a lot about tools.</p>
+<p>And this is far less about what hardware you're using when you sit down to knock something out. Nor is it a stance on the Python vs R vs whatever else debate. Instead, I want to talk a bit about the way I consider tooling as an analyst, and how that's changed over the past couple of years.</p>
+
+    </div>
+
+    <div class="meta">
+      <div>
+        <a href="./blog/2017/10/08/the-right-tool-for-the-any-job/" class="read_more">Read more &#8594;</a>
+      </div>
+
+      <div>
+            <a href="./tag/meta.html" class="tag">meta</a>
+            <a href="./tag/musing.html" class="tag">musing</a>
+            <a href="./tag/python.html" class="tag">python</a>
+            <a href="./tag/technical.html" class="tag">technical</a>
+            <a href="./tag/tools.html" class="tag">tools</a>
+      </div>
+
+    </div>
+
+  </article>
+  <div class="separator"></div>
+  <article>
+    <header>
+      <h2><a href="./blog/2017/09/15/hey-hows-it-going-empirically/">Hey, How's it Going? (Empirically)</a></h2>
+      <time datetime="" title="2017-09-15T00:00:00-04:00" pubdate>Fri 15 September 2017</time>
+    </header>
+
+    <div class="article_content">
+      
+<p><span style="color:red">Fair warning: Some less-than-wholesome language below.</span></p>
+<h1 id="background">Background<a class="headerlink" href="#background" title="Permanent link"> </a></h1>
+<p><a href="https://www.youtube.com/watch?v=k5Dypaw46fA">Mood Music</a></p>
+<p>Generally speaking, I've always struggled with mental health stuff and in turn, go through varying levels of "do something about it." Feels like I spend a good chunk of time vacillating wildly between "too anxious to keep anything straight" and "too depressed to want to keep anything straight." Of course, there are long tears where this is less the case, but it always felt borderline-arbitrary how things would just come and go.</p>
+<p>So as I've mentioned in <a href="./pages/resources.html">previous posts</a>, I've been using a mobile app called Daylio for the better part of a year. It was recommended to me by my good friend Will when I was going through something of a slump as a way to try and sort things out. Figured it was probably a better better approach to do something instead of literally nothing from a monitoring/reflection standpoint.
+Naturally, I gravitated to something that would metricize what I couldn't get a good handle on, because:</p>
+<p><center><img src="./images/daylio/job.jpg"/></center>
+<center>For real.</center></p>
+
+    </div>
+
+    <div class="meta">
+      <div>
+        <a href="./blog/2017/09/15/hey-hows-it-going-empirically/" class="read_more">Read more &#8594;</a>
+      </div>
+
+      <div>
+            <a href="./tag/architecture.html" class="tag">architecture</a>
+            <a href="./tag/python.html" class="tag">python</a>
+            <a href="./tag/technical.html" class="tag">technical</a>
+            <a href="./tag/tools.html" class="tag">tools</a>
+            <a href="./tag/viz.html" class="tag">viz</a>
+            <a href="./tag/wellness.html" class="tag">wellness</a>
+      </div>
+
+    </div>
+
+  </article>
+  <div class="separator"></div>
+  <article>
+    <header>
+      <h2><a href="./blog/2017/08/18/thoughts-about-tech-debt/">A Lot of Thoughts About Tech Debt</a></h2>
+      <time datetime="" title="2017-08-18T00:00:00-04:00" pubdate>Fri 18 August 2017</time>
+    </header>
+
+    <div class="article_content">
+      
+<h1 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link"> </a></h1>
+<p>So I finally finished <a href="https://www.amazon.com/Phoenix-Project-DevOps-Helping-Business/dp/0988262509/ref=sr_1_1?ie=UTF8&amp;qid=1502758279&amp;sr=8-1&amp;keywords=phoenix+project">The Phoenix Project</a> after chugging along on it for the better part of a month. Pulling, verbatim, from a summary paragraph at the beginning of the reference section, I'll let it explain itself better than I could:</p>
+<blockquote>
+<p><strong>The Phoenix Project</strong> frames how a core, chronic conflict between Development and IT Operations preordains failure for the entire IT organization, as well as the organization it serves. Left unchecked, the conflict increases time to market for Development, creates longer and more problematic deployments during feature releases, increases the number of Sev 1 outages, and IT Operations becomes increasingly buried with unplanned work, making it difficult to retire technical debt.</p>
+</blockquote>
+<p>I picked this book up for a number of reasons-- not least of which because I see it all over the desks of our Network Operations folks as I pass to and fro to the kitchen to sate a moderate coffee habit. But I also picked it up to try and find some new perspective on what I'd characterize as a tough couple of months transitioning to a totally different business (and by extension subject-expertise) area. I'd gotten pretty good at tinkering with what I knew, but found myself unbelievably frustrated by how much effort it was taking me just to hit the bare minimum of something new. In hindsight, the good bulk of it was inevitable growing pains-- the more exposure you have in an area, the easier it becomes to take on and contextualize new information and pick good projects. Nevertheless, I struggled to reconcile knowing that there had to be a better way and not knowing how to plan/build whatever that meant.</p>
+
+    </div>
+
+    <div class="meta">
+      <div>
+        <a href="./blog/2017/08/18/thoughts-about-tech-debt/" class="read_more">Read more &#8594;</a>
+      </div>
+
+      <div>
+            <a href="./tag/architecture.html" class="tag">architecture</a>
+            <a href="./tag/long.html" class="tag">long</a>
+            <a href="./tag/meta.html" class="tag">meta</a>
+            <a href="./tag/musing.html" class="tag">musing</a>
+            <a href="./tag/technical.html" class="tag">technical</a>
+      </div>
+
+    </div>
+
+  </article>
+  <div class="separator"></div>
+  <article>
+    <header>
+      <h2><a href="./blog/2017/06/23/for-frame-in-movie-make_bars/">for frame in movie: make_bars()</a></h2>
+      <time datetime="" title="2017-06-23T00:00:00-04:00" pubdate>Fri 23 June 2017</time>
+    </header>
+
+    <div class="article_content">
+      
+<p><a href="https://www.youtube.com/watch?v=GI6CfKcMhjY">Related mood music (see below)</a>. Revisited this one for the first time in a long while today and have been listening to it on repeat while I typed up this blog.</p>
+<p><strong>Total Plays at the Time I Hit Publish: 21</strong></p>
+<p>Anyhow, I stumbled across a wildly amusing Reddit thread a couple years ago where a user had basically:</p>
+<ul>
+<li>Got ahold of various movies through one mean or another</li>
+<li>Went through and calculated the average color in each frame</li>
+<li>Used those values to make a bunch of vertical bars that mapped the progression of color through the movie</li>
+</ul>
+<p><a href="https://imgur.com/gallery/Pw6LD/">Check it out. It's pretty cool.</a></p>
+<p>The Internet has taken to calling these Movie Bar Codes (which drives the pedant in me insane, lol) and other users have some pretty cool galleries of their takes on the project. One of my favorites is a <a href="http://moviebarcode.tumblr.com/">tumblr user whose been cranking out dozens of them</a>, with a grainier, hand-brushed aesthetic. So I bookmarked the links into my "would be cool to do" folder, then totally forgot about it.</p>
+<p><center><img height="400" src="./images/moviebars/jackmkv.png" width="700"/></center>
+<center><strong>The Jack Sparrow music video:</strong> Look at how starkly that first Jack Sparrow scene pops at the first white bar, lol</center></p>
+
+    </div>
+
+    <div class="meta">
+      <div>
+        <a href="./blog/2017/06/23/for-frame-in-movie-make_bars/" class="read_more">Read more &#8594;</a>
+      </div>
+
+      <div>
+            <a href="./tag/data.html" class="tag">data</a>
+            <a href="./tag/movies.html" class="tag">movies</a>
+            <a href="./tag/python.html" class="tag">python</a>
+            <a href="./tag/viz.html" class="tag">viz</a>
+      </div>
+
+    </div>
+
+  </article>
+  <div class="separator"></div>
+  <article>
+    <header>
+      <h2><a href="./blog/2017/06/04/trivial-pursuits/">Trivial Pursuits in Sports and Web Scraping</a></h2>
+      <time datetime="" title="2017-06-04T00:00:00-04:00" pubdate>Sun 04 June 2017</time>
+    </header>
+
+    <div class="article_content">
+      
+<h2 id="high-volume-but-to-what-end">High Volume, but to what End?<a class="headerlink" href="#high-volume-but-to-what-end" title="Permanent link"> </a></h2>
+<p>So in the past couple of years, I've gone on tears where I'm addicted to MOOC's (or Massive Open Online Courses, like Coursera, Khan Academy, etc). Occasionally, I'll really connect with some exceptional material, for instance</p>
+<ul>
+<li>I'm currently revisiting <a href="https://www.coursera.org/learn/machine-learning">Andrew Ng's Machine Learning course</a>, which I loved, and trying my damnedest to implement the whole thing in Python, not Matlab/Octave.</li>
+<li>I got a ton out of the <a href="https://www.coursera.org/learn/analytics-tableau">Data Visualization and Communication in Tableau</a> course.</li>
+<li>And I recently had a ton of fun learning the fundamentals of MapReduce with [Udacity](https://www.udacity.com/course/intro-to-hadoop-and-mapreduce--ud617.</li>
+</ul>
+<p>Though, perhaps equally often, I'll engage with a course for a few then give up-- like that time <a href="https://soundcloud.com/manifes7o/coursera-week1">I was really excited about Jazz Improvization</a> and then got distracted with other things. More perilous, I'm coming to understand that get addicted to the dopamine rush of bookmarking the hell out of everything, and never following up. It's a low-effort, high-"feels"-dividend to imagine all of the cool things that I WILL be learning..........someday. (For real, don't ask me how many O'Reilly manuals I own but haven't read.)</p>
+<p>Eventually, it occurred to me that I got really good at watching YouTube videos and following along. Ultimately, though, I was kind of shit at keeping all of the information in my head. Truth be told, looking back-- even at courses that I really enjoyed-- my experience in academia can largely be summarized with the phrase</p>
+<p>"Okay. I'll do what I need to to get the grade now, but I'm going to come back and really learn this later."</p>
+
+    </div>
+
+    <div class="meta">
+      <div>
+        <a href="./blog/2017/06/04/trivial-pursuits/" class="read_more">Read more &#8594;</a>
+      </div>
+
+      <div>
+            <a href="./tag/python.html" class="tag">python</a>
+            <a href="./tag/scraping.html" class="tag">scraping</a>
+            <a href="./tag/tools.html" class="tag">tools</a>
+            <a href="./tag/trivia.html" class="tag">trivia</a>
+      </div>
+
+    </div>
+
+  </article>
+  <div class="separator"></div>
+
+  <nav class="pagination row">
+    <div class="col-xs-6 left">
+        <a class="prev" href="./index2.html">&#8592; Past</a>
+    </div>
+    <div class="col-xs-6 right">
+    </div>
+  </nav>
+
+  </div>
+
+</div>
+
+        </div>
+<!--
+    <footer>
+      <p>
+        © 2012-2017 Nick, license <a href=""> </a>
+        unless otherwise noted.
+        Generated by <a href= "http://docs.getpelican.com/">Pelican</a>.
+      </p>
+    </footer>
+-->
+    </body>
+</html>

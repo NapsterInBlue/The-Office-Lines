@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="author" content="Nick">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+        <title>DMV Paradox, with a Side of Hash | Movies, Metrics, Musings</title>
+
+	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+	<link rel="icon" href="/favicon.ico" type="image/x-icon">
+        <link rel="alternate" type="application/atom+xml" title="Movies, Metrics, Musings blog atom feed" href="/feeds/all.atom.xml" />
+        <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700' rel='stylesheet' type='text/css'>
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="/theme/css/icons.css"/>
+        <style>.highlight .hll { background-color: #ffffcc }
+.highlight .c { color: #60a0b0; font-style: italic } /* Comment */
+.highlight .err { border: 1px solid #FF0000 } /* Error */
+.highlight .k { color: #007020; font-weight: bold } /* Keyword */
+.highlight .o { color: #666666 } /* Operator */
+.highlight .cm { color: #60a0b0; font-style: italic } /* Comment.Multiline */
+.highlight .cp { color: #007020 } /* Comment.Preproc */
+.highlight .c1 { color: #60a0b0; font-style: italic } /* Comment.Single */
+.highlight .cs { color: #60a0b0; background-color: #fff0f0 } /* Comment.Special */
+.highlight .gd { color: #A00000 } /* Generic.Deleted */
+.highlight .ge { font-style: italic } /* Generic.Emph */
+.highlight .gr { color: #FF0000 } /* Generic.Error */
+.highlight .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+.highlight .gi { color: #00A000 } /* Generic.Inserted */
+.highlight .go { color: #808080 } /* Generic.Output */
+.highlight .gp { color: #c65d09; font-weight: bold } /* Generic.Prompt */
+.highlight .gs { font-weight: bold } /* Generic.Strong */
+.highlight .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+.highlight .gt { color: #0040D0 } /* Generic.Traceback */
+.highlight .kc { color: #007020; font-weight: bold } /* Keyword.Constant */
+.highlight .kd { color: #007020; font-weight: bold } /* Keyword.Declaration */
+.highlight .kn { color: #007020; font-weight: bold } /* Keyword.Namespace */
+.highlight .kp { color: #007020 } /* Keyword.Pseudo */
+.highlight .kr { color: #007020; font-weight: bold } /* Keyword.Reserved */
+.highlight .kt { color: #902000 } /* Keyword.Type */
+.highlight .m { color: #40a070 } /* Literal.Number */
+.highlight .s { color: #4070a0 } /* Literal.String */
+.highlight .na { color: #4070a0 } /* Name.Attribute */
+.highlight .nb { color: #007020 } /* Name.Builtin */
+.highlight .nc { color: #0e84b5; font-weight: bold } /* Name.Class */
+.highlight .no { color: #60add5 } /* Name.Constant */
+.highlight .nd { color: #555555; font-weight: bold } /* Name.Decorator */
+.highlight .ni { color: #d55537; font-weight: bold } /* Name.Entity */
+.highlight .ne { color: #007020 } /* Name.Exception */
+.highlight .nf { color: #06287e } /* Name.Function */
+.highlight .nl { color: #002070; font-weight: bold } /* Name.Label */
+.highlight .nn { color: #0e84b5; font-weight: bold } /* Name.Namespace */
+.highlight .nt { color: #062873; font-weight: bold } /* Name.Tag */
+.highlight .nv { color: #bb60d5 } /* Name.Variable */
+.highlight .ow { color: #007020; font-weight: bold } /* Operator.Word */
+.highlight .w { color: #bbbbbb } /* Text.Whitespace */
+.highlight .mf { color: #40a070 } /* Literal.Number.Float */
+.highlight .mh { color: #40a070 } /* Literal.Number.Hex */
+.highlight .mi { color: #40a070 } /* Literal.Number.Integer */
+.highlight .mo { color: #40a070 } /* Literal.Number.Oct */
+.highlight .sb { color: #4070a0 } /* Literal.String.Backtick */
+.highlight .sc { color: #4070a0 } /* Literal.String.Char */
+.highlight .sd { color: #4070a0; font-style: italic } /* Literal.String.Doc */
+.highlight .s2 { color: #4070a0 } /* Literal.String.Double */
+.highlight .se { color: #4070a0; font-weight: bold } /* Literal.String.Escape */
+.highlight .sh { color: #4070a0 } /* Literal.String.Heredoc */
+.highlight .si { color: #70a0d0; font-style: italic } /* Literal.String.Interpol */
+.highlight .sx { color: #c65d09 } /* Literal.String.Other */
+.highlight .sr { color: #235388 } /* Literal.String.Regex */
+.highlight .s1 { color: #4070a0 } /* Literal.String.Single */
+.highlight .ss { color: #517918 } /* Literal.String.Symbol */
+.highlight .bp { color: #007020 } /* Name.Builtin.Pseudo */
+.highlight .vc { color: #bb60d5 } /* Name.Variable.Class */
+.highlight .vg { color: #bb60d5 } /* Name.Variable.Global */
+.highlight .vi { color: #bb60d5 } /* Name.Variable.Instance */
+.highlight .il { color: #40a070 } /* Literal.Number.Integer.Long */</style>
+        <style>body {
+  margin: 0;
+  padding: 0;
+  font: 15px 'Source Sans Pro', sans-serif;
+  line-height: 1.6em;
+  color: #222;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+a {
+  color: #007EE5;
+  text-decoration: none;
+}
+a:hover {
+  color: #007EE5;
+  text-decoration: none;
+}
+header.main-header {
+  background: none repeat scroll 0% 0% #205F29;
+  margin-bottom: 0px;
+}
+header.main-header a {
+  color: #fff;
+}
+header.main-header .container {
+  max-width: 1000px;
+}
+header.main-header .container nav a:hover {
+  background-color: #5C881C;
+}
+article {
+  margin: 0;
+}
+article header.about {
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+}
+article header {
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+}
+article header h1 {
+  margin-bottom: 2px;
+  font-weight: 700;
+  color: #000;
+}
+article header time {
+  color: #9E9E9E;
+  font-size: 0.85em;
+  float: right;
+}
+article header time.left {
+  color: #9E9E9E;
+  font-size: 0.85em;
+  float: left;
+}
+article div.social-links ul {
+  padding: 0px;
+}
+article div.social-links li {
+  display: inline;
+  font-size: 20px;
+}
+article div.social-links li a {
+  color: #000;
+  padding: 10px;
+}
+article div.social-links li a:hover {
+  color: #666;
+  text-decoration: none;
+}
+article p {
+  font-size: 16px;
+  margin-bottom: 20px;
+  line-height: 1.6em;
+}
+article p.note {
+  background: #f5f5f5;
+  border: 1px solid #ddd;
+  padding: 0.533em 0.733em;
+}
+article p.update {
+  background-color: #FEEFB3;
+  border: 1px solid #e6e68a;
+  padding: 0.533em 0.733em;
+}
+article p.alert {
+  background-color: #ffe2e2;
+  border: 1px solid #ffb2b2;
+  padding: 0.533em 0.733em;
+}
+article ol {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+article ol {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+article li {
+  font-size: 16px;
+  line-height: 1.6em;
+}
+article a:hover {
+  text-decoration: underline;
+}
+article blockquote {
+  border-left: 2px solid #c7c7cc;
+  color: #666;
+  margin: 30px 0;
+  padding: 0 0 0 25px;
+}
+article img {
+  max-width: 100%;
+}
+article code {
+  color: #333;
+  background-color: #EEE;
+  border-radius: 0;
+  font-size: 13px;
+}
+article .meta {
+  font-size: 11px;
+}
+article .meta a:hover {
+  text-decoration: none;
+}
+article .meta div {
+  margin-bottom: 20px;
+  display: block;
+}
+article .meta a.tag {
+  margin: 0 10px 10px 0;
+  padding: 1px 12px;
+  display: inline-block;
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.8);
+  background: rgba(0, 0, 0, 0.05);
+}
+article .meta a.tag:hover {
+  background: rgba(0, 0, 0, 0.15);
+}
+article .meta a.read_more,
+article .meta a.comments_btn {
+  font-size: 14px;
+  font-weight: 800;
+  padding: 10px 20px;
+  color: #205F29;
+  background: #FFF;
+  border: 1px solid #205F29;
+}
+article .meta a.read_more:hover,
+article .meta a.comments_btn:hover {
+  color: #FFF;
+  background: #5C881C;
+}
+.index {
+  max-width: 700px;
+}
+.index article header h2 {
+  font-size: 36px;
+  margin-bottom: 2px;
+  font-weight: 700;
+}
+.index article header h2 a {
+  color: #000;
+}
+.index article header h2 a:hover {
+  color: #007EE5;
+  text-decoration: none;
+}
+.index .separator {
+  padding: 40px 0 0 0;
+  margin: 0 0 40px 0;
+  height: 10px;
+  border-bottom: solid 1px #CCC;
+}
+.index .pagination {
+  display: block;
+  margin-bottom: 100px;
+}
+.index .pagination .left {
+  text-align: right;
+}
+.index .pagination .right {
+  text-align: left;
+}
+.index .pagination a {
+  display: inline-block;
+  border: 2px solid #5C881C;
+  margin: 0 5px;
+  padding: 8px 20px;
+  font-weight: bold;
+  color: #5C881C;
+}
+.index .pagination a:hover {
+  color: #FFF;
+  background: #5C881C;
+}
+.post {
+  max-width: 800px;
+}
+.post h2:before {
+  font-weight: bold;
+  color: #DDD;
+}
+.post h3:before {
+  font-weight: bold;
+  color: #DDD;
+}
+.post h4:before {
+  font-weight: bold;
+  color: #DDD;
+}
+.post article .meta {
+  margin: 50px 0 100px;
+}
+.list {
+  max-width: 700px;
+}
+.list ul.double-list {
+  margin: 0 auto 60px;
+  padding: 0;
+  list-style-type: none;
+}
+.list ul.double-list li {
+  padding: 5px 0;
+}
+.list ul.double-list li h2 {
+  font-size: 1em;
+  display: inline;
+  font-weight: normal;
+}
+.list ul.double-list li span {
+  font-family: sans-serif;
+  text-transform: uppercase;
+  text-align: right;
+  float: right;
+  padding-top: 3px;
+  font-size: 12px;
+  color: #999;
+}
+.full-width-content {
+  padding-top: 10px;
+  padding-left: 0px;
+  padding-right: 0px;
+  margin-left: -20px;
+  margin-right: -20px;
+}
+.col-xs-1,
+.col-sm-1,
+.col-md-1,
+.col-lg-1,
+.col-xs-2,
+.col-sm-2,
+.col-md-2,
+.col-lg-2,
+.col-xs-3,
+.col-sm-3,
+.col-md-3,
+.col-lg-3,
+.col-xs-4,
+.col-sm-4,
+.col-md-4,
+.col-lg-4,
+.col-xs-5,
+.col-sm-5,
+.col-md-5,
+.col-lg-5,
+.col-xs-6,
+.col-sm-6,
+.col-md-6,
+.col-lg-6,
+.col-xs-7,
+.col-sm-7,
+.col-md-7,
+.col-lg-7,
+.col-xs-8,
+.col-sm-8,
+.col-md-8,
+.col-lg-8,
+.col-xs-9,
+.col-sm-9,
+.col-md-9,
+.col-lg-9,
+.col-xs-10,
+.col-sm-10,
+.col-md-10,
+.col-lg-10,
+.col-xs-11,
+.col-sm-11,
+.col-md-11,
+.col-lg-11,
+.col-xs-12,
+.col-sm-12,
+.col-md-12,
+.col-lg-12 {
+  padding-right: 0px;
+  padding-left: 0px;
+}</style>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+    </head>
+
+    <body>
+        <header class="navbar navbar-inverse bs-docs-nav">
+            <div class="container-fluid">
+                <div class="navbar-header">
+		  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#theNavbar">
+		    <span class="icon-bar"></span>
+		    <span class="icon-bar"></span>
+		    <span class="icon-bar"></span>
+		  </button>
+                  <a class="navbar-brand" href="/" title="Home" class="title">Movies, Metrics, Musings</a>
+                </div>
+                <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation" id="theNavbar">
+		    <ul class="nav navbar-nav navbar-right">
+                            <li><a href="/pages/about.html" title="About">About</a></li>
+                            <li><a href="/archives.html" title="Archive">Archive</a></li>
+                            <li><a href="/pages/resources.html" title="Resources">Resources</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <div id="wrap">
+<div class="container post">
+    <article>
+        <header>
+            <h1>DMV Paradox, with a Side of Hash</h1>
+            <time datetime="article.date.isoformat()" pubdate>Wed 06 December 2017</time>
+        </header>
+
+        <div class="panel panel-default">
+            <div class="panel-heading">Table of Contents</div>
+            <div class="panel-body">
+            <div id="toc"><ul><li><a class="toc-href" href="#the-birthday-paradox" title="The Birthday Paradox ">The Birthday Paradox </a><ul><li><a '="" a="" birthday?="" class="toc-href" different="" having="" href="#whats-the-probability-of-having-a-different-birthday" of="" probability="" s="" the="" title="What">What's the probability of having a different birthday? </a></li><li><a class="toc-href" href="#how-many-comparisons-are-you-considering" title="How many comparisons are you considering? ">How many comparisons are you considering? </a></li><li><a class="toc-href" href="#merging-the-two" title="Merging the Two ">Merging the Two </a></li></ul></li><li><a class="toc-href" href="#the-dmv_1" title="The DMV ">The DMV </a><ul><li><a class="toc-href" href="#wait-what-are-the-odds" title="Wait, What are the Odds? ">Wait, What are the Odds? </a></li></ul></li><li><a class="toc-href" href="#generalizing-even-more_1" title="Generalizing Even More ">Generalizing Even More </a></li><li><a class="toc-href" href="#hash-values" title="Hash Values ">Hash Values </a><ul><li><a class="toc-href" href="#at-scale" title="At Scale ">At Scale </a></li></ul></li><li><a class="toc-href" href="#conclusion_1" title="Conclusion ">Conclusion </a></li><li><a class="toc-href" href="#notes" title="Notes ">Notes </a></li></ul></div>
+            </div>
+        </div>
+
+        <div class="article_content">
+            
+<p><a href="https://www.youtube.com/watch?v=yWDB4tCEczM">Not necessarily related mood music</a>. If this sounds like your thing and you're in SE Michigan, do yourself a favor and check them out.</p>
+<p>Anyhow, I was out doing some errand running a few months ago and happened upon a dumb application of a famous math problem you may have heard of. I've wanted to get a post about this for some time now, but as I wrote, I realized that some of the math in this unrelated problem helped inform some intuition regarding a CS fundamental I've been tinkering with a whole lot lately.</p>
+<h1 id="the-birthday-paradox">The Birthday Paradox<a class="headerlink" href="#the-birthday-paradox" title="Permanent link"> </a></h1>
+<p>Perhaps you've heard of the Birthday Paradox. Essentially, it states that if 23 people are in the same room, it's more likely than not that two of them have the same birthday. Moreover, if you have 75 people in the room, you can be 99.9% certain that at least one pair of them share a birthday.</p>
+<p>This might not be immediately intuitive (hence the "paradox" part). I think mentally, everyone would easily accept 366 people in a room as a guarantee to see at least one pair, but to unpack why you can be half-certain with dramatically fewer people, you need to consider two things:</p>
+
+<h2 id="whats-the-probability-of-having-a-different-birthday">What's the probability of having a different birthday?<a class="headerlink" href="#whats-the-probability-of-having-a-different-birthday" title="Permanent link"> </a></h2>
+<p>Let's assume a wild hypothetical where your birthday is on July 8th (and you procrastinate writing about an idea you had nearly 5 months). This means that there are <strong>364 / 365</strong> possible days that aren't your birthday-- 99.72% chance that a day selected at random is a different calendar day from your birthday.</p>
+<p>And so you to turn to your neighbor and ask them their birthday. It's a different day, which could be expected as reasoned above.</p>
+<p>Next you turn to your other neighbor and repeat the exercise. Note here that now you're entering a realm of compounding probabilities. In much the same manner that the probability that you flip two consecutive fair coins to heads is 1/4 (= 1/2 * 1/2), the probability that you find two consecutive different dates is (364/365 * 364/365) = 99.45%</p>
+<p>You go on and repeat this until you've sampled 100 people and come up with (364 / 365) ^ 100 = 76% chance there's not a single match. But this is far from the 50% likelihood I quoted in the first paragraph-- and with seemingly 4 times as many people. What gives?</p>
+<h2 id="how-many-comparisons-are-you-considering">How many comparisons are you considering?<a class="headerlink" href="#how-many-comparisons-are-you-considering" title="Permanent link"> </a></h2>
+<p>In our last example above, you were only considering 100 different pairs of people, and they were all you-centric. However, this fails to consider all of the checks that are happening in the room that don't involve you. Instead, we should think of the number of pairs in a room as the number of people times the number of potential partners, divided by two to correct for double-counting. This gives us:</p>
+<p><center><img src="../../../../../images/birthday/pairs.PNG" width="400"/></center></p>
+<p>In our example we reached out to 100 people, which means that there must've been 101 people in the room (100 plus you), giving us (101) * (100) / 2 = 5050 pairs. A few more comparisons than we were considering, yeah?</p>
+<h2 id="merging-the-two">Merging the Two<a class="headerlink" href="#merging-the-two" title="Permanent link"> </a></h2>
+<p>And so when you combine the probability of each check for different birthdays with the correct number of checks given a number of people in the room, you wind up with a neat equation for "Probability of No-Birthday-Matches" as follows:</p>
+<p><center><img src="../../../../../images/birthday/birthdayEq.PNG" width="400"/></center></p>
+<p>Using this same equation, but tinkering with the number of people in the room (the exponent), we can see that the probability that there are no matches quickly goes to zero.</p>
+<p><center><img src="../../../../../images/birthday/birthday.PNG" width="600"/></center></p>
+<p>Indeed, we only need 23 people to be about 50% confident that there's no match. At 41 people, there's a 10% chance of that still being true, and at only 58, we're 99% confident that there's a birthday pair.</p>
+<h1 id="the-dmv_1">The DMV<a class="headerlink" href="#the-dmv" title="Permanent link"> </a></h1>
+<p>So I'm sitting at the DMV waiting to getting my license renewed. It's a Wednesday afternoon, their "Super Hours" day where you don't have to take off work to do paperwork that you're legally required to do. Naturally it's a circus of unhappy people milling about.</p>
+<p>However, they've got this cool feature nowadays where you can register with your phone number and they'll text you when you should head back (presumably while you aimlessly wander around the adjoining strip mall). The bureaucracy is still a headache, but the added convenience is certainly appreciated.</p>
+<p>I didn't have anything better to do so I nabbed a seat and started bouncing back and forth between some trivia flash cards and the copy of Lost Boys by Orson Scott Card a friend had lent me (decent book, by the by, if a slow one). But then I look up and see:</p>
+<p><center>
+```
+ALL SERVICES</center></p>
+<p>CUSTOMERS WAITING: 107</p>
+<p>TOTAL FORECAST WAIT: 2 hr, 11 min
+```
+</p>
+<p>And underneath that there was a big board of positional rankings of everyone's phone numbers. Not the whole number, mind you, the last 4 digits. (Could you imagine? lol) It was organized into two columns of about 25 each and was, thankfully, moving at a pretty good pace.</p>
+<p>After 10 minutes or so, I got excited because I thought that my number had finally entered the arena, despite being quoted an hour and a half wait. Alas, I was actually looking at someone else's phone number and had flipped an 8 and a 3 from afar. I was, of course, still not even on the board yet. Someone just had basically the same number as me. What are the odds?</p>
+<h2 id="wait-what-are-the-odds">Wait, What are the Odds?<a class="headerlink" href="#wait-what-are-the-odds" title="Permanent link"> </a></h2>
+<p>And so we have a room full of people of variable length and a fixed number of possible values (phone numbers ending in 0000 to 9999 allows for 10,000 different values). This is basically the same problem as above, yeah?</p>
+<p>If we generalize the formula we used above a bit, we get</p>
+<p><center><img src="../../../../../images/birthday/genEq.PNG" width="500"/></center></p>
+<p>Where NumValues is the number of possible values that we could check for (365 calendar days in the Birthday Paradox) and PopSize is the number of people in the room.</p>
+<p>A bit of computer nonsense&trade; later, and we can repeat the same "hold the possible values constant and tinker with the number of people" as above. We see that it takes about 118 people to be as certain as not that we're going to see duplicate numbers.</p>
+<p><center><img src="../../../../../images/birthday/dmv.PNG" width="600"/></center></p>
+<p>118 people. Considering that the board showed less than half of that a time, I think my error (in a hypothetical situation where I wasn't just reading wrong) seems to be a rare one, albeit not completely far-fetched.</p>
+<p>But did it stand out to you that if we stripped away the axes, these graphs looks pretty similar? Let's do some more digging.</p>
+<h1 id="generalizing-even-more_1">Generalizing Even More<a class="headerlink" href="#generalizing-even-more" title="Permanent link"> </a></h1>
+<p>The only difference between the first and the second example is what base we held constant. In the Birthday Paradox, it was (364 / 365) and at the DMV, it was (9999 / 10000). From there, we arbitrarily increased the number of people in the room until we hit the break-even points were were monitoring in the visuals.</p>
+<p>But what happens when we also arbitrarily increase the number of possible values at the same time?</p>
+<p><center><img src="../../../../../images/birthday/generic.PNG" width="600"/></center></p>
+<p>There's a lot going on here, but one thing that I want to point out is that despite our "Number of potential values" axis being in the hundreds of thousands (bottom-right axis), our Population Size only needs to be in a few hundred to break that "more likely than not" barrier.</p>
+<p>In fact, holding those target values (50%, 90%, 99%) equal, and playing with the different values in "People in the room" and "Possible Values" some interesting behavior emerges in the relationship between how many possibilities there are, and <em>how few people you need to be more certain than not that there's a match somewhere.</em></p>
+<ul>
+<li>In the Birthday example, 23 people covered 365 values. 23 / 365 = 6.3%</li>
+<li>In the DMV example, 118 covered 10,000. 118 / 10,000 = 1.18%</li>
+<li>In the graphic above, 471 covered 160k. <em>0.294%</em></li>
+</ul>
+<p><center><img src="../../../../../images/birthday/longterm.PNG" width="600"/></center></p>
+<p>So where am I going with this?</p>
+<h1 id="hash-values">Hash Values<a class="headerlink" href="#hash-values" title="Permanent link"> </a></h1>
+<p>If you aren't in the good handful of people who've been on the receiving end of my ranting on this topic, the elevator pitch about hash values goes: "You put some data into a hash function and it jumbles it. Like a lot. Conveniently, it also gives you a consistent output every time you put in an identical input." I won't go much deeper than that, but Chapter 5 of <a href="https://www.amazon.com/Grokking-Algorithms-illustrated-programmers-curious/dp/1617292230">Grokking's Algorithms</a> (a must-read, IMO) does a much better job than I could going into some of the finer details.</p>
+<p>For instance, in Python, if you hash out the string values 'a' and 'b', they're represented as some crazy-long integers that are bafflingly different from one another, as a result of a multitude of differences in their bit representations (highlighted below).</p>
+<p><center><img src="../../../../../images/birthday/hash.PNG" width="600"/></center></p>
+<p>SO...</p>
+<p>Any time that I start in on teaching someone about Git/GitHub, I first give a lightning-fast overview of hash values. I think that a fundamental understanding of what they are allows a real solid appreciation for their role in powering the entire backend of Git.</p>
+<p>If you want to know if two files are the same, don't go through and check every character, just compare their hash values. This extends to images. Unintelligible byte code. Whole projects. At the end of the day it's just 0s and 1s saved to disk and the hashing algorithm eats it up all the same. I leaned on the difference between 'a' and 'b' above, but the same would go for the difference in hash values between 'a' and 'A' or 'a' and 'a _'. Despite the inputs being very similar, the outputs are anything but. In order for this to work, though, you need to be certain that you're not accidentally going to wind up getting the same outputted hash values for different inputs; that hash values for the character 'a' vs all of the text in Crime and Punishment don't accidentally match.</p>
+<p>By now, you probably see where I'm going with this. Let's look at how many "Possible Values" we're generating with these hash functions.</p>
+<p>The binary strings I printed above are about 60 or so characters long, with each place holding a value of either 0 or 1. This winds up being 2^60 different possible values. About 1.15 quintillion. A whole lot.</p>
+<p>The hashing scheme that Git uses is called the SHA-1 Hash, which, given some input data, spits out, count 'em, <strong>40</strong> hexadecimal characters with 16 possible values (0-9A-F, instead of just 0-9). I always emphasize the ludicrous amount of possible values for this string to take and how useful this is in ensuring that you've got a unique version of your file.</p>
+<p>But as I pointed out above, as this whole "look for pairs in the room" model scales to infinity, the ratio of "People needed" in order to achieve "more likely than not there's a match" divided by "Possible values" tends to, basically, zero.</p>
+<p>There are 16^40 possible SHA-1 Hash Values. This is expressed as 1.462e48 (or times 10 to the 48th power), measured in the <a href="http://www.thealmightyguru.com/Pointless/BigNumbers.html">quindecillions</a>-- a word Google auto-correct insists doesn't exist as I type this.</p>
+<p>If we go back to our "people in a room" idea, trying to to cover the 50% likelihood number for this unfathomably large possibility-space, we need 1.42e24 different folks. Or 1.42 septillion. If our aim is ensure uniqueness with our hashing algorithm, having <em>septillions</em> of possible file states worth of wiggle room ain't bad.</p>
+<h2 id="at-scale">At Scale<a class="headerlink" href="#at-scale" title="Permanent link"> </a></h2>
+<p>However, as we continue to tack 'e' and some combination of numbers to the end of a decimal, I worry that the sheer magnitude of the numbers we're talking about gets lost along the way. Let's march back through our earlier examples:</p>
+<ul>
+<li>Birthday: 23 people covered 365 values. 23 / 365 = 6.3%</li>
+<li>DMV: 118 covered 10,000. 118 / 10,000 = 1.18%</li>
+<li>471 covered 160k. 0.294%</li>
+</ul>
+<p>Here, 1.42e24 covers 1.46e48. 1.42e24 / 1.46e48 = 9.739e-25.</p>
+<p>9.734e-25. Let me help you with that.</p>
+<p><center>0.0000000000000000000000009734</center></p>
+<p>For comparison, the ratio you get when you divide the <a href="https://en.wikipedia.org/wiki/Bohr_radius">diameter of a Hydrogen atom</a> by the <a href="http://physics.ucr.edu/~wudka/Physics7/Notes_www/node17.html">average distance between Pluto and the Sun</a> comes in at 8.966e-24, <strong>which is STILL not small enough to pass this covering ratio.</strong></p>
+<p>Wow.</p>
+<p>Hopefully this brief detour into from trivia to CS</p>
+<h1 id="conclusion_1">Conclusion<a class="headerlink" href="#conclusion" title="Permanent link"> </a></h1>
+<p>Hopefully now the notion of it only taking 23 people in a room to find a pair of matching birthdays holds a bit more water, intellectually. Because as this problem scales, the power of compounding pairs of people is just wild.</p>
+<p>As for the rest of the day at the DMV, I spent the couple days leading up to that Wednesday ruminating on what 7 letter word I could create with a Block M and 6 other letters.</p>
+<p>And then an ah-ha moment! I could pay homage to one of my favorite movies, thus publicly memorializing my inaccessible pop culture humor.</p>
+<p><center><span class="videobox">
+<iframe allowfullscreen="" frameborder="0" height="390" mozallowfullscreen="" src="https://www.youtube.com/embed/dhkeu0TB4dw" webkitallowfullscreen="" width="640">
+</iframe>
+</span></center></p>
+<p>And so after a bit of l337 5p34k finagling, I drove off with</p>
+<p><center><img src="../../../../../images/birthday/plate.jpg" width="600"/></center></p>
+<h1 id="notes">Notes<a class="headerlink" href="#notes" title="Permanent link"> </a></h1>
+<p>For the sake of demonstration, I simplified our model a bit with some rounder math and some relaxed assumptions.</p>
+<ul>
+<li>No Leap Day</li>
+<li>Assuming a uniform distribution of birthdays</li>
+<li>Not leaning on any conditional probability in my calculation</li>
+</ul>
+<p>If you found yourself interested in this idea of a hash value interesting at all, that's basically what's powering the backend of BitCoin. And if you want to be on the forefront of the new buzzword in tech, apparently you want to spend some time googling "Block Chain" in the near future (shout out to my good friend Patrick for keeping me current).</p>
+<p>As always, <a href="https://github.com/NapsterInBlue/dmvParadox">github link</a> to show my work.</p>
+<p>Cheers,</p>
+<p>-Nick</p>
+        </div>
+
+        <div class="meta">
+            <div>
+                    <a href="../../../../../tag/math.html" class="tag">math</a>
+                    <a href="../../../../../tag/musing.html" class="tag">musing</a>
+                    <a href="../../../../../tag/python.html" class="tag">python</a>
+                    <a href="../../../../../tag/viz.html" class="tag">viz</a>
+            </div>
+        </div>
+    </article>
+
+
+</div>
+
+<style type="text/css">
+{
+    max-width: 700px;
+}
+
+.text_cell .prompt {
+    display: none;
+}
+
+.output_png {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+div.cell {
+    padding: 0;
+}
+
+div.text_cell_render {
+    padding: 0;
+}
+
+div.prompt {
+    padding: -2px;
+    font-size: 13px;
+    min-width: 9ex;
+}
+
+div.input_prompt {
+    padding: .4em 0.2em;
+}
+
+div.output_prompt {
+    padding: .1em .2em;
+}
+
+div.output_area{
+    padding-bottom: 10px;
+}
+
+div.output_subarea {
+    max-width: calc(100% - 10ex);
+}
+
+div.input_area {
+    margin: .2em 0.4em;
+    max-width: 650px;
+}
+
+table.dataframe {
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    line-height: 20px;
+}
+
+table.dataframe th, td {
+    padding: 4px;
+    text-align: left;
+}
+
+pre code {
+    background-color: inherit;
+}
+
+.highlight {
+    padding-left: 4ex;
+    background: #fff;
+}</style>
+
+        </div>
+<!--
+    <footer>
+      <p>
+        © 2012-2017 Nick, license <a href=""> </a>
+        unless otherwise noted.
+        Generated by <a href= "http://docs.getpelican.com/">Pelican</a>.
+      </p>
+    </footer>
+-->
+    </body>
+</html>

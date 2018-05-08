@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="author" content="Nick">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+        <title>Down the Reddit Rabbit Hole with Dr. Strange | Movies, Metrics, Musings</title>
+
+	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+	<link rel="icon" href="/favicon.ico" type="image/x-icon">
+        <link rel="alternate" type="application/atom+xml" title="Movies, Metrics, Musings blog atom feed" href="/feeds/all.atom.xml" />
+        <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700' rel='stylesheet' type='text/css'>
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="/theme/css/icons.css"/>
+        <style>.highlight .hll { background-color: #ffffcc }
+.highlight .c { color: #60a0b0; font-style: italic } /* Comment */
+.highlight .err { border: 1px solid #FF0000 } /* Error */
+.highlight .k { color: #007020; font-weight: bold } /* Keyword */
+.highlight .o { color: #666666 } /* Operator */
+.highlight .cm { color: #60a0b0; font-style: italic } /* Comment.Multiline */
+.highlight .cp { color: #007020 } /* Comment.Preproc */
+.highlight .c1 { color: #60a0b0; font-style: italic } /* Comment.Single */
+.highlight .cs { color: #60a0b0; background-color: #fff0f0 } /* Comment.Special */
+.highlight .gd { color: #A00000 } /* Generic.Deleted */
+.highlight .ge { font-style: italic } /* Generic.Emph */
+.highlight .gr { color: #FF0000 } /* Generic.Error */
+.highlight .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+.highlight .gi { color: #00A000 } /* Generic.Inserted */
+.highlight .go { color: #808080 } /* Generic.Output */
+.highlight .gp { color: #c65d09; font-weight: bold } /* Generic.Prompt */
+.highlight .gs { font-weight: bold } /* Generic.Strong */
+.highlight .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+.highlight .gt { color: #0040D0 } /* Generic.Traceback */
+.highlight .kc { color: #007020; font-weight: bold } /* Keyword.Constant */
+.highlight .kd { color: #007020; font-weight: bold } /* Keyword.Declaration */
+.highlight .kn { color: #007020; font-weight: bold } /* Keyword.Namespace */
+.highlight .kp { color: #007020 } /* Keyword.Pseudo */
+.highlight .kr { color: #007020; font-weight: bold } /* Keyword.Reserved */
+.highlight .kt { color: #902000 } /* Keyword.Type */
+.highlight .m { color: #40a070 } /* Literal.Number */
+.highlight .s { color: #4070a0 } /* Literal.String */
+.highlight .na { color: #4070a0 } /* Name.Attribute */
+.highlight .nb { color: #007020 } /* Name.Builtin */
+.highlight .nc { color: #0e84b5; font-weight: bold } /* Name.Class */
+.highlight .no { color: #60add5 } /* Name.Constant */
+.highlight .nd { color: #555555; font-weight: bold } /* Name.Decorator */
+.highlight .ni { color: #d55537; font-weight: bold } /* Name.Entity */
+.highlight .ne { color: #007020 } /* Name.Exception */
+.highlight .nf { color: #06287e } /* Name.Function */
+.highlight .nl { color: #002070; font-weight: bold } /* Name.Label */
+.highlight .nn { color: #0e84b5; font-weight: bold } /* Name.Namespace */
+.highlight .nt { color: #062873; font-weight: bold } /* Name.Tag */
+.highlight .nv { color: #bb60d5 } /* Name.Variable */
+.highlight .ow { color: #007020; font-weight: bold } /* Operator.Word */
+.highlight .w { color: #bbbbbb } /* Text.Whitespace */
+.highlight .mf { color: #40a070 } /* Literal.Number.Float */
+.highlight .mh { color: #40a070 } /* Literal.Number.Hex */
+.highlight .mi { color: #40a070 } /* Literal.Number.Integer */
+.highlight .mo { color: #40a070 } /* Literal.Number.Oct */
+.highlight .sb { color: #4070a0 } /* Literal.String.Backtick */
+.highlight .sc { color: #4070a0 } /* Literal.String.Char */
+.highlight .sd { color: #4070a0; font-style: italic } /* Literal.String.Doc */
+.highlight .s2 { color: #4070a0 } /* Literal.String.Double */
+.highlight .se { color: #4070a0; font-weight: bold } /* Literal.String.Escape */
+.highlight .sh { color: #4070a0 } /* Literal.String.Heredoc */
+.highlight .si { color: #70a0d0; font-style: italic } /* Literal.String.Interpol */
+.highlight .sx { color: #c65d09 } /* Literal.String.Other */
+.highlight .sr { color: #235388 } /* Literal.String.Regex */
+.highlight .s1 { color: #4070a0 } /* Literal.String.Single */
+.highlight .ss { color: #517918 } /* Literal.String.Symbol */
+.highlight .bp { color: #007020 } /* Name.Builtin.Pseudo */
+.highlight .vc { color: #bb60d5 } /* Name.Variable.Class */
+.highlight .vg { color: #bb60d5 } /* Name.Variable.Global */
+.highlight .vi { color: #bb60d5 } /* Name.Variable.Instance */
+.highlight .il { color: #40a070 } /* Literal.Number.Integer.Long */</style>
+        <style>body {
+  margin: 0;
+  padding: 0;
+  font: 15px 'Source Sans Pro', sans-serif;
+  line-height: 1.6em;
+  color: #222;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+a {
+  color: #007EE5;
+  text-decoration: none;
+}
+a:hover {
+  color: #007EE5;
+  text-decoration: none;
+}
+header.main-header {
+  background: none repeat scroll 0% 0% #205F29;
+  margin-bottom: 0px;
+}
+header.main-header a {
+  color: #fff;
+}
+header.main-header .container {
+  max-width: 1000px;
+}
+header.main-header .container nav a:hover {
+  background-color: #5C881C;
+}
+article {
+  margin: 0;
+}
+article header.about {
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+}
+article header {
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+}
+article header h1 {
+  margin-bottom: 2px;
+  font-weight: 700;
+  color: #000;
+}
+article header time {
+  color: #9E9E9E;
+  font-size: 0.85em;
+  float: right;
+}
+article header time.left {
+  color: #9E9E9E;
+  font-size: 0.85em;
+  float: left;
+}
+article div.social-links ul {
+  padding: 0px;
+}
+article div.social-links li {
+  display: inline;
+  font-size: 20px;
+}
+article div.social-links li a {
+  color: #000;
+  padding: 10px;
+}
+article div.social-links li a:hover {
+  color: #666;
+  text-decoration: none;
+}
+article p {
+  font-size: 16px;
+  margin-bottom: 20px;
+  line-height: 1.6em;
+}
+article p.note {
+  background: #f5f5f5;
+  border: 1px solid #ddd;
+  padding: 0.533em 0.733em;
+}
+article p.update {
+  background-color: #FEEFB3;
+  border: 1px solid #e6e68a;
+  padding: 0.533em 0.733em;
+}
+article p.alert {
+  background-color: #ffe2e2;
+  border: 1px solid #ffb2b2;
+  padding: 0.533em 0.733em;
+}
+article ol {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+article ol {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+article li {
+  font-size: 16px;
+  line-height: 1.6em;
+}
+article a:hover {
+  text-decoration: underline;
+}
+article blockquote {
+  border-left: 2px solid #c7c7cc;
+  color: #666;
+  margin: 30px 0;
+  padding: 0 0 0 25px;
+}
+article img {
+  max-width: 100%;
+}
+article code {
+  color: #333;
+  background-color: #EEE;
+  border-radius: 0;
+  font-size: 13px;
+}
+article .meta {
+  font-size: 11px;
+}
+article .meta a:hover {
+  text-decoration: none;
+}
+article .meta div {
+  margin-bottom: 20px;
+  display: block;
+}
+article .meta a.tag {
+  margin: 0 10px 10px 0;
+  padding: 1px 12px;
+  display: inline-block;
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.8);
+  background: rgba(0, 0, 0, 0.05);
+}
+article .meta a.tag:hover {
+  background: rgba(0, 0, 0, 0.15);
+}
+article .meta a.read_more,
+article .meta a.comments_btn {
+  font-size: 14px;
+  font-weight: 800;
+  padding: 10px 20px;
+  color: #205F29;
+  background: #FFF;
+  border: 1px solid #205F29;
+}
+article .meta a.read_more:hover,
+article .meta a.comments_btn:hover {
+  color: #FFF;
+  background: #5C881C;
+}
+.index {
+  max-width: 700px;
+}
+.index article header h2 {
+  font-size: 36px;
+  margin-bottom: 2px;
+  font-weight: 700;
+}
+.index article header h2 a {
+  color: #000;
+}
+.index article header h2 a:hover {
+  color: #007EE5;
+  text-decoration: none;
+}
+.index .separator {
+  padding: 40px 0 0 0;
+  margin: 0 0 40px 0;
+  height: 10px;
+  border-bottom: solid 1px #CCC;
+}
+.index .pagination {
+  display: block;
+  margin-bottom: 100px;
+}
+.index .pagination .left {
+  text-align: right;
+}
+.index .pagination .right {
+  text-align: left;
+}
+.index .pagination a {
+  display: inline-block;
+  border: 2px solid #5C881C;
+  margin: 0 5px;
+  padding: 8px 20px;
+  font-weight: bold;
+  color: #5C881C;
+}
+.index .pagination a:hover {
+  color: #FFF;
+  background: #5C881C;
+}
+.post {
+  max-width: 800px;
+}
+.post h2:before {
+  font-weight: bold;
+  color: #DDD;
+}
+.post h3:before {
+  font-weight: bold;
+  color: #DDD;
+}
+.post h4:before {
+  font-weight: bold;
+  color: #DDD;
+}
+.post article .meta {
+  margin: 50px 0 100px;
+}
+.list {
+  max-width: 700px;
+}
+.list ul.double-list {
+  margin: 0 auto 60px;
+  padding: 0;
+  list-style-type: none;
+}
+.list ul.double-list li {
+  padding: 5px 0;
+}
+.list ul.double-list li h2 {
+  font-size: 1em;
+  display: inline;
+  font-weight: normal;
+}
+.list ul.double-list li span {
+  font-family: sans-serif;
+  text-transform: uppercase;
+  text-align: right;
+  float: right;
+  padding-top: 3px;
+  font-size: 12px;
+  color: #999;
+}
+.full-width-content {
+  padding-top: 10px;
+  padding-left: 0px;
+  padding-right: 0px;
+  margin-left: -20px;
+  margin-right: -20px;
+}
+.col-xs-1,
+.col-sm-1,
+.col-md-1,
+.col-lg-1,
+.col-xs-2,
+.col-sm-2,
+.col-md-2,
+.col-lg-2,
+.col-xs-3,
+.col-sm-3,
+.col-md-3,
+.col-lg-3,
+.col-xs-4,
+.col-sm-4,
+.col-md-4,
+.col-lg-4,
+.col-xs-5,
+.col-sm-5,
+.col-md-5,
+.col-lg-5,
+.col-xs-6,
+.col-sm-6,
+.col-md-6,
+.col-lg-6,
+.col-xs-7,
+.col-sm-7,
+.col-md-7,
+.col-lg-7,
+.col-xs-8,
+.col-sm-8,
+.col-md-8,
+.col-lg-8,
+.col-xs-9,
+.col-sm-9,
+.col-md-9,
+.col-lg-9,
+.col-xs-10,
+.col-sm-10,
+.col-md-10,
+.col-lg-10,
+.col-xs-11,
+.col-sm-11,
+.col-md-11,
+.col-lg-11,
+.col-xs-12,
+.col-sm-12,
+.col-md-12,
+.col-lg-12 {
+  padding-right: 0px;
+  padding-left: 0px;
+}</style>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+    </head>
+
+    <body>
+        <header class="navbar navbar-inverse bs-docs-nav">
+            <div class="container-fluid">
+                <div class="navbar-header">
+		  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#theNavbar">
+		    <span class="icon-bar"></span>
+		    <span class="icon-bar"></span>
+		    <span class="icon-bar"></span>
+		  </button>
+                  <a class="navbar-brand" href="/" title="Home" class="title">Movies, Metrics, Musings</a>
+                </div>
+                <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation" id="theNavbar">
+		    <ul class="nav navbar-nav navbar-right">
+                            <li><a href="/pages/about.html" title="About">About</a></li>
+                            <li><a href="/archives.html" title="Archive">Archive</a></li>
+                            <li><a href="/pages/resources.html" title="Resources">Resources</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <div id="wrap">
+<div class="container post">
+    <article>
+        <header>
+            <h1>Down the Reddit Rabbit Hole with Dr. Strange</h1>
+            <time datetime="article.date.isoformat()" pubdate>Sun 06 November 2016</time>
+        </header>
+
+        <div class="panel panel-default">
+            <div class="panel-heading">Table of Contents</div>
+            <div class="panel-body">
+            <div id="toc"><ul><li><a '="" already.="" class="toc-href" dr.="" href="#spoiler-alert-this-whole-post-is-predicated-on-the-notion-that-youve-seen-dr-strange-already" seen="" strange="" title="Spoiler Alert: this whole post is predicated on the notion that you" ve="">Spoiler Alert: this whole post is predicated on the notion that you've seen Dr. Strange already. </a></li><li><a class="toc-href" href="#second-spoiler-alert-this-goes-on-for-a-very-long-time" title="Second Spoiler Alert: this goes on for a very long time. ">Second Spoiler Alert: this goes on for a very long time. </a></li></ul></div>
+            </div>
+        </div>
+
+        <div class="article_content">
+            
+<h3 id="spoiler-alert-this-whole-post-is-predicated-on-the-notion-that-youve-seen-dr-strange-already">Spoiler Alert: this whole post is predicated on the notion that you've seen Dr. Strange already.<a class="headerlink" href="#spoiler-alert-this-whole-post-is-predicated-on-the-notion-that-youve-seen-dr-strange-already" title="Permanent link"> </a></h3>
+<p>So I saw Dr. Strange over the weekend and <a href="https://letterboxd.com/nick_m3blog/film/doctor-strange-2016/">really enjoyed it.</a></p>
+<p>While I was waiting for post-credit tag <strong>OF WHICH THERE'S TWO</strong>, I ritualistically went to the <a href="https://www.reddit.com/r/movies/comments/5b0zni/official_discussion_doctor_strange_spoilers/">discussion thread on Reddit</a> to see what other people thought. I should mention that I have a real affinity for Groundhog Day, so when Stephen saves the world by exploiting an abbreviated plot of one of my favorite movies, I was delighted. It didn't take much digging through the thread to find that others did as well.</p>
+<p><center><img src="../../../../../images/strange/strange1.png"/></center></p>
+<p>Pulling from the scene in question, user FilmsAreQuiteAwesome posted</p>
+<p><center><img src="../../../../../images/strange/strange2.png"/></center></p>
+<p>and then shortly thereafter</p>
+<p><center><img src="../../../../../images/strange/strange3.png"/></center></p>
+<p>and then</p>
+<p><center><img src="../../../../../images/strange/strange4.png"/></center></p>
+
+<p>which of course lead to an even-more extended thread</p>
+<p><center><img src="../../../../../images/strange/strange5.png"/></center></p>
+<p>oh... oh my... It just keeps going.</p>
+<p><center><img src="../../../../../images/strange/strange6.png"/></center></p>
+<h3 id="second-spoiler-alert-this-goes-on-for-a-very-long-time">Second Spoiler Alert: this goes on for a very long time.<a class="headerlink" href="#second-spoiler-alert-this-goes-on-for-a-very-long-time" title="Permanent link"> </a></h3>
+<p>The second tag started and I put my phone away and watched some newly-minted-bad-guy Chiwetel Ejiofor. I grabbed the popcorn and the ladyfriend and rushed home because I had a web-scraper to build-- I was curious to see where this rabbit hole led.</p>
+<p>And so in a nutshell, I did the following:</p>
+<ul>
+<li>Start <a href="https://www.reddit.com/r/movies/comments/5b0zni/official_discussion_doctor_strange_spoilers/d9kwuke/?st=iva22lot&amp;sh=4755d655">here.</a></li>
+<li>Grab the highest-voted reply containing just the phrase "Dormammu, I've come to bargain"</li>
+<li>Find the the highest-voted reply to that reply containing just the phrase "Dormammu, I've come to bargain"</li>
+<li>Find the the highest-voted reply to that reply containing just the phrase "Dormammu, I've come to bargain"</li>
+<li>Find the the highest-voted reply to that reply containing just the phrase "Dormammu, I've come to bargain"</li>
+<li>Find the the highest-voted reply to that reply containing just the phrase "Dormammu, I've come to bargain"</li>
+<li>Find the the highest-voted reply to that reply containing just the phrase "Dormammu, I've come to bargain"</li>
+<li>Find the the highest-voted reply to that reply containing just the phrase "Dormammu, I've come to bargain"</li>
+<li>Ad nauseum</li>
+<li>All the while grabbing<ul>
+<li>Author</li>
+<li>Upvote Score</li>
+<li>Number of Immediate Child Comments</li>
+<li>What page you're on (relative to the "Continue this thread" clicks)</li>
+<li>Time of Post</li>
+<li>The URL of each post</li>
+<li>Time since the last post</li>
+</ul>
+</li>
+<li>Toss that into a Pandas DataFrame</li>
+<li>Poke around for a bit</li>
+<li>Write my first blog post in weeks</li>
+</ul>
+<p>If you're curious on the how, I've included a link to the Jupyter notebook containing hacky, unambigiously bad code below. If you just want the data (at the time of writing), I've shared that too. Would love some code feedback if anyone's interested!</p>
+<p>Ultimately, I wound up following the chain with the highest amount of votes as far as it would take me until I had a table full of data...</p>
+<p><center><img src="../../../../../images/strange/data1.png" width="800"/></center></p>
+<p>...over 300 comments long</p>
+<p><center><img src="../../../../../images/strange/data2.png" width="800"/></center></p>
+<p>Wow.</p>
+<p>The first thing that I noticed is that the number of upvotes that a post received fell off sharply after the user had to click "Continue this thread" after the 9th post</p>
+<p><center><img src="../../../../../images/strange/graph1.png"/></center></p>
+<p>Every 10 posts, the user has to click to go to a new page. The scores drop with each threshold through the fifth page.</p>
+<p><center><img src="../../../../../images/strange/graph2.png"/></center></p>
+<p>And yet another drop after the 100th post, or the 10th click in</p>
+<p><center><img src="../../../../../images/strange/graph3.png"/></center></p>
+<p>The thread between the 100th and 180th posts baffles the hell out of me. Need I remind you, that every comment is an identical "Dormammu, I've come to bargain." What happened at the 151st comment that people were so enthusiastic about? How does any comment have more votes than the one before it????</p>
+<p><center><img src="../../../../../images/strange/graph4.png"/></center></p>
+<p>People are weird.</p>
+<p>Next, I filtered down the table to try and get a handle on how much engagement we'd see if we poked around further on down the chain-- how many comments had replies that weren't part of the main chain.</p>
+<p><center><img src="../../../../../images/strange/table1.png" width="800"/></center></p>
+<p>On the second page in, I found a series of posts where user YakMan2 tried his damnedest to force the old <a href="http://knowyourmeme.com/memes/dental-plan-lisa-needs-braces">"Lisa needs braces!" meme</a></p>
+<p><center><img src="../../../../../images/strange/braces.png"/></center></p>
+<p>After the 22nd post, a user aptly-named ComboBreakerr tried to interrupt chain and promptly failed (as evidenced by his post being voted below the viewing threshold)</p>
+<p><center><img src="../../../../../images/strange/combo.png"/></center></p>
+<p>After the 152nd post, there was a split where two users posted at the same level. There's a large fork in replies here-- the lower half, perhaps material for another blog post someday.</p>
+<p><center><img src="../../../../../images/strange/fork.png"/></center></p>
+<p>Hilariously, after 212 posts (OR 22 PAGES DEEP), user Monolight finds that they can't take it anymore.</p>
+<p><center><img src="../../../../../images/strange/wtf.png"/></center></p>
+<p>Wait a minute</p>
+<p><center><img src="../../../../../images/strange/clone.png"/></center></p>
+<p>Wait what? I grouped each post by that Author field I'd collected and got the counts of the most frequent poster in the chain.</p>
+<p><center><img src="../../../../../images/strange/authors.png"/></center></p>
+<p>lol</p>
+<p>I've got no interest in Ken Boning the hell out of this person (and neither should you), but I had to know what was going on in this thread, so I filtered my table down to posts where the username was 'ggalaximm' and got all 185 posts. Here's the top 10. Note the column in the right, which outlines the time since the post just prior to it.</p>
+<p><center><img src="../../../../../images/strange/table2.png" width="800"/></center></p>
+<p>From what I can gather, at the beginning of this thread, this person spent a little over a minute reading all of the parent comments before deciding to get in on the fun as the 28th comment. After a couple seconds of hesitation, they realized that nothing was stopping them from whipping up some good ol' copypasta again. And again. And again.</p>
+<p>Over the next 50 posts, they had an average CTRL+C, CTRL+V, submit turnaround time of about 10 seconds. But it didn't stop there. I plotted out the sequential number of their post and how long they waited before posting it.</p>
+<p><center><img src="../../../../../images/strange/graph5.png"/></center></p>
+<p>It would appear to me that ggalaximm took 3 breaks over the course of their spree: One for 5 minutes, one for about 4, and one for ~3, for a grand total of about 35 minutes of glorious shitposting.</p>
+<p><center><img src="../../../../../images/strange/break.png"/></center></p>
+<p>After that, the trail goes cold and /u/ggalaximm disappears from the chain.</p>
+<p>...Until new challengers appear.</p>
+<p><center><img src="../../../../../images/strange/next.png"/></center></p>
+<p>The Internet is Strange.</p>
+<p>Heh. Strange.</p>
+<p><a href="https://github.com/NapsterInBlue/redditDrStrange">Link to the files</a></p>
+        </div>
+
+        <div class="meta">
+            <div>
+                    <a href="../../../../../tag/analysis.html" class="tag">analysis</a>
+                    <a href="../../../../../tag/data.html" class="tag">data</a>
+                    <a href="../../../../../tag/movies.html" class="tag">movies</a>
+                    <a href="../../../../../tag/pandas.html" class="tag">pandas</a>
+                    <a href="../../../../../tag/python.html" class="tag">python</a>
+                    <a href="../../../../../tag/reddit.html" class="tag">reddit</a>
+                    <a href="../../../../../tag/scraping.html" class="tag">scraping</a>
+            </div>
+        </div>
+    </article>
+
+
+</div>
+
+<style type="text/css">
+{
+    max-width: 700px;
+}
+
+.text_cell .prompt {
+    display: none;
+}
+
+.output_png {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+div.cell {
+    padding: 0;
+}
+
+div.text_cell_render {
+    padding: 0;
+}
+
+div.prompt {
+    padding: -2px;
+    font-size: 13px;
+    min-width: 9ex;
+}
+
+div.input_prompt {
+    padding: .4em 0.2em;
+}
+
+div.output_prompt {
+    padding: .1em .2em;
+}
+
+div.output_area{
+    padding-bottom: 10px;
+}
+
+div.output_subarea {
+    max-width: calc(100% - 10ex);
+}
+
+div.input_area {
+    margin: .2em 0.4em;
+    max-width: 650px;
+}
+
+table.dataframe {
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    line-height: 20px;
+}
+
+table.dataframe th, td {
+    padding: 4px;
+    text-align: left;
+}
+
+pre code {
+    background-color: inherit;
+}
+
+.highlight {
+    padding-left: 4ex;
+    background: #fff;
+}</style>
+
+        </div>
+<!--
+    <footer>
+      <p>
+        © 2012-2017 Nick, license <a href=""> </a>
+        unless otherwise noted.
+        Generated by <a href= "http://docs.getpelican.com/">Pelican</a>.
+      </p>
+    </footer>
+-->
+    </body>
+</html>

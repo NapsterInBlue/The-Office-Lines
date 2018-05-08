@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="author" content="Nick">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+        <title>American Beauty in 3d | Movies, Metrics, Musings</title>
+
+	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+	<link rel="icon" href="/favicon.ico" type="image/x-icon">
+        <link rel="alternate" type="application/atom+xml" title="Movies, Metrics, Musings blog atom feed" href="/feeds/all.atom.xml" />
+        <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700' rel='stylesheet' type='text/css'>
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="/theme/css/icons.css"/>
+        <style>.highlight .hll { background-color: #ffffcc }
+.highlight .c { color: #60a0b0; font-style: italic } /* Comment */
+.highlight .err { border: 1px solid #FF0000 } /* Error */
+.highlight .k { color: #007020; font-weight: bold } /* Keyword */
+.highlight .o { color: #666666 } /* Operator */
+.highlight .cm { color: #60a0b0; font-style: italic } /* Comment.Multiline */
+.highlight .cp { color: #007020 } /* Comment.Preproc */
+.highlight .c1 { color: #60a0b0; font-style: italic } /* Comment.Single */
+.highlight .cs { color: #60a0b0; background-color: #fff0f0 } /* Comment.Special */
+.highlight .gd { color: #A00000 } /* Generic.Deleted */
+.highlight .ge { font-style: italic } /* Generic.Emph */
+.highlight .gr { color: #FF0000 } /* Generic.Error */
+.highlight .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+.highlight .gi { color: #00A000 } /* Generic.Inserted */
+.highlight .go { color: #808080 } /* Generic.Output */
+.highlight .gp { color: #c65d09; font-weight: bold } /* Generic.Prompt */
+.highlight .gs { font-weight: bold } /* Generic.Strong */
+.highlight .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+.highlight .gt { color: #0040D0 } /* Generic.Traceback */
+.highlight .kc { color: #007020; font-weight: bold } /* Keyword.Constant */
+.highlight .kd { color: #007020; font-weight: bold } /* Keyword.Declaration */
+.highlight .kn { color: #007020; font-weight: bold } /* Keyword.Namespace */
+.highlight .kp { color: #007020 } /* Keyword.Pseudo */
+.highlight .kr { color: #007020; font-weight: bold } /* Keyword.Reserved */
+.highlight .kt { color: #902000 } /* Keyword.Type */
+.highlight .m { color: #40a070 } /* Literal.Number */
+.highlight .s { color: #4070a0 } /* Literal.String */
+.highlight .na { color: #4070a0 } /* Name.Attribute */
+.highlight .nb { color: #007020 } /* Name.Builtin */
+.highlight .nc { color: #0e84b5; font-weight: bold } /* Name.Class */
+.highlight .no { color: #60add5 } /* Name.Constant */
+.highlight .nd { color: #555555; font-weight: bold } /* Name.Decorator */
+.highlight .ni { color: #d55537; font-weight: bold } /* Name.Entity */
+.highlight .ne { color: #007020 } /* Name.Exception */
+.highlight .nf { color: #06287e } /* Name.Function */
+.highlight .nl { color: #002070; font-weight: bold } /* Name.Label */
+.highlight .nn { color: #0e84b5; font-weight: bold } /* Name.Namespace */
+.highlight .nt { color: #062873; font-weight: bold } /* Name.Tag */
+.highlight .nv { color: #bb60d5 } /* Name.Variable */
+.highlight .ow { color: #007020; font-weight: bold } /* Operator.Word */
+.highlight .w { color: #bbbbbb } /* Text.Whitespace */
+.highlight .mf { color: #40a070 } /* Literal.Number.Float */
+.highlight .mh { color: #40a070 } /* Literal.Number.Hex */
+.highlight .mi { color: #40a070 } /* Literal.Number.Integer */
+.highlight .mo { color: #40a070 } /* Literal.Number.Oct */
+.highlight .sb { color: #4070a0 } /* Literal.String.Backtick */
+.highlight .sc { color: #4070a0 } /* Literal.String.Char */
+.highlight .sd { color: #4070a0; font-style: italic } /* Literal.String.Doc */
+.highlight .s2 { color: #4070a0 } /* Literal.String.Double */
+.highlight .se { color: #4070a0; font-weight: bold } /* Literal.String.Escape */
+.highlight .sh { color: #4070a0 } /* Literal.String.Heredoc */
+.highlight .si { color: #70a0d0; font-style: italic } /* Literal.String.Interpol */
+.highlight .sx { color: #c65d09 } /* Literal.String.Other */
+.highlight .sr { color: #235388 } /* Literal.String.Regex */
+.highlight .s1 { color: #4070a0 } /* Literal.String.Single */
+.highlight .ss { color: #517918 } /* Literal.String.Symbol */
+.highlight .bp { color: #007020 } /* Name.Builtin.Pseudo */
+.highlight .vc { color: #bb60d5 } /* Name.Variable.Class */
+.highlight .vg { color: #bb60d5 } /* Name.Variable.Global */
+.highlight .vi { color: #bb60d5 } /* Name.Variable.Instance */
+.highlight .il { color: #40a070 } /* Literal.Number.Integer.Long */</style>
+        <style>body {
+  margin: 0;
+  padding: 0;
+  font: 15px 'Source Sans Pro', sans-serif;
+  line-height: 1.6em;
+  color: #222;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+a {
+  color: #007EE5;
+  text-decoration: none;
+}
+a:hover {
+  color: #007EE5;
+  text-decoration: none;
+}
+header.main-header {
+  background: none repeat scroll 0% 0% #205F29;
+  margin-bottom: 0px;
+}
+header.main-header a {
+  color: #fff;
+}
+header.main-header .container {
+  max-width: 1000px;
+}
+header.main-header .container nav a:hover {
+  background-color: #5C881C;
+}
+article {
+  margin: 0;
+}
+article header.about {
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+}
+article header {
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+}
+article header h1 {
+  margin-bottom: 2px;
+  font-weight: 700;
+  color: #000;
+}
+article header time {
+  color: #9E9E9E;
+  font-size: 0.85em;
+  float: right;
+}
+article header time.left {
+  color: #9E9E9E;
+  font-size: 0.85em;
+  float: left;
+}
+article div.social-links ul {
+  padding: 0px;
+}
+article div.social-links li {
+  display: inline;
+  font-size: 20px;
+}
+article div.social-links li a {
+  color: #000;
+  padding: 10px;
+}
+article div.social-links li a:hover {
+  color: #666;
+  text-decoration: none;
+}
+article p {
+  font-size: 16px;
+  margin-bottom: 20px;
+  line-height: 1.6em;
+}
+article p.note {
+  background: #f5f5f5;
+  border: 1px solid #ddd;
+  padding: 0.533em 0.733em;
+}
+article p.update {
+  background-color: #FEEFB3;
+  border: 1px solid #e6e68a;
+  padding: 0.533em 0.733em;
+}
+article p.alert {
+  background-color: #ffe2e2;
+  border: 1px solid #ffb2b2;
+  padding: 0.533em 0.733em;
+}
+article ol {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+article ol {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+article li {
+  font-size: 16px;
+  line-height: 1.6em;
+}
+article a:hover {
+  text-decoration: underline;
+}
+article blockquote {
+  border-left: 2px solid #c7c7cc;
+  color: #666;
+  margin: 30px 0;
+  padding: 0 0 0 25px;
+}
+article img {
+  max-width: 100%;
+}
+article code {
+  color: #333;
+  background-color: #EEE;
+  border-radius: 0;
+  font-size: 13px;
+}
+article .meta {
+  font-size: 11px;
+}
+article .meta a:hover {
+  text-decoration: none;
+}
+article .meta div {
+  margin-bottom: 20px;
+  display: block;
+}
+article .meta a.tag {
+  margin: 0 10px 10px 0;
+  padding: 1px 12px;
+  display: inline-block;
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.8);
+  background: rgba(0, 0, 0, 0.05);
+}
+article .meta a.tag:hover {
+  background: rgba(0, 0, 0, 0.15);
+}
+article .meta a.read_more,
+article .meta a.comments_btn {
+  font-size: 14px;
+  font-weight: 800;
+  padding: 10px 20px;
+  color: #205F29;
+  background: #FFF;
+  border: 1px solid #205F29;
+}
+article .meta a.read_more:hover,
+article .meta a.comments_btn:hover {
+  color: #FFF;
+  background: #5C881C;
+}
+.index {
+  max-width: 700px;
+}
+.index article header h2 {
+  font-size: 36px;
+  margin-bottom: 2px;
+  font-weight: 700;
+}
+.index article header h2 a {
+  color: #000;
+}
+.index article header h2 a:hover {
+  color: #007EE5;
+  text-decoration: none;
+}
+.index .separator {
+  padding: 40px 0 0 0;
+  margin: 0 0 40px 0;
+  height: 10px;
+  border-bottom: solid 1px #CCC;
+}
+.index .pagination {
+  display: block;
+  margin-bottom: 100px;
+}
+.index .pagination .left {
+  text-align: right;
+}
+.index .pagination .right {
+  text-align: left;
+}
+.index .pagination a {
+  display: inline-block;
+  border: 2px solid #5C881C;
+  margin: 0 5px;
+  padding: 8px 20px;
+  font-weight: bold;
+  color: #5C881C;
+}
+.index .pagination a:hover {
+  color: #FFF;
+  background: #5C881C;
+}
+.post {
+  max-width: 800px;
+}
+.post h2:before {
+  font-weight: bold;
+  color: #DDD;
+}
+.post h3:before {
+  font-weight: bold;
+  color: #DDD;
+}
+.post h4:before {
+  font-weight: bold;
+  color: #DDD;
+}
+.post article .meta {
+  margin: 50px 0 100px;
+}
+.list {
+  max-width: 700px;
+}
+.list ul.double-list {
+  margin: 0 auto 60px;
+  padding: 0;
+  list-style-type: none;
+}
+.list ul.double-list li {
+  padding: 5px 0;
+}
+.list ul.double-list li h2 {
+  font-size: 1em;
+  display: inline;
+  font-weight: normal;
+}
+.list ul.double-list li span {
+  font-family: sans-serif;
+  text-transform: uppercase;
+  text-align: right;
+  float: right;
+  padding-top: 3px;
+  font-size: 12px;
+  color: #999;
+}
+.full-width-content {
+  padding-top: 10px;
+  padding-left: 0px;
+  padding-right: 0px;
+  margin-left: -20px;
+  margin-right: -20px;
+}
+.col-xs-1,
+.col-sm-1,
+.col-md-1,
+.col-lg-1,
+.col-xs-2,
+.col-sm-2,
+.col-md-2,
+.col-lg-2,
+.col-xs-3,
+.col-sm-3,
+.col-md-3,
+.col-lg-3,
+.col-xs-4,
+.col-sm-4,
+.col-md-4,
+.col-lg-4,
+.col-xs-5,
+.col-sm-5,
+.col-md-5,
+.col-lg-5,
+.col-xs-6,
+.col-sm-6,
+.col-md-6,
+.col-lg-6,
+.col-xs-7,
+.col-sm-7,
+.col-md-7,
+.col-lg-7,
+.col-xs-8,
+.col-sm-8,
+.col-md-8,
+.col-lg-8,
+.col-xs-9,
+.col-sm-9,
+.col-md-9,
+.col-lg-9,
+.col-xs-10,
+.col-sm-10,
+.col-md-10,
+.col-lg-10,
+.col-xs-11,
+.col-sm-11,
+.col-md-11,
+.col-lg-11,
+.col-xs-12,
+.col-sm-12,
+.col-md-12,
+.col-lg-12 {
+  padding-right: 0px;
+  padding-left: 0px;
+}</style>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+    </head>
+
+    <body>
+        <header class="navbar navbar-inverse bs-docs-nav">
+            <div class="container-fluid">
+                <div class="navbar-header">
+		  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#theNavbar">
+		    <span class="icon-bar"></span>
+		    <span class="icon-bar"></span>
+		    <span class="icon-bar"></span>
+		  </button>
+                  <a class="navbar-brand" href="/" title="Home" class="title">Movies, Metrics, Musings</a>
+                </div>
+                <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation" id="theNavbar">
+		    <ul class="nav navbar-nav navbar-right">
+                            <li><a href="/pages/about.html" title="About">About</a></li>
+                            <li><a href="/archives.html" title="Archive">Archive</a></li>
+                            <li><a href="/pages/resources.html" title="Resources">Resources</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <div id="wrap">
+<div class="container post">
+    <article>
+        <header>
+            <h1>American Beauty in 3d</h1>
+            <time datetime="article.date.isoformat()" pubdate>Fri 02 December 2016</time>
+        </header>
+
+        <div class="panel panel-default">
+            <div class="panel-heading">Table of Contents</div>
+            <div class="panel-body">
+            <div id="toc"><ul><li><a class="toc-href" href="#3d" title="3D? ">3D? </a><ul><li><a '="" being="" class="toc-href" desires="" genuine="" href="#a-characters-desires-being-genuine-or-superficial" or="" s="" superficial="" title="A character">A character's desires being genuine or superficial </a></li><li><a '="" being="" class="toc-href" goals="" href="#a-characters-goals-being-self-imposed-or-society-imposed" or="" s="" self-imposed="" society-imposed="" title="A character">A character's goals being self-imposed or society-imposed </a></li><li><a '="" being="" class="toc-href" headspace="" href="#a-characters-headspace-being-present-or-sedated" or="" present="" s="" sedated="" title="A character">A character's headspace being present or sedated </a></li></ul></li><li><a class="toc-href" href="#black-box_1" title="Black Box ">Black Box </a></li><li><a class="toc-href" href="#what-about-distance" title="What About Distance? ">What About Distance? </a></li><li><a class="toc-href" href="#think-about-it" title="Think about it ">Think about it </a></li></ul></div>
+            </div>
+        </div>
+
+        <div class="article_content">
+            
+<p>American Beauty falls off of the US Netflix catalog on the morning of December 1st. I remember loving it last time I gave it a watch and so I sat down to revisit it and write about it. This was at 6:52p the day before so naturally, by the time you're reading this, that train has left the station. Bummer.
+Anyhow</p>
+<h3 id="3d">3D?<a class="headerlink" href="#3d" title="Permanent link"> </a></h3>
+<p>The movie ended, and I sat and pored through my notes and doodles that I took down while I was watching. This might not be the most accessible way to share my thoughts, but ultimately, I came away from this movie thinking about a 3-dimensional space. Bear with me.</p>
+<p><center><img src="../../../../../images/beauty/xyz.png" width="400"/></center></p>
+<p>Chances are, you've probably seen something like the above in one capacity or another. Movement to the bottom-right means that the X value is getting bigger. Movement to the top means the same for Z. Similar deal for Y. Cool. Points can float somewhere in this space that we've cooked up. I'll spare you the lousy sketch and grab something a bit more polished from Google.</p>
+
+<p><center><img src="../../../../../images/beauty/good3d.png"/></center></p>
+<p>Each point represents an observation of some sort of data. The axes could be pretty much anything you'd care to measure. In one of my very favorite examples of Machine Learning (which, if that's something you're interested in, by all means, close this, read this. It's fantastic.), the first step in predicting the location of a house is doing a similar exercise and putting various metrics on their own axes; combining them you wind up with a ton of data points that represent individual houses.</p>
+<p>I'm going to be miserably reductive here and say that in our example, each dot is a person, and that the dots live somewhere on 3 personality axes. Couple clarifying points to that:</p>
+<ol>
+<li>
+<p>Each axes represents an attribute, sure. But in our housing example, everything starts at zero and grows. For an attribute called <span style="color:lime">rooms</span> a <span style="color:red">small value</span> could mean <span style="color:red">"not many bedrooms"</span> and a large value would mean <span style="color:red">"lots of bedrooms".</span></p>
+</li>
+<li>
+<p>Here, each axes is still an attribute, but instead values represent a place on a spectrum. A point being closer to one end isn't necessarily better or worse, just more "like" that extreme on each end.</p>
+</li>
+</ol>
+<p>So our spectrums</p>
+<h4 id="a-characters-desires-being-genuine-or-superficial">A character's <span style="color:lime">desires</span> being <span style="color:red">genuine</span> or <span style="color:red">superficial</span><a class="headerlink" href="#a-characters-desires-being-genuine-or-superficial" title="Permanent link"> </a></h4>
+<ul>
+<li>Ricky, the boy next door, makes money hand over fist selling weed, but his most prized possessions are the tapes that he films</li>
+<li>Lester condemns Carolyn's concern over a $4,000 couch-- "they're just things", yet impulse buys a 1975 Pontiac Firebird-- "The car I've always wanted, and now I have it. I rule! <em>fist pump</em></li>
+</ul>
+<h4 id="a-characters-goals-being-self-imposed-or-society-imposed">A character's <span style="color:lime">goals</span> being <span style="color:red">self-imposed</span> or <span style="color:red">society-imposed</span><a class="headerlink" href="#a-characters-goals-being-self-imposed-or-society-imposed" title="Permanent link"> </a></h4>
+<ul>
+<li>Angela's constant obsession (and frequent lying) about her sex life</li>
+<li>Carolyn goes to painstaking lengths to get Lester to behave at realtor functions-- to put on a show.</li>
+</ul>
+<h4 id="a-characters-headspace-being-present-or-sedated">A character's <span style="color:lime">headspace</span> being <span style="color:red">present</span> or <span style="color:red">sedated</span><a class="headerlink" href="#a-characters-headspace-being-present-or-sedated" title="Permanent link"> </a></h4>
+<ul>
+<li>Angela spends most of the movie with an impressive lack of self-awareness, "sick of people taking their insecurities out on [her]" and believing that "everything that's meant to happen will happen eventually" and saying and doing anything to get attention and affirmation.</li>
+<li>The whole first act hinges on Spacey's so-called "awakening" into a state of mindfulness. More on this to come. Time and its perception play a huge role in this movie.</li>
+</ul>
+<p>This takes us to something that looks kinda like this</p>
+<p><center><img src="../../../../../images/beauty/spectrum.png" width="400"/></center></p>
+<p>You can imagine that, like the image above this one, each of the characters in the movie have their own dots, and if you tried mapping those out throughout the story, they'd move and shift. That's storytelling.</p>
+<h3 id="black-box_1">Black Box<a class="headerlink" href="#black-box" title="Permanent link"> </a></h3>
+<p>Unpacking, and, regrettably, further math-ifying this idea, imagine that there's some actual significance to where a dot falls in this space. Imagine that there's a <a href="https://en.wikipedia.org/wiki/Black_box">Black Box function</a>, an equation that I'm going to call <strong>Turbulence</strong>. Each possible dot at the intersection of these 3 axes maps to some level of turmoil, of inner strife. The complicated mess of personality gets stuffed into this sausage equation that returns a degree of inner peace, or lack thereof. A character that's considered to be 'one-dimensional,' with embarrassingly clear motivations and predictable interactions with the world around them, fits neatly into this paradigm, probably only having strong tendencies in one axis. Hacky writers use these characters as soulless plot drivers, while others consider the effect that this imbalance has on a character.</p>
+<p><center><img src="../../../../../images/beauty/allwork.jpg" width="600"/></center>
+<center>This blog post features original and proprietary ideas.</center></p>
+<p>The important distinction that I want to note is that this Black Box Turbulence function doesn't behave in any uniform fashion. As I've crudely illustrated below, you could be exactly the same in 2 of the 3 spectrums, but one arbitrary and poorly-illustrated unit step on the third behaves wildly different.</p>
+<p><center><img src="../../../../../images/beauty/fruits.png" width="600"/></center></p>
+<p>But hey, this is all conjecture, generalizations, and some paint.net finagling, but this is life, right? We can't "optimize" Turbulence; nobody's solved for it. I can't possibly imagine that my values and what works for me is what works for you. That's what makes us unique.</p>
+<p>Lester and Carolyn share a life together. They come home to the same house, dine with the same unhappy daughter, sleep in the same bed, but they're both miserable in their own way. The stressors and challenges they face are a direct result of their values and perceptions. They're two different dots in the same Turbulence Space.</p>
+<p>But if you accept the way that I'm framing this so far-- the inherent randomness in this theoretical Turbulence Space--, then "character development" isn't a parallel trajectory shared by everyone in the story. They aren't all wired the same way and therefore aren't all marching toward the same definition of "healthy," of "happy." Hell, I'd contend that for the majority of the movie, Carolyn barely moves at all. If I asked you to give me a rough sketch of where her dot would be, it'd probably look something like this, right?</p>
+<p><center><img src="../../../../../images/beauty/spectrum2.png" width="400"/></center></p>
+<p>She's portrayed as someone who has bought into the values of middle-America, hook-line-and-sinker, with very little regard for reflection, reinvention. Her biggest expressions of emotion happen after public failures, and she handles them as privately as she does violently. Nobody is a harder critic on Carolyn than Carolyn, but she's completely blind to this, instead boiling up during the Third Act to race home with a bullet meant for Lester, chanting a mantra about her victimhood.</p>
+<p>Ultimately, her stale, self-imposed toxicity is what makes Lester's transformation so damn interesting.</p>
+<p>To a degree, he begins the movie, like her, really letting his outside world get to him. Early on he comes home livid that a business is behaving in an extraordinarily predictable fashion and trying to downsize to keep their books balanced. He has spent the last several decades as a passive actor on his own life ("sedated," he calls it) and is jarred by the world changing around him. Ultimately, life piles up, and it's enough that it's impossible for him to not reassess where he's at in life and make adjustments.</p>
+<p>American Beauty is primarily about Lester's movement through Turbulence Space, the lucky arrival at his own personal Black Box Turbulence value, and the varying degree that everyone around him struggles to do the same.</p>
+<h3 id="what-about-distance">What About Distance?<a class="headerlink" href="#what-about-distance" title="Permanent link"> </a></h3>
+<p>So we've got this framework. Wandering through Turbulence Space in search of personal happiness is a total crap shoot that follows no rhyme or reason. But despite this, the thing that's going to stay with me when I think about this movie, and this slapped-together idea of reducing and mapping a person's essence, is the importance of the space between any two points in Turbulence Space.</p>
+<p>As it relates to the movie, some examples stood out to me more than others:</p>
+<ul>
+<li>Lester is in shock and awe of Ricky's "So don't pay me. I quit. Now leave me alone" line and soon follows suit by getting himself fantastically fired (in a manner that thoroughly scratched an Office Space itch). Despite the fact that Lester enjoys a fair degree of conventional success, an abrupt and very real view into someone else's value system emboldened him to consider if his values were correct ones.</li>
+<li>Carolyn is beside herself, heart-aflutter, when she learns that The King shares the same attitudes on appearances and adoration. She learns that despite the fact that he is, in fact, also struggling to keep his life held together, it is more important to him to be celebrated for what he has been than accepted for the faulted person that he is. Regardless of how much shaming and bickering Carolyn does, Lester simply does not see things this way and it becomes something of an escape to learn she's not alone in this regard.</li>
+<li>Twice in the movie, we hear Jane say that she wishes she had a role model, rejecting and mocking her father, but all throughout the movie learning from Ricky. Ironically, Lester is trying to do just the same thing. More ironic yet, by the end of the movie both Lester and Ricky profess the same overwhelming sensation about life itself-- they're not so different.</li>
+</ul>
+<p>Characters really only ever feel compelled to move from their comfort zone when they're unhappy. They develop an approximation of someone's Black Box Turbulence and try their hand at adapting themselves to be more like, or unlike them-- Jane despises her dad, intentionally growing away from him and rolling her eyes every time Ricky and Angela stand up for him. Carolyn perceives The King to be successful and satisfied which reaffirms the way that she lives her life. Lester tries to become more aloof physically attractive to impress Angela-- only when he finally has her does he realize that his arrival to her point in space didn't bring him the happiness he was after. From a character study perspective, this conscious movement through Turbulence Space relative to other actors is absolutely critical.</p>
+<p>Also worth considering is the importance of distance that a character navigates over time:</p>
+<ul>
+<li>A big driver in Lester's behavior is reflection on the person that he used to be, flipping burgers, partying, and getting laid. Upon reflection, he finds that whatever concessions he's made with himself has put him into a state of higher Turbulence, and he finds peace in regressing back to the way that he was.</li>
+<li>The amount of emotional whipsawing that Ricky's father does is exhausting to watch. Even in an individual scene, he'll go from beating the hell out of his son, to looking at him with pride. He begins the movie condemning his gay neighbors for their way of life, kicking Ricky out of his home when he thinks that his son is gay, shows up at his neighbors house in the middle of the night to kiss him, and then when he gets rejected, returns to murder him. Goddamn.</li>
+<li>Lastly, though the characters have all moved considerably through Turbulence Space over the course of their lives and the story, their perceptions of others hasn't. Lester in particular struggles to reconcile between the people that he lives with and who they really are. When we see Lester and Carolyn's first fight at dinner, Jane storms off into the kitchen. Lester follows and begins with "What happened? We used to be pals." Later in the movie, Carolyn returns home and Lester tries his damnedest to coax out his real wife, reminding of the wild things that she used to do before her life revolved around her work and the opinions of others.</li>
+</ul>
+<h3 id="think-about-it">Think about it<a class="headerlink" href="#think-about-it" title="Permanent link"> </a></h3>
+<p>All models and brain dumping aside, I want to summarize with two of my biggest lasting impressions from American Beauty:</p>
+<p>The first being that our best guess for where someone lies is Turbulence Space is just that, a guess. Lately, I've been trying to work on developing better GitHub skills and in doing so was referred to an awesome site called <a href="http://think-like-a-git.net/">think-like-a-git.net</a>. Perhaps it's because I stumbled across it this morning and the thought was still alive in my head, latent, but the author had a really great learning moment that I think is <a href="http://think-like-a-git.net/sections/git-makes-more-sense-when-you-understand-x/example-1-kent-beck.html">worth sharing.</a></p>
+<p><center><img src="../../../../../images/beauty/kent.png"/></center></p>
+<p>We really don't know. But on the off chance that we nail that guess, we often have a comically incorrect view of how together someone's got everything-- especially if they're the type of person who values their perception. As I've more than belabored at this point, that Black Box Turbulence function is no joke.</p>
+<p>The second is a quote that Lester said that I really loved:</p>
+<p><strong>"It's a great thing when you realize that you still have the ability to surprise yourself. Makes you wonder what else you can do that you've forgotten about."</strong></p>
+<p>I think at its heart, American Beauty is a love letter to wellness and mindfulness. It's about a man staring his unhappiness directly in the face and his journey to learn how to be more at peace with everything from the world around him. Characters are ushered out of their comfort zone when their Black Box Turbulence hits them across the head like a bucket of cold water. Some people ignore this wake up call and double down on their unhappiness, others poke around Turbulence Space until they find a place that suits them, ultimately finding themselves being on the wrong end of an Austin Powers-level "seeing the wrong thing through the window" gag and being gunned down by a Neo-Nazi. But hey, that's life. If I had a nickel.</p>
+        </div>
+
+        <div class="meta">
+            <div>
+                    <a href="../../../../../tag/deep-read.html" class="tag">deep read</a>
+                    <a href="../../../../../tag/movies.html" class="tag">movies</a>
+                    <a href="../../../../../tag/musing.html" class="tag">musing</a>
+                    <a href="../../../../../tag/wellness.html" class="tag">wellness</a>
+            </div>
+        </div>
+    </article>
+
+
+</div>
+
+<style type="text/css">
+{
+    max-width: 700px;
+}
+
+.text_cell .prompt {
+    display: none;
+}
+
+.output_png {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+div.cell {
+    padding: 0;
+}
+
+div.text_cell_render {
+    padding: 0;
+}
+
+div.prompt {
+    padding: -2px;
+    font-size: 13px;
+    min-width: 9ex;
+}
+
+div.input_prompt {
+    padding: .4em 0.2em;
+}
+
+div.output_prompt {
+    padding: .1em .2em;
+}
+
+div.output_area{
+    padding-bottom: 10px;
+}
+
+div.output_subarea {
+    max-width: calc(100% - 10ex);
+}
+
+div.input_area {
+    margin: .2em 0.4em;
+    max-width: 650px;
+}
+
+table.dataframe {
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    line-height: 20px;
+}
+
+table.dataframe th, td {
+    padding: 4px;
+    text-align: left;
+}
+
+pre code {
+    background-color: inherit;
+}
+
+.highlight {
+    padding-left: 4ex;
+    background: #fff;
+}</style>
+
+        </div>
+<!--
+    <footer>
+      <p>
+        © 2012-2017 Nick, license <a href=""> </a>
+        unless otherwise noted.
+        Generated by <a href= "http://docs.getpelican.com/">Pelican</a>.
+      </p>
+    </footer>
+-->
+    </body>
+</html>

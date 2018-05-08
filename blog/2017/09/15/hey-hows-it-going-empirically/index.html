@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="author" content="Nick">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+        <title>Hey, How's it Going? (Empirically) | Movies, Metrics, Musings</title>
+
+	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+	<link rel="icon" href="/favicon.ico" type="image/x-icon">
+        <link rel="alternate" type="application/atom+xml" title="Movies, Metrics, Musings blog atom feed" href="/feeds/all.atom.xml" />
+        <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700' rel='stylesheet' type='text/css'>
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="/theme/css/icons.css"/>
+        <style>.highlight .hll { background-color: #ffffcc }
+.highlight .c { color: #60a0b0; font-style: italic } /* Comment */
+.highlight .err { border: 1px solid #FF0000 } /* Error */
+.highlight .k { color: #007020; font-weight: bold } /* Keyword */
+.highlight .o { color: #666666 } /* Operator */
+.highlight .cm { color: #60a0b0; font-style: italic } /* Comment.Multiline */
+.highlight .cp { color: #007020 } /* Comment.Preproc */
+.highlight .c1 { color: #60a0b0; font-style: italic } /* Comment.Single */
+.highlight .cs { color: #60a0b0; background-color: #fff0f0 } /* Comment.Special */
+.highlight .gd { color: #A00000 } /* Generic.Deleted */
+.highlight .ge { font-style: italic } /* Generic.Emph */
+.highlight .gr { color: #FF0000 } /* Generic.Error */
+.highlight .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+.highlight .gi { color: #00A000 } /* Generic.Inserted */
+.highlight .go { color: #808080 } /* Generic.Output */
+.highlight .gp { color: #c65d09; font-weight: bold } /* Generic.Prompt */
+.highlight .gs { font-weight: bold } /* Generic.Strong */
+.highlight .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+.highlight .gt { color: #0040D0 } /* Generic.Traceback */
+.highlight .kc { color: #007020; font-weight: bold } /* Keyword.Constant */
+.highlight .kd { color: #007020; font-weight: bold } /* Keyword.Declaration */
+.highlight .kn { color: #007020; font-weight: bold } /* Keyword.Namespace */
+.highlight .kp { color: #007020 } /* Keyword.Pseudo */
+.highlight .kr { color: #007020; font-weight: bold } /* Keyword.Reserved */
+.highlight .kt { color: #902000 } /* Keyword.Type */
+.highlight .m { color: #40a070 } /* Literal.Number */
+.highlight .s { color: #4070a0 } /* Literal.String */
+.highlight .na { color: #4070a0 } /* Name.Attribute */
+.highlight .nb { color: #007020 } /* Name.Builtin */
+.highlight .nc { color: #0e84b5; font-weight: bold } /* Name.Class */
+.highlight .no { color: #60add5 } /* Name.Constant */
+.highlight .nd { color: #555555; font-weight: bold } /* Name.Decorator */
+.highlight .ni { color: #d55537; font-weight: bold } /* Name.Entity */
+.highlight .ne { color: #007020 } /* Name.Exception */
+.highlight .nf { color: #06287e } /* Name.Function */
+.highlight .nl { color: #002070; font-weight: bold } /* Name.Label */
+.highlight .nn { color: #0e84b5; font-weight: bold } /* Name.Namespace */
+.highlight .nt { color: #062873; font-weight: bold } /* Name.Tag */
+.highlight .nv { color: #bb60d5 } /* Name.Variable */
+.highlight .ow { color: #007020; font-weight: bold } /* Operator.Word */
+.highlight .w { color: #bbbbbb } /* Text.Whitespace */
+.highlight .mf { color: #40a070 } /* Literal.Number.Float */
+.highlight .mh { color: #40a070 } /* Literal.Number.Hex */
+.highlight .mi { color: #40a070 } /* Literal.Number.Integer */
+.highlight .mo { color: #40a070 } /* Literal.Number.Oct */
+.highlight .sb { color: #4070a0 } /* Literal.String.Backtick */
+.highlight .sc { color: #4070a0 } /* Literal.String.Char */
+.highlight .sd { color: #4070a0; font-style: italic } /* Literal.String.Doc */
+.highlight .s2 { color: #4070a0 } /* Literal.String.Double */
+.highlight .se { color: #4070a0; font-weight: bold } /* Literal.String.Escape */
+.highlight .sh { color: #4070a0 } /* Literal.String.Heredoc */
+.highlight .si { color: #70a0d0; font-style: italic } /* Literal.String.Interpol */
+.highlight .sx { color: #c65d09 } /* Literal.String.Other */
+.highlight .sr { color: #235388 } /* Literal.String.Regex */
+.highlight .s1 { color: #4070a0 } /* Literal.String.Single */
+.highlight .ss { color: #517918 } /* Literal.String.Symbol */
+.highlight .bp { color: #007020 } /* Name.Builtin.Pseudo */
+.highlight .vc { color: #bb60d5 } /* Name.Variable.Class */
+.highlight .vg { color: #bb60d5 } /* Name.Variable.Global */
+.highlight .vi { color: #bb60d5 } /* Name.Variable.Instance */
+.highlight .il { color: #40a070 } /* Literal.Number.Integer.Long */</style>
+        <style>body {
+  margin: 0;
+  padding: 0;
+  font: 15px 'Source Sans Pro', sans-serif;
+  line-height: 1.6em;
+  color: #222;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+a {
+  color: #007EE5;
+  text-decoration: none;
+}
+a:hover {
+  color: #007EE5;
+  text-decoration: none;
+}
+header.main-header {
+  background: none repeat scroll 0% 0% #205F29;
+  margin-bottom: 0px;
+}
+header.main-header a {
+  color: #fff;
+}
+header.main-header .container {
+  max-width: 1000px;
+}
+header.main-header .container nav a:hover {
+  background-color: #5C881C;
+}
+article {
+  margin: 0;
+}
+article header.about {
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+}
+article header {
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+}
+article header h1 {
+  margin-bottom: 2px;
+  font-weight: 700;
+  color: #000;
+}
+article header time {
+  color: #9E9E9E;
+  font-size: 0.85em;
+  float: right;
+}
+article header time.left {
+  color: #9E9E9E;
+  font-size: 0.85em;
+  float: left;
+}
+article div.social-links ul {
+  padding: 0px;
+}
+article div.social-links li {
+  display: inline;
+  font-size: 20px;
+}
+article div.social-links li a {
+  color: #000;
+  padding: 10px;
+}
+article div.social-links li a:hover {
+  color: #666;
+  text-decoration: none;
+}
+article p {
+  font-size: 16px;
+  margin-bottom: 20px;
+  line-height: 1.6em;
+}
+article p.note {
+  background: #f5f5f5;
+  border: 1px solid #ddd;
+  padding: 0.533em 0.733em;
+}
+article p.update {
+  background-color: #FEEFB3;
+  border: 1px solid #e6e68a;
+  padding: 0.533em 0.733em;
+}
+article p.alert {
+  background-color: #ffe2e2;
+  border: 1px solid #ffb2b2;
+  padding: 0.533em 0.733em;
+}
+article ol {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+article ol {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+article li {
+  font-size: 16px;
+  line-height: 1.6em;
+}
+article a:hover {
+  text-decoration: underline;
+}
+article blockquote {
+  border-left: 2px solid #c7c7cc;
+  color: #666;
+  margin: 30px 0;
+  padding: 0 0 0 25px;
+}
+article img {
+  max-width: 100%;
+}
+article code {
+  color: #333;
+  background-color: #EEE;
+  border-radius: 0;
+  font-size: 13px;
+}
+article .meta {
+  font-size: 11px;
+}
+article .meta a:hover {
+  text-decoration: none;
+}
+article .meta div {
+  margin-bottom: 20px;
+  display: block;
+}
+article .meta a.tag {
+  margin: 0 10px 10px 0;
+  padding: 1px 12px;
+  display: inline-block;
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.8);
+  background: rgba(0, 0, 0, 0.05);
+}
+article .meta a.tag:hover {
+  background: rgba(0, 0, 0, 0.15);
+}
+article .meta a.read_more,
+article .meta a.comments_btn {
+  font-size: 14px;
+  font-weight: 800;
+  padding: 10px 20px;
+  color: #205F29;
+  background: #FFF;
+  border: 1px solid #205F29;
+}
+article .meta a.read_more:hover,
+article .meta a.comments_btn:hover {
+  color: #FFF;
+  background: #5C881C;
+}
+.index {
+  max-width: 700px;
+}
+.index article header h2 {
+  font-size: 36px;
+  margin-bottom: 2px;
+  font-weight: 700;
+}
+.index article header h2 a {
+  color: #000;
+}
+.index article header h2 a:hover {
+  color: #007EE5;
+  text-decoration: none;
+}
+.index .separator {
+  padding: 40px 0 0 0;
+  margin: 0 0 40px 0;
+  height: 10px;
+  border-bottom: solid 1px #CCC;
+}
+.index .pagination {
+  display: block;
+  margin-bottom: 100px;
+}
+.index .pagination .left {
+  text-align: right;
+}
+.index .pagination .right {
+  text-align: left;
+}
+.index .pagination a {
+  display: inline-block;
+  border: 2px solid #5C881C;
+  margin: 0 5px;
+  padding: 8px 20px;
+  font-weight: bold;
+  color: #5C881C;
+}
+.index .pagination a:hover {
+  color: #FFF;
+  background: #5C881C;
+}
+.post {
+  max-width: 800px;
+}
+.post h2:before {
+  font-weight: bold;
+  color: #DDD;
+}
+.post h3:before {
+  font-weight: bold;
+  color: #DDD;
+}
+.post h4:before {
+  font-weight: bold;
+  color: #DDD;
+}
+.post article .meta {
+  margin: 50px 0 100px;
+}
+.list {
+  max-width: 700px;
+}
+.list ul.double-list {
+  margin: 0 auto 60px;
+  padding: 0;
+  list-style-type: none;
+}
+.list ul.double-list li {
+  padding: 5px 0;
+}
+.list ul.double-list li h2 {
+  font-size: 1em;
+  display: inline;
+  font-weight: normal;
+}
+.list ul.double-list li span {
+  font-family: sans-serif;
+  text-transform: uppercase;
+  text-align: right;
+  float: right;
+  padding-top: 3px;
+  font-size: 12px;
+  color: #999;
+}
+.full-width-content {
+  padding-top: 10px;
+  padding-left: 0px;
+  padding-right: 0px;
+  margin-left: -20px;
+  margin-right: -20px;
+}
+.col-xs-1,
+.col-sm-1,
+.col-md-1,
+.col-lg-1,
+.col-xs-2,
+.col-sm-2,
+.col-md-2,
+.col-lg-2,
+.col-xs-3,
+.col-sm-3,
+.col-md-3,
+.col-lg-3,
+.col-xs-4,
+.col-sm-4,
+.col-md-4,
+.col-lg-4,
+.col-xs-5,
+.col-sm-5,
+.col-md-5,
+.col-lg-5,
+.col-xs-6,
+.col-sm-6,
+.col-md-6,
+.col-lg-6,
+.col-xs-7,
+.col-sm-7,
+.col-md-7,
+.col-lg-7,
+.col-xs-8,
+.col-sm-8,
+.col-md-8,
+.col-lg-8,
+.col-xs-9,
+.col-sm-9,
+.col-md-9,
+.col-lg-9,
+.col-xs-10,
+.col-sm-10,
+.col-md-10,
+.col-lg-10,
+.col-xs-11,
+.col-sm-11,
+.col-md-11,
+.col-lg-11,
+.col-xs-12,
+.col-sm-12,
+.col-md-12,
+.col-lg-12 {
+  padding-right: 0px;
+  padding-left: 0px;
+}</style>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+    </head>
+
+    <body>
+        <header class="navbar navbar-inverse bs-docs-nav">
+            <div class="container-fluid">
+                <div class="navbar-header">
+		  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#theNavbar">
+		    <span class="icon-bar"></span>
+		    <span class="icon-bar"></span>
+		    <span class="icon-bar"></span>
+		  </button>
+                  <a class="navbar-brand" href="/" title="Home" class="title">Movies, Metrics, Musings</a>
+                </div>
+                <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation" id="theNavbar">
+		    <ul class="nav navbar-nav navbar-right">
+                            <li><a href="/pages/about.html" title="About">About</a></li>
+                            <li><a href="/archives.html" title="Archive">Archive</a></li>
+                            <li><a href="/pages/resources.html" title="Resources">Resources</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <div id="wrap">
+<div class="container post">
+    <article>
+        <header>
+            <h1>Hey, How's it Going? (Empirically)</h1>
+            <time datetime="article.date.isoformat()" pubdate>Fri 15 September 2017</time>
+        </header>
+
+        <div class="panel panel-default">
+            <div class="panel-heading">Table of Contents</div>
+            <div class="panel-body">
+            <div id="toc"><ul><li><a class="toc-href" href="#background" title="Background ">Background </a></li><li><a class="toc-href" href="#daylio-crash-course" title="Daylio Crash-Course ">Daylio Crash-Course </a><ul><li><a class="toc-href" href="#so-what" title="So What? ">So What? </a></li></ul></li><li><a class="toc-href" href="#making-the-data-useful_1" title="Making the Data Useful ">Making the Data Useful </a><ul><li><a class="toc-href" href="#hand-wavy-technical-details" title="Hand-Wavy Technical Details ">Hand-Wavy Technical Details </a></li></ul></li><li><a class="toc-href" href="#now-what_1" title="Now What? ">Now What? </a></li></ul></div>
+            </div>
+        </div>
+
+        <div class="article_content">
+            
+<p><span style="color:red">Fair warning: Some less-than-wholesome language below.</span></p>
+<h1 id="background">Background<a class="headerlink" href="#background" title="Permanent link"> </a></h1>
+<p><a href="https://www.youtube.com/watch?v=k5Dypaw46fA">Mood Music</a></p>
+<p>Generally speaking, I've always struggled with mental health stuff and in turn, go through varying levels of "do something about it." Feels like I spend a good chunk of time vacillating wildly between "too anxious to keep anything straight" and "too depressed to want to keep anything straight." Of course, there are long tears where this is less the case, but it always felt borderline-arbitrary how things would just come and go.</p>
+<p>So as I've mentioned in <a href="../../../../../pages/resources.html">previous posts</a>, I've been using a mobile app called Daylio for the better part of a year. It was recommended to me by my good friend Will when I was going through something of a slump as a way to try and sort things out. Figured it was probably a better better approach to do something instead of literally nothing from a monitoring/reflection standpoint.
+Naturally, I gravitated to something that would metricize what I couldn't get a good handle on, because:</p>
+<p><center><img src="../../../../../images/daylio/job.jpg"/></center>
+<center>For real.</center></p>
+
+<h1 id="daylio-crash-course">Daylio Crash-Course<a class="headerlink" href="#daylio-crash-course" title="Permanent link"> </a></h1>
+<p>Using Daylio is easy enough. 5 times a day, I get a push notification that looks like this</p>
+<p><center><img src="../../../../../images/daylio/push.png" width="250"/></center></p>
+<p>which basically prompts you for a 1-5 Likert Scale of your current mood. You can set as many alerts as you want, or just input your mood whenever you're so inclined. I just thought it made sense to catch some data at different cross-sections of the day and so I've got alerts coming at:</p>
+<ul>
+<li>9:30a: Morning</li>
+<li>12:15p: Lunch</li>
+<li>3:00p: Afternoon</li>
+<li>6:15p: End of Work Day</li>
+<li>10:00p: Night</li>
+</ul>
+<p>from here, you're taken to a page with a bunch of Tags and invites you to mark what you've done since the last time you checked in.</p>
+<p><center><img src="../../../../../images/daylio/tags.png" width="250"/></center>
+<center>Blurred for perhaps-obvious reasons</center></p>
+<p>I should mention that all of the tags that you're selecting are ones that you build yourself. I honestly don't remember which ones the app comes with (if any), but with well-over 100 icons that you can select from, there's a huge diversity of things that you can choose to capture. It took me awhile to figure out what worked for me-- I'd wager that I have more tags than the average user, and by extension, probably way more than I actually need.</p>
+<p>And so among other things, my tags are best summarized as:</p>
+<p><center><img src="../../../../../images/daylio/tags1.png" width="300"/></center>
+<center>My Eating Habits</center></p>
+<p><center><img src="../../../../../images/daylio/tags2.png" width="300"/></center>
+<center>How Well I'm Sleeping</center></p>
+<p><center><img src="../../../../../images/daylio/tags3.png" width="300"/></center>
+<center>A More Elaborate Description of Mood</center></p>
+<p><center><img src="../../../../../images/daylio/tags4.png" width="300"/></center>
+<center>Info about Meds</center></p>
+<p><center><img src="../../../../../images/daylio/tags5.png" width="300"/></center>
+<center>How Active I'm Staying</center></p>
+<p><center><img src="../../../../../images/daylio/tags6.png" width="300"/></center>
+<center>How Work Went</center></p>
+<p><center><img src="../../../../../images/daylio/tags7.png" width="300"/></center>
+<center>How Organized I'm Staying</center></p>
+<p><center><img src="../../../../../images/daylio/tags8.png" width="300"/></center>
+<center>How I'm Spending my Downtime</center></p>
+<p><center><img src="../../../../../images/daylio/tags9.png" width="300"/></center>
+<center>And Who I'm Spending it With</center></p>
+<h2 id="so-what">So What?<a class="headerlink" href="#so-what" title="Permanent link"> </a></h2>
+<p>A few months ago I was reading an older article titled <a href="https://www.nytimes.com/2010/05/02/magazine/02self-measurement-t.html">"The Data-Driven Life"</a> and came across a quote that hit me like a bucket of cold water.</p>
+<blockquote>
+<p>"For many self-trackers, the goal is unknown. Although they may take up tracking with a specific question in mind, they continue because they believe their numbers hold secrets that they can&rsquo;t afford to ignore, including answers to questions they have not yet thought to ask."</p>
+</blockquote>
+<p>I'd been using Daylio consistently for a good while, but never tried to look at anything in aggregate because I wanted to ensure sufficient sample size. And even though I wasn't doing any kind of data analysis on the results, stopping to reflect and input how things were going served as a decent course-correction mechanism (when I'd let it)-- if there was an interruption at 2:00 and now I'm floundering and talking a ton, when I have to sit and input that at 3:00, maybe I make the decision to go hole up somewhere, close Skype and Outlook, and right the ship, yeah?</p>
+<p>Of course, reading that article got the gears turning and I set out to suss out the "secrets that [I couldn't] afford to ignore" and develop strategies around them. After all, "the great aim of education is not knowledge, but action."
+- I could start to answer questions like:
+- What makes me tick? (whatever that means...)
+- How strong are the good habits I try to keep?
+- How much of my mood is momentum-based? (Spoilers: a lot)
+- I had this notion of "setting myself up for success" when I sleep well, or exercise, or plan my days.
+    - Is there a difference in my mood when I don't?
+    - ... and what's the effect of the inevitable pang of self-guilt when I don't stay on top of it?</p>
+<p>I wanted to understand what kinds of things drove a day that looked like this</p>
+<p><center><img src="../../../../../images/daylio/goodvariance.png" width="300"/></center></p>
+<p>Or have some intuition that explained dips like this</p>
+<p><center><img src="../../../../../images/daylio/aggregate.png" width="300"/></center></p>
+<p>But the tool didn't do enough to answer that.</p>
+<p>My chief concern with the "Stats" tab of the app, was that all of the data was windowed at the month-level. And so trying to get a picture of how your mental health is trending month over month involved a lot of dancing back and forth between the different pages, which is hardly scalable. Humans are very visual thinkers-- cycling through and trying to keep everything straight was untenable.</p>
+<p>More frustrating yet, I couldn't get very good insight about the relationship between my Moods and Tags.</p>
+<p>For example, I could click into the "Often Together" view and see that when I'm <em>worried/anxious</em> I'm typically doing <em>Meh</em> or worse.</p>
+<p><center><img src="../../../../../images/daylio/badcorr1.png" width="300"/></center>
+<center>Go figure</center></p>
+<p>But I couldn't answer the effects of non-entries-- if I didn't get 7 1/2 hours of sleep, were those mornings better or worse than when I did? I also couldn't answer questions about the preceding and after-effects of Tags. How could I use this to determine if I drank more after I was having a rough go at it? (I'm happy to say that I'm, empirically, a strictly social drinker.)</p>
+<p>I also couldn't examine the relationships between the different Tags. Not that it takes hard data science to gather that I'll often shower if I'm hitting the gym, or if I'm deliberately relaxing, there's probably a movie involved (what, because the name of the blog and all...). But I'd like to know things like "How often does the floundering Tag come on the heels of mornings that I took the time to plan. I'd wager fewer than those that don't.</p>
+<p><center><img src="../../../../../images/daylio/badcorr2.png" width="300"/></center>
+<center>And good luck sorting this out.</center></p>
+<p>Lastly, like the "Monthly Mood Chart" above, all of this "Stats" tab data is grouped at the month-level, so any significant trending in the nearly 300 days I've been collecting data is out of reach through just the app alone.</p>
+<p>But then I found the "Export Data" functionality. It was time I finally rolled up my sleeves and did some data analysis.</p>
+<h1 id="making-the-data-useful_1">Making the Data Useful<a class="headerlink" href="#making-the-data-useful" title="Permanent link"> </a></h1>
+<p>But the data dump looked crazy gross.</p>
+<p><center><img src="../../../../../images/daylio/dump.PNG" width="700"/></center></p>
+<p>Specifically:</p>
+<ol>
+<li>The strange year, date, time formatting would need some cleaning/consolidating</li>
+<li>I'd self-imposed this morning/afternoon/etc paradigm. I would need a way to reflect that.</li>
+<li>For my analysis, moods needed to be mapped to numbers.</li>
+<li>My biggest hurdle: Bar-delimited Activities. Ugh.</li>
+</ol>
+<p>Parked in front of a wealth of raw data, I had to save and walk away from the .csv, lest I get ahead of myself doing the first thing that came to mind. I was going to be doing some sort of automated data manipulation anyways, and so I needed to consider my problem space before I start solutioning.</p>
+<p>What were some of the things that I wanted this data to do for me?</p>
+<p>Intra-day movement. If I'm doing 5 Entries a day, I need the ability to interrogate each individual Entry, relative to that Entry's Mood. And then one step further, tie that Entry's Mood to the day and the Entries around it.</p>
+<p><center><img src="../../../../../images/daylio/badvariance.png" width="300"/></center>
+<center>I probably want to know what kinds of Tags happen between Entries like this, yeah?</center></p>
+<p>Ultimately, I'd do something like:</p>
+<ol>
+<li>Chronologically sort all of the Entries</li>
+<li>Find each Entry where the Mood value is 2-3 less than the one before it</li>
+<li>Get each of those Entries' Activity Tags</li>
+<li>Count and sort the frequency of each Tag</li>
+<li>???</li>
+<li>Profit</li>
+</ol>
+<p>Or if I wanted to keep track of my daily habits, I'd need to do some creative checking. Like if I wanted to know how well I was exercising, I'd</p>
+<ol>
+<li>Search each entry for a gym or ran Tag</li>
+<li>If either are there, code that Entry as a 1, otherwise a 0, as an "Exercised" flag</li>
+<li>Roll every Entry back to their relevant day and take the max value of that flag for the Entries in a given day.<ul>
+<li>Therefore, if any of the Entries had one of the Tags, the whole day would reflect a value of 1. If none of them did, a 0.</li>
+</ul>
+</li>
+</ol>
+<p>This would allow me to go from ferreting through 5 Entries a day to just having a clean 0 or 1 value at the day level. From here, I can test my hypothesis that "The first time I don't go to the gym in a week, it makes it that much more likely that I'll skip the rest of the week." Maybe that might be common sense-- it's certainly an intuitive idea to me-- but knowing that for a fact and being able to capture when it's happening allows me to also have visibility into how well I'm course-correcting. A worthwhile endeavor, IMO.</p>
+<p>So what I gather is that if I can get everything down to the Tag level, I can answer damn-near any question I want: Entry-level stuff by rolling the Tags up to the Entries. Same goes for Day-level stuff by rolling the Entries up to the Days. Time to get cleaning.</p>
+<p><center><img src="../../../../../images/daylio/data-cleansing.jpg" width="600"/></center>
+<center>Look at this garbage picture that came up when I googled "data cleaning" lol</center></p>
+<h2 id="hand-wavy-technical-details">Hand-Wavy Technical Details<a class="headerlink" href="#hand-wavy-technical-details" title="Permanent link"> </a></h2>
+<p>I spent a Sunday morning a couple weekends ago tinkering around in a <a href="https://www.coursera.org/learn/python-databases/home">Python/Database course</a>. I'm very comfortable with SQL by nature of the day job, and with a data-design in mind, my goal was figuring out how to transform what <em>I had</em> into what <em>I knew how to exploit.</em></p>
+<p>I built out a few dim tables for things like "Mood," "TimeBucket," and "ActivityName" as well as two main tables-- one that captured every Entry, and another that captured each individual Activity selected <em>in an Entry.</em></p>
+<p>With the skeletons of the tables built, I turned my attention to parsing/transforming the .csv I got through the data dump. For each row I:</p>
+<ol>
+<li>Tossed out the data that I wouldn't use</li>
+<li>Transformed the dates into something usable<ul>
+<li>Slotting each entry into "Morning/Lunch/Afternoon/Evening/Night" based on what time it was</li>
+</ul>
+</li>
+<li>Mapped my moods to numbers</li>
+<li>Separated out and individually stored each Activity that I'd marked</li>
+</ol>
+<p>I'd contend that 90% of my SQL experience at work is Reading data from our warehouse-- we have plenty of engineers dedicated to the Creation, Updating, and Deleting aspect. And so I learned a ton about ETL development through this little side-project. Not least of which was the majesty of the <code>INSERT OR IGNORE</code> command and <code>CREATE TABLE ... CONSTRAINT</code> arguments to save myself from a ton of duplicate data.</p>
+<p>Here's the schema I wound up with, if anyone's interested.</p>
+<p><center><img src="../../../../../images/daylio/schema.PNG" width="700"/></center></p>
+<h1 id="now-what_1">Now What?<a class="headerlink" href="#now-what" title="Permanent link"> </a></h1>
+<p>And so at the time of writing, I've got</p>
+<ul>
+<li>301 Distinct Dates</li>
+<li>1,426 Distinct Entries</li>
+<li>10,851 Distinct Activity Tags</li>
+</ul>
+<p>All told, that month-by-month view aggregates to</p>
+<p><center><img src="../../../../../images/daylio/trend.png" width="600"/></center></p>
+<p>Which looks overwhelming, right? Lot of spikes on both sides. Some interesting whipsawing, for sure. But in my estimation, it's better to know than to not know. The alternative is feeling these things anyways and not being able to sort out why, and by extension of that, what to do about it.</p>
+<p>And so I have tangible looks at how things are going at the expense of what, 15 seconds a few times a day? I'm okay with that trade-off. Because as I start to pay more attention, I'm, slowly but surely, figuring out how to take better care of myself.</p>
+<p><center><img src="../../../../../images/daylio/trend2.png" width="600"/></center></p>
+<p>Thanks for reading.</p>
+<p>-Nick</p>
+<p><a href="https://github.com/NapsterInBlue/daylioTools">Github link as always</a>, though I've gotta caution against using it as-is. I did the majority of the work in Python 2 and then have since come around to being a 3 proponent (which could be a post in itself...).</p>
+<p>I've been doing some tinkering with Dynamic SQL and dipping my toe into automating some Matplotlib calls (used to create the two visualizations above). Ideally, I'd like to abstract most of the analysis into function calls as well. This has me digging in on some library creation/project architecture. As it happens, that's also a big part of what I'm currently doing at work-- so expect a follow-up post regarding tooling and some of the more interesting things I'm finding in the data.</p>
+<p>But not for another few months. I'd rather my next few posts had some levity :)</p>
+        </div>
+
+        <div class="meta">
+            <div>
+                    <a href="../../../../../tag/architecture.html" class="tag">architecture</a>
+                    <a href="../../../../../tag/python.html" class="tag">python</a>
+                    <a href="../../../../../tag/technical.html" class="tag">technical</a>
+                    <a href="../../../../../tag/tools.html" class="tag">tools</a>
+                    <a href="../../../../../tag/viz.html" class="tag">viz</a>
+                    <a href="../../../../../tag/wellness.html" class="tag">wellness</a>
+            </div>
+        </div>
+    </article>
+
+
+</div>
+
+<style type="text/css">
+{
+    max-width: 700px;
+}
+
+.text_cell .prompt {
+    display: none;
+}
+
+.output_png {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+div.cell {
+    padding: 0;
+}
+
+div.text_cell_render {
+    padding: 0;
+}
+
+div.prompt {
+    padding: -2px;
+    font-size: 13px;
+    min-width: 9ex;
+}
+
+div.input_prompt {
+    padding: .4em 0.2em;
+}
+
+div.output_prompt {
+    padding: .1em .2em;
+}
+
+div.output_area{
+    padding-bottom: 10px;
+}
+
+div.output_subarea {
+    max-width: calc(100% - 10ex);
+}
+
+div.input_area {
+    margin: .2em 0.4em;
+    max-width: 650px;
+}
+
+table.dataframe {
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    line-height: 20px;
+}
+
+table.dataframe th, td {
+    padding: 4px;
+    text-align: left;
+}
+
+pre code {
+    background-color: inherit;
+}
+
+.highlight {
+    padding-left: 4ex;
+    background: #fff;
+}</style>
+
+        </div>
+<!--
+    <footer>
+      <p>
+        © 2012-2017 Nick, license <a href=""> </a>
+        unless otherwise noted.
+        Generated by <a href= "http://docs.getpelican.com/">Pelican</a>.
+      </p>
+    </footer>
+-->
+    </body>
+</html>
