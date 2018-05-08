@@ -28,3 +28,22 @@ def get_dialogue(df, season, episode, scenes=None):
         scenes = True
 
     return df[season & episode & scenes]
+
+def a_spoke_after_b(df, personA, personB):
+    sameScene = (df.groupby(['season', 'episode'])['scene']
+                   .transform(_within_two_scenes))
+    aAfterB = (df.groupby(['season', 'episode'])['speaker']
+                   .transform(lambda x: _within_two_lines(x, personA, personB)))
+
+    return sameScene & aAfterB
+
+
+def _within_two_lines(col, personA, personB):
+    a = col == personA
+    b = col.shift(1) == personB
+    c = col.shift(2) == personB
+
+    return a & (b | c)
+
+def _within_two_scenes(col):
+    return (col - col.shift(2)) < 2
