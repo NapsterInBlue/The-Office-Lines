@@ -56,4 +56,4 @@ def extract_corpus(df):
             if word not in stopWords]
 
 def _clean_word(word):
-    return ''.join(re.findall('[a-z\s]', word.lower().strip()))
+    return ''.join(re.findall('[a-z\s\-]', word.lower().strip()))
